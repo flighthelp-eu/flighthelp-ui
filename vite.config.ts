@@ -1,11 +1,9 @@
+// vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import { resolve } from "path";
 import pkg from "./package.json";
-
-const peerDependencies = pkg.peerDependencies || {};
-const dependencies = pkg.devDependencies || {};
 
 export default defineConfig({
   plugins: [
@@ -23,14 +21,20 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        ...Object.keys(peerDependencies),
-        ...Object.keys(dependencies),
+        "react",
+        "react-dom",
+        "@mui/material",
+        "@mui/material/Button",
+        "@mui/styles",
+        "@emotion/react",
+        "@emotion/styled",
       ],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
           "@mui/material": "MaterialUI",
+          "@mui/material/Button": "MaterialUIButton",
           "@mui/styles": "MaterialUIStyles",
           "@emotion/react": "emotionReact",
           "@emotion/styled": "emotionStyled",
@@ -38,6 +42,8 @@ export default defineConfig({
       },
     },
     sourcemap: true,
+    minify: false,
+    target: "es2015",
     emptyOutDir: true,
   },
 });
