@@ -22,12 +22,12 @@
   "author": "",
   "license": "ISC",
   "peerDependencies": {
-    "@emotion/react": ">=11.0.0",
-    "@emotion/styled": ">=11.0.0",
-    "@mui/material": ">=5.0.0",
-    "@mui/styles": ">=5.0.0",
-    "react": ">=17.0.0",
-    "react-dom": ">=17.0.0"
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.10.16",
+    "@mui/styles": "^5.10.16",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
@@ -51,11 +51,11 @@
     "vite": "^6.2.2",
     "vite-plugin-dts": "^4.5.3",
     "vitest": "^3.0.9",
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/material": "^6.4.8",
-    "@mui/styles": "^6.4.8",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.10.16",
+    "@mui/styles": "^5.10.16",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
