@@ -1,8 +1,16 @@
 import { default as React } from 'react';
-import { ButtonProps as MuiButtonProps } from '@mui/material/Button';
 export type ButtonVariant = "primary" | "secondary" | "system" | "text";
-export interface ButtonProps extends Omit<MuiButtonProps, "variant"> {
+export interface ButtonProps {
     variant?: ButtonVariant;
+    color?: string;
+    className?: string;
+    disabled?: boolean;
+    children?: React.ReactNode;
+    onClick?: () => void;
+    [key: string]: any;
 }
-declare const Button: React.FC<ButtonProps>;
+declare function Button(props: ButtonProps): import("react/jsx-runtime").JSX.Element;
+declare namespace Button {
+    var displayName: string;
+}
 export default Button;

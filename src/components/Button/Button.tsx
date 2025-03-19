@@ -1,31 +1,39 @@
 import React from "react";
-import MuiButton, { ButtonProps as MuiButtonProps } from "@mui/material/Button";
+import MuiButton from "@mui/material/Button";
 
+// Simplificamos los tipos para evitar problemas de compatibilidad
 export type ButtonVariant = "primary" | "secondary" | "system" | "text";
 
-export interface ButtonProps extends Omit<MuiButtonProps, "variant"> {
+export interface ButtonProps {
   variant?: ButtonVariant;
+  color?: string;
+  className?: string;
+  disabled?: boolean;
+  children?: React.ReactNode;
+  onClick?: () => void;
+  [key: string]: any; // Para permitir otras props sin tipado estricto
 }
 
-const Button: React.FC<ButtonProps> = (props) => {
-  const { variant = "primary", children, ...rest } = props;
+// Cambiamos a una declaración de función normal
+function Button(props: ButtonProps) {
+  const { variant = "primary", children, className, ...rest } = props;
 
-  let muiVariant: MuiButtonProps["variant"] = "contained";
-  let color: MuiButtonProps["color"] = "primary";
-  let className = "";
+  let muiVariant = "contained";
+  let muiColor = "primary";
+  let buttonClassName = "";
 
   switch (variant) {
     case "primary":
       muiVariant = "contained";
-      color = "primary";
+      muiColor = "primary";
       break;
     case "secondary":
       muiVariant = "contained";
-      color = "secondary";
+      muiColor = "secondary";
       break;
     case "system":
       muiVariant = "contained";
-      className = "system-button";
+      buttonClassName = "system-button";
       break;
     case "text":
       muiVariant = "text";
@@ -34,10 +42,10 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   return (
     <MuiButton
-      variant={muiVariant}
-      color={color}
+      variant={muiVariant as any}
+      color={muiColor as any}
       className={
-        className ? `${className} ${rest.className || ""}` : rest.className
+        buttonClassName ? `${buttonClassName} ${className || ""}` : className
       }
       disableElevation
       {...rest}
@@ -45,6 +53,8 @@ const Button: React.FC<ButtonProps> = (props) => {
       {children}
     </MuiButton>
   );
-};
+}
+
+Button.displayName = "Button";
 
 export default Button;

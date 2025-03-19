@@ -1025,23 +1025,23 @@ function requireJsxRuntime() {
   return jsxRuntime.exports;
 }
 var jsxRuntimeExports = requireJsxRuntime();
-const Button = (props) => {
-  const _a2 = props, { variant = "primary", children } = _a2, rest = __objRest(_a2, ["variant", "children"]);
+function Button(props) {
+  const _a2 = props, { variant = "primary", children, className } = _a2, rest = __objRest(_a2, ["variant", "children", "className"]);
   let muiVariant = "contained";
-  let color2 = "primary";
-  let className = "";
+  let muiColor = "primary";
+  let buttonClassName = "";
   switch (variant) {
     case "primary":
       muiVariant = "contained";
-      color2 = "primary";
+      muiColor = "primary";
       break;
     case "secondary":
       muiVariant = "contained";
-      color2 = "secondary";
+      muiColor = "secondary";
       break;
     case "system":
       muiVariant = "contained";
-      className = "system-button";
+      buttonClassName = "system-button";
       break;
     case "text":
       muiVariant = "text";
@@ -1051,14 +1051,15 @@ const Button = (props) => {
     MuiButton$1,
     __spreadProps(__spreadValues({
       variant: muiVariant,
-      color: color2,
-      className: className ? `${className} ${rest.className || ""}` : rest.className,
+      color: muiColor,
+      className: buttonClassName ? `${buttonClassName} ${className || ""}` : className,
       disableElevation: true
     }, rest), {
       children
     })
   );
-};
+}
+Button.displayName = "Button";
 function formatMuiErrorMessage$1(code) {
   let url = "https://mui.com/production-error/?code=" + code;
   for (let i = 1; i < arguments.length; i += 1) {
