@@ -36,5 +36,6 @@ export default defineConfig({
     },
     sourcemap: true,
     emptyOutDir: true,
+    target: "es2015",
   },
 });
