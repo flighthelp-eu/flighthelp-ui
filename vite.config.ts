@@ -2,7 +2,10 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import { resolve } from "path";
-import { peerDependencies, dependencies } from "./package.json";
+import pkg from "./package.json";
+
+const peerDependencies = pkg.peerDependencies || {};
+const dependencies = pkg.devDependencies || {};
 
 export default defineConfig({
   plugins: [
@@ -36,6 +39,5 @@ export default defineConfig({
     },
     sourcemap: true,
     emptyOutDir: true,
-    target: "es2015",
   },
 });
