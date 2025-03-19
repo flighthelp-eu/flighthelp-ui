@@ -4407,7 +4407,76 @@ Please use another name.` : formatMuiErrorMessage$1(18));
       }
     }
   });
+  const Title = material.styled(material.Typography)(() => ({
+    fontSize: "14px",
+    fontWeight: 600,
+    lineHeight: "22px",
+    letterSpacing: "-0.28px",
+    pb: 1
+  }));
+  const TextFieldStyled = material.styled(material.TextField)(() => ({
+    boxSizing: "border-box",
+    "& label.Mui-focused": { color: "#6FC3C4" },
+    "& .MuiOutlinedInput-root": {
+      lineHeight: "1.5",
+      backgroundColor: "#F4FEFE",
+      "& fieldset": {
+        borderColor: "#6FC3C4",
+        borderWidth: "1px",
+        borderRadius: "8px"
+      },
+      "&:hover fieldset": {
+        borderColor: "#20ABAD"
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#20ABAD",
+        color: "#20ABAD"
+      },
+      "& .MuiOutlinedInput-input": {
+        fontSize: "14px",
+        fontWeight: 400,
+        padding: `${theme.spacing(4)} ${theme.spacing(4)}`,
+        "&::placeholder": {
+          color: "#293747",
+          opacity: 1
+        }
+      },
+      "& label.Mui-focused": { color: "green" }
+    }
+  }));
+  const InputText = React.forwardRef(
+    (_f, ref) => {
+      var _g = _f, { variant = "primary", title } = _g, props = __objRest(_g, ["variant", "title"]);
+      let muiProps = {
+        fullWidth: true,
+        variant: "outlined"
+      };
+      switch (variant) {
+        case "primary":
+          muiProps = __spreadProps(__spreadValues({}, muiProps), {
+            color: "primary"
+          });
+          break;
+        case "secondary":
+          muiProps = __spreadProps(__spreadValues({}, muiProps), {
+            color: "secondary"
+          });
+          break;
+        case "error":
+          muiProps = __spreadProps(__spreadValues({}, muiProps), {
+            error: true
+          });
+          break;
+      }
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        title && /* @__PURE__ */ jsxRuntimeExports.jsx(Title, { children: title }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TextFieldStyled, __spreadValues(__spreadValues({ ref }, muiProps), props))
+      ] });
+    }
+  );
+  InputText.displayName = "TextField";
   exports2.Button = Button;
+  exports2.InputText = InputText;
   exports2.breakpoints = breakpoints;
   exports2.palette = palette;
   exports2.theme = theme;

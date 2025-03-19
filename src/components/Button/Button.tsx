@@ -1,7 +1,6 @@
 import React from "react";
 import MuiButton from "@mui/material/Button";
 
-// Simplificamos los tipos para evitar problemas de compatibilidad
 export type ButtonVariant = "primary" | "secondary" | "system" | "text";
 
 export interface ButtonProps {
@@ -11,10 +10,9 @@ export interface ButtonProps {
   disabled?: boolean;
   children?: React.ReactNode;
   onClick?: () => void;
-  [key: string]: any; // Para permitir otras props sin tipado estricto
+  [key: string]: any;
 }
 
-// Cambiamos a una declaración de función normal
 function Button(props: ButtonProps) {
   const { variant = "primary", children, className, ...rest } = props;
 

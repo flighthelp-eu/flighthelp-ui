@@ -9,7 +9,7 @@ export interface TextFieldProps extends Omit<MuiTextFieldProps, "variant"> {
   title?: string;
 }
 
-const TextField = React.forwardRef<HTMLDivElement, TextFieldProps>(
+const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
   ({ variant = "primary", title, ...props }, ref) => {
     let muiProps: Partial<MuiTextFieldProps> = {
       fullWidth: true,
@@ -46,6 +46,6 @@ const TextField = React.forwardRef<HTMLDivElement, TextFieldProps>(
   }
 );
 
-TextField.displayName = "TextField";
+InputText.displayName = "TextField";
 
-export default TextField;
+export default InputText;

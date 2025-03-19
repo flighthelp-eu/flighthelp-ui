@@ -34,7 +34,7 @@ var _a, _b, _c, _d, _e;
 import * as React from "react";
 import React__default from "react";
 import MuiButton$1 from "@mui/material/Button";
-import { darken } from "@mui/material";
+import { darken, styled, Typography, TextField } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 function getDefaultExportFromCjs(x) {
   return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
@@ -4391,8 +4391,77 @@ makeStyles({
     }
   }
 });
+const Title = styled(Typography)(() => ({
+  fontSize: "14px",
+  fontWeight: 600,
+  lineHeight: "22px",
+  letterSpacing: "-0.28px",
+  pb: 1
+}));
+const TextFieldStyled = styled(TextField)(() => ({
+  boxSizing: "border-box",
+  "& label.Mui-focused": { color: "#6FC3C4" },
+  "& .MuiOutlinedInput-root": {
+    lineHeight: "1.5",
+    backgroundColor: "#F4FEFE",
+    "& fieldset": {
+      borderColor: "#6FC3C4",
+      borderWidth: "1px",
+      borderRadius: "8px"
+    },
+    "&:hover fieldset": {
+      borderColor: "#20ABAD"
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#20ABAD",
+      color: "#20ABAD"
+    },
+    "& .MuiOutlinedInput-input": {
+      fontSize: "14px",
+      fontWeight: 400,
+      padding: `${theme.spacing(4)} ${theme.spacing(4)}`,
+      "&::placeholder": {
+        color: "#293747",
+        opacity: 1
+      }
+    },
+    "& label.Mui-focused": { color: "green" }
+  }
+}));
+const InputText = React__default.forwardRef(
+  (_f, ref) => {
+    var _g = _f, { variant = "primary", title } = _g, props = __objRest(_g, ["variant", "title"]);
+    let muiProps = {
+      fullWidth: true,
+      variant: "outlined"
+    };
+    switch (variant) {
+      case "primary":
+        muiProps = __spreadProps(__spreadValues({}, muiProps), {
+          color: "primary"
+        });
+        break;
+      case "secondary":
+        muiProps = __spreadProps(__spreadValues({}, muiProps), {
+          color: "secondary"
+        });
+        break;
+      case "error":
+        muiProps = __spreadProps(__spreadValues({}, muiProps), {
+          error: true
+        });
+        break;
+    }
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      title && /* @__PURE__ */ jsxRuntimeExports.jsx(Title, { children: title }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TextFieldStyled, __spreadValues(__spreadValues({ ref }, muiProps), props))
+    ] });
+  }
+);
+InputText.displayName = "TextField";
 export {
   Button,
+  InputText,
   breakpoints,
   palette,
   theme,

@@ -1,4 +1,5 @@
 export { default as Button } from './src/components/Button/Button';
+export { default as InputText } from './src/components/InputText/InputText';
 export { default as theme } from './src/theme';
 export { default as palette } from './src/theme/palette';
 export { default as typography } from './src/theme/typography';

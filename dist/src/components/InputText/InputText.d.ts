@@ -4,5 +4,5 @@ export interface TextFieldProps extends Omit<MuiTextFieldProps, "variant"> {
     variant?: "primary" | "secondary" | "error";
     title?: string;
 }
-declare const TextField: React.ForwardRefExoticComponent<Omit<TextFieldProps, "ref"> & React.RefAttributes<HTMLDivElement>>;
-export default TextField;
+declare const InputText: React.ForwardRefExoticComponent<Omit<TextFieldProps, "ref"> & React.RefAttributes<HTMLDivElement>>;
+export default InputText;
