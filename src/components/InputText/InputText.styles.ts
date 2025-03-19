@@ -11,7 +11,7 @@ export const Title = styled(Typography)(() => ({
 
 export const TextFieldStyled = styled(TextField)(() => ({
   boxSizing: "border-box",
-  "& label.Mui-focused": { color: "#6FC3C4" },
+  "& label.Mui-focused": { color: "#0F5C5D" },
   "& .MuiOutlinedInput-root": {
     lineHeight: "1.5",
     backgroundColor: "#F4FEFE",
@@ -21,11 +21,11 @@ export const TextFieldStyled = styled(TextField)(() => ({
       borderRadius: "8px",
     },
     "&:hover fieldset": {
-      borderColor: "#20ABAD",
+      borderColor: "#0F5C5D",
     },
     "&.Mui-focused fieldset": {
-      borderColor: "#20ABAD",
-      color: "#20ABAD",
+      borderColor: "#0F5C5D",
+      color: "#0F5C5D",
     },
     "& .MuiOutlinedInput-input": {
       fontSize: "14px",
@@ -36,6 +36,5 @@ export const TextFieldStyled = styled(TextField)(() => ({
         opacity: 1,
       },
     },
-    "& label.Mui-focused": { color: "green" },
   },
 }));
