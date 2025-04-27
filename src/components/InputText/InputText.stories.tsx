@@ -109,3 +109,12 @@ export const Multiline: Story = {
     placeholder: "Enter multiple lines of text",
   },
 };
+
+export const Masked: Story = {
+  args: {
+    variant: "masked",
+    title: "Website URL",
+    placeholder: "Company Name",
+    urlPrefix: "flighthelp.eu/",
+  },
+};
