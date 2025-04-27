@@ -6465,7 +6465,7 @@ const InputText = React__default.forwardRef(
         }, muiProps), props), {
           sx: {
             "& .MuiOutlinedInput-input": {
-              paddingLeft: "0px !important"
+              paddingLeft: variant === "masked" ? "0px !important" : theme.spacing(4)
             }
           }
         })
