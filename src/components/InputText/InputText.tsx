@@ -3,6 +3,7 @@ import MuiTextField, {
   TextFieldProps as MuiTextFieldProps,
 } from "@mui/material/TextField";
 import { TextFieldStyled, Title } from "./InputText.styles";
+import { Typography } from "@mui/material";
 
 export interface TextFieldProps extends Omit<MuiTextFieldProps, "variant"> {
   variant?: "primary" | "secondary" | "error";
@@ -39,7 +40,21 @@ const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
 
     return (
       <>
-        {title && <Title>{title}</Title>}
+        {title && (
+          <Title>
+            {title}{" "}
+            {props.required ? (
+              <Typography
+                sx={{ fontSize: 20, pl: 0.3, display: "block" }}
+                color="#C10000"
+              >
+                *
+              </Typography>
+            ) : (
+              ""
+            )}
+          </Title>
+        )}
         <TextFieldStyled ref={ref} {...muiProps} {...props} />
       </>
     );

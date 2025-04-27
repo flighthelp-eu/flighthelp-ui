@@ -52,6 +52,7 @@ export const WithTitle: Story = {
     variant: "primary",
     placeholder: "Enter text here",
     title: "Best Title Ever",
+    required: true,
   },
 };
 

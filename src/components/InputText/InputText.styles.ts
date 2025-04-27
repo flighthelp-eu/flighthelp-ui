@@ -7,6 +7,8 @@ export const Title = styled(Typography)(() => ({
   lineHeight: "22px",
   letterSpacing: "-0.28px",
   pb: 1,
+  position: "relative",
+  display: "flex",
 }));
 
 export const TextFieldStyled = styled(TextField)(() => ({
