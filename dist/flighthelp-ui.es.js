@@ -4396,11 +4396,13 @@ const Title = styled(Typography)(() => ({
   fontWeight: 600,
   lineHeight: "22px",
   letterSpacing: "-0.28px",
-  pb: 1
+  pb: 1,
+  position: "relative",
+  display: "flex"
 }));
 const TextFieldStyled = styled(TextField)(() => ({
   boxSizing: "border-box",
-  "& label.Mui-focused": { color: "#6FC3C4" },
+  "& label.Mui-focused": { color: "#0F5C5D" },
   "& .MuiOutlinedInput-root": {
     lineHeight: "1.5",
     backgroundColor: "#F4FEFE",
@@ -4410,11 +4412,11 @@ const TextFieldStyled = styled(TextField)(() => ({
       borderRadius: "8px"
     },
     "&:hover fieldset": {
-      borderColor: "#20ABAD"
+      borderColor: "#0F5C5D"
     },
     "&.Mui-focused fieldset": {
-      borderColor: "#20ABAD",
-      color: "#20ABAD"
+      borderColor: "#0F5C5D",
+      color: "#0F5C5D"
     },
     "& .MuiOutlinedInput-input": {
       fontSize: "14px",
@@ -4424,8 +4426,7 @@ const TextFieldStyled = styled(TextField)(() => ({
         color: "#293747",
         opacity: 1
       }
-    },
-    "& label.Mui-focused": { color: "green" }
+    }
   }
 }));
 const InputText = React__default.forwardRef(
@@ -4453,7 +4454,18 @@ const InputText = React__default.forwardRef(
         break;
     }
     return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      title && /* @__PURE__ */ jsxRuntimeExports.jsx(Title, { children: title }),
+      title && /* @__PURE__ */ jsxRuntimeExports.jsxs(Title, { children: [
+        title,
+        " ",
+        props.required ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Typography,
+          {
+            sx: { fontSize: 20, pl: 0.3, display: "block" },
+            color: "#C10000",
+            children: "*"
+          }
+        ) : ""
+      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TextFieldStyled, __spreadValues(__spreadValues({ ref }, muiProps), props))
     ] });
   }
