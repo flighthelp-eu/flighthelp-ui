@@ -1,4 +1,3 @@
-// vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
@@ -10,6 +9,7 @@ export default defineConfig({
     react(),
     dts({
       insertTypesEntry: true,
+      include: ["src/**/*.ts", "src/**/*.tsx", "index.ts"],
     }),
   ],
   build: {
