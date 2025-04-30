@@ -1,7 +1,5 @@
 import React from "react";
-import MuiTextField, {
-  TextFieldProps as MuiTextFieldProps,
-} from "@mui/material/TextField";
+import { TextFieldProps as MuiTextFieldProps } from "@mui/material/TextField";
 import { TextFieldStyled, Title } from "./InputText.styles";
 import { Typography } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
