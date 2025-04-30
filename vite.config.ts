@@ -30,6 +30,7 @@ export default defineConfig({
         "@emotion/styled",
       ],
       output: {
+        interop: "auto",
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
