@@ -91,112 +91,117 @@ declare module "@mui/material/styles" {
   }
 
   interface TypographyVariants {
+    allCaps: React.CSSProperties;
+    bold18: React.CSSProperties;
+    regular18: React.CSSProperties;
+    bold16: React.CSSProperties;
+    regular16: React.CSSProperties;
+    bold14: React.CSSProperties;
+    regular14: React.CSSProperties;
+    bold12: React.CSSProperties;
+    regular12: React.CSSProperties;
+    bold10: React.CSSProperties;
+    regular10: React.CSSProperties;
+    normalLink: React.CSSProperties;
+    buttonLink: React.CSSProperties;
+    // Mantener tus variantes personalizadas existentes
+    h1Light: React.CSSProperties;
+    h1Regular: React.CSSProperties;
     h1Bold: React.CSSProperties;
     h1SemiBold: React.CSSProperties;
     h1Medium: React.CSSProperties;
-    h1Regular: React.CSSProperties;
-    h1Light: React.CSSProperties;
-
     h2Bold: React.CSSProperties;
     h2Medium: React.CSSProperties;
     h2Regular: React.CSSProperties;
-
     h3Bold: React.CSSProperties;
     h3Regular: React.CSSProperties;
-
-    paragraphBold: React.CSSProperties;
-    paragraphMedium: React.CSSProperties;
-
-    mediumBold: React.CSSProperties;
-    mediumRegular: React.CSSProperties;
-
     regularBold: React.CSSProperties;
     regularRegular: React.CSSProperties;
-
     smallBold: React.CSSProperties;
     smallSemiBold: React.CSSProperties;
-    smallRegular: React.CSSProperties;
-
-    xsmallSemiBold: React.CSSProperties;
     xsmallRegular: React.CSSProperties;
+    xsmallSemiBold: React.CSSProperties;
+    mediumBold: React.CSSProperties;
+    mediumRegular: React.CSSProperties;
+    smallRegular: React.CSSProperties;
+    paragraphBold: React.CSSProperties;
+    paragraphMedium: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
-    h1Bold: React.CSSProperties;
-    h1SemiBold: React.CSSProperties;
-    h1Medium: React.CSSProperties;
-    h1Regular: React.CSSProperties;
-    h1Light: React.CSSProperties;
-
-    h2Bold: React.CSSProperties;
-    h2Medium: React.CSSProperties;
-    h2Regular: React.CSSProperties;
-
-    h3Bold: React.CSSProperties;
-    h3Regular: React.CSSProperties;
-
-    paragraphBold: React.CSSProperties;
-    paragraphMedium: React.CSSProperties;
-
-    mediumBold: React.CSSProperties;
-    mediumRegular: React.CSSProperties;
-
-    regularBold: React.CSSProperties;
-    regularRegular: React.CSSProperties;
-
-    smallBold: React.CSSProperties;
-    smallSemiBold: React.CSSProperties;
-    smallRegular: React.CSSProperties;
-
-    xsmallSemiBold: React.CSSProperties;
-    xsmallRegular: React.CSSProperties;
+    allCaps?: React.CSSProperties;
+    bold18?: React.CSSProperties;
+    regular18?: React.CSSProperties;
+    bold16?: React.CSSProperties;
+    regular16?: React.CSSProperties;
+    bold14?: React.CSSProperties;
+    regular14?: React.CSSProperties;
+    bold12?: React.CSSProperties;
+    regular12?: React.CSSProperties;
+    bold10?: React.CSSProperties;
+    regular10?: React.CSSProperties;
+    normalLink?: React.CSSProperties;
+    buttonLink?: React.CSSProperties;
+    h1Light?: React.CSSProperties;
+    h1Regular?: React.CSSProperties;
+    h1Bold?: React.CSSProperties;
+    h1SemiBold?: React.CSSProperties;
+    h1Medium?: React.CSSProperties;
+    h2Bold?: React.CSSProperties;
+    h2Medium?: React.CSSProperties;
+    h2Regular?: React.CSSProperties;
+    h3Bold?: React.CSSProperties;
+    h3Regular?: React.CSSProperties;
+    regularBold?: React.CSSProperties;
+    regularRegular?: React.CSSProperties;
+    smallBold?: React.CSSProperties;
+    smallSemiBold?: React.CSSProperties;
+    xsmallRegular?: React.CSSProperties;
+    xsmallSemiBold?: React.CSSProperties;
+    mediumBold?: React.CSSProperties;
+    mediumRegular?: React.CSSProperties;
+    smallRegular?: React.CSSProperties;
+    paragraphBold?: React.CSSProperties;
+    paragraphMedium?: React.CSSProperties;
   }
 }
 
 declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
+    allCaps: true;
+    bold18: true;
+    regular18: true;
+    bold16: true;
+    regular16: true;
+    bold14: true;
+    regular14: true;
+    bold12: true;
+    regular12: true;
+    bold10: true;
+    regular10: true;
+    normalLink: true;
+    buttonLink: true;
+    h1Light: true;
+    h1Regular: true;
     h1Bold: true;
     h1SemiBold: true;
     h1Medium: true;
-    h1Regular: true;
-    h1Light: true;
-
     h2Bold: true;
     h2Medium: true;
     h2Regular: true;
-
     h3Bold: true;
     h3Regular: true;
-
-    paragraphBold: true;
-    paragraphMedium: true;
-
-    mediumBold: true;
-    mediumRegular: true;
-
     regularBold: true;
     regularRegular: true;
-
     smallBold: true;
     smallSemiBold: true;
-    smallRegular: true;
-
-    xsmallSemiBold: true;
     xsmallRegular: true;
-
-    h1: false;
-    h2: false;
-    h3: false;
-    h4: false;
-    h5: false;
-    h6: false;
-    subtitle1: false;
-    subtitle2: false;
-    body1: false;
-    body2: false;
-    button: false;
-    caption: false;
-    overline: false;
+    xsmallSemiBold: true;
+    mediumBold: true;
+    mediumRegular: true;
+    smallRegular: true;
+    paragraphBold: true;
+    paragraphMedium: true;
   }
 }
 

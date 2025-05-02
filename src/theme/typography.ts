@@ -10,7 +10,219 @@ const typography: TypographyOptions = {
 
   fontFamily,
   fontSize: 14,
-  // Used in homepage
+
+  h1: {
+    fontFamily,
+    fontWeight: 700, // Bold
+    fontSize: "28px",
+    lineHeight: "36px",
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]:
+      {
+        fontSize: "40px",
+        lineHeight: "46px",
+      },
+    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "48px",
+      lineHeight: "56px",
+    },
+  },
+
+  h2: {
+    fontFamily,
+    fontWeight: 700, // Bold
+    fontSize: "26px",
+    lineHeight: "32px",
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]:
+      {
+        fontSize: "35px",
+        lineHeight: "38px",
+      },
+    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "40px",
+      lineHeight: "44px",
+    },
+  },
+
+  h3: {
+    fontFamily,
+    fontWeight: 700, // Bold
+    fontSize: "24px",
+    lineHeight: "30px",
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]:
+      {
+        fontSize: "32px",
+        lineHeight: "26px",
+      },
+    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "36px",
+      lineHeight: "44px",
+    },
+  },
+
+  h4: {
+    fontFamily,
+    fontWeight: 700, // Bold
+    fontSize: "22px",
+    lineHeight: "26px",
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]:
+      {
+        fontSize: "26px",
+        lineHeight: "30px",
+      },
+    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "28px",
+      lineHeight: "26px",
+    },
+  },
+
+  h5: {
+    fontFamily,
+    fontWeight: 600, // SemiBold
+    fontSize: "20px",
+    lineHeight: "26px",
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]:
+      {
+        fontSize: "22px",
+        lineHeight: "28px",
+      },
+    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "24px",
+      lineHeight: "29px",
+    },
+  },
+
+  h6: {
+    fontFamily,
+    fontWeight: 700, // Bold
+    fontSize: "18px",
+    lineHeight: "26px",
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]:
+      {
+        fontSize: "18px",
+        lineHeight: "26px",
+      },
+    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "20px",
+      lineHeight: "26px",
+    },
+  },
+
+  // Variantes personalizadas de las guías
+  allCaps: {
+    fontFamily,
+    fontWeight: 700, // Bold
+    textTransform: "uppercase",
+    fontSize: "12px",
+    lineHeight: "18px",
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]:
+      {
+        fontSize: "15px",
+        lineHeight: "20px",
+      },
+    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "17px",
+      lineHeight: "23px",
+    },
+  },
+
+  // Bold.18
+  bold18: {
+    fontFamily,
+    fontWeight: 700, // Bold
+    fontSize: "18px",
+    lineHeight: "24px",
+  },
+
+  // Regular.18
+  regular18: {
+    fontFamily,
+    fontWeight: 400, // Regular
+    fontSize: "18px",
+    lineHeight: "24px",
+  },
+
+  // Bold.16
+  bold16: {
+    fontFamily,
+    fontWeight: 700, // Bold
+    fontSize: "16px",
+    lineHeight: "26px",
+  },
+
+  // Regular.16
+  regular16: {
+    fontFamily,
+    fontWeight: 400, // Regular
+    fontSize: "16px",
+    lineHeight: "26px",
+  },
+
+  // Bold.14
+  bold14: {
+    fontFamily,
+    fontWeight: 700, // Bold
+    fontSize: "14px",
+    lineHeight: "20px",
+  },
+
+  // Regular.14
+  regular14: {
+    fontFamily,
+    fontWeight: 400, // Regular
+    fontSize: "14px",
+    lineHeight: "20px",
+  },
+
+  // Bold.12 (SemiBold)
+  bold12: {
+    fontFamily,
+    fontWeight: 600, // SemiBold
+    fontSize: "12px",
+    lineHeight: "16px",
+  },
+
+  // Regular.12
+  regular12: {
+    fontFamily,
+    fontWeight: 400, // Regular
+    fontSize: "12px",
+    lineHeight: "16px",
+  },
+
+  // Bold.10
+  bold10: {
+    fontFamily,
+    fontWeight: 700, // Bold
+    fontSize: "10px",
+    lineHeight: "14px",
+  },
+
+  // Regular.10
+  regular10: {
+    fontFamily,
+    fontWeight: 400, // Regular
+    fontSize: "10px",
+    lineHeight: "14px",
+  },
+
+  // Normal Link
+  normalLink: {
+    fontFamily,
+    fontWeight: 400, // Regular
+    fontSize: "12px",
+    lineHeight: "16px",
+    textDecoration: "underline",
+  },
+
+  // Button Link
+  buttonLink: {
+    fontFamily,
+    fontWeight: 600, // SemiBold
+    fontSize: "12px",
+    lineHeight: "16px",
+    textTransform: "capitalize", // Title Case
+  },
+
   h1Light: {},
   h1Regular: {},
   regularBold: {},
@@ -45,7 +257,6 @@ const typography: TypographyOptions = {
     fontWeight: "500",
     lineHeight: "60px",
   },
-  // Used in homepage
   h2Bold: {
     fontFamily,
     fontSize: "40px",
@@ -68,7 +279,6 @@ const typography: TypographyOptions = {
     fontWeight: "400",
     lineHeight: "60px",
   },
-  // Used in homepage
   h3Bold: {
     fontFamily,
     fontSize: "28px",
@@ -93,29 +303,24 @@ const typography: TypographyOptions = {
     fontWeight: "600",
     lineHeight: "16px",
   },
-
   mediumRegular: {
     fontFamily,
     fontSize: "14px",
     fontWeight: "400",
     lineHeight: "150%",
   },
-
-  // Used in file a claim
   smallRegular: {
     fontFamily,
     fontSize: "12px",
     fontWeight: "400",
     lineHeight: "16px",
   },
-  // Used in FormAppbar
   paragraphBold: {
     fontFamily,
     fontSize: "16px",
     fontWeight: "700",
     lineHeight: "30px",
   },
-  // Used in homepage
   paragraphMedium: {
     fontFamily,
     fontSize: "16px",
@@ -123,12 +328,7 @@ const typography: TypographyOptions = {
     lineHeight: "30px",
   },
 
-  h1: undefined,
-  h2: undefined,
-  h3: undefined,
-  h4: undefined,
-  h5: undefined,
-  h6: undefined,
+  // Otras variantes estándar
   subtitle1: undefined,
   subtitle2: undefined,
   body1: {

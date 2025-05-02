@@ -1467,17 +1467,17 @@
 
 	const THEME_ID = '$$material';
 
-	function _extends$1() {
-	  return _extends$1 = Object.assign ? Object.assign.bind() : function (n) {
+	function _extends$3() {
+	  return _extends$3 = Object.assign ? Object.assign.bind() : function (n) {
 	    for (var e = 1; e < arguments.length; e++) {
 	      var t = arguments[e];
 	      for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
 	    }
 	    return n;
-	  }, _extends$1.apply(null, arguments);
+	  }, _extends$3.apply(null, arguments);
 	}
 
-	function _objectWithoutPropertiesLoose(r, e) {
+	function _objectWithoutPropertiesLoose$1(r, e) {
 	  if (null == r) return {};
 	  var t = {};
 	  for (var n in r) if ({}.hasOwnProperty.call(r, n)) {
@@ -3837,6 +3837,36 @@
 		keyframes: react.keyframes
 	}, Symbol.toStringTag, { value: 'Module' }));
 
+	function _extends$2() {
+	  return _extends$2 = Object.assign ? Object.assign.bind() : function (n) {
+	    for (var e = 1; e < arguments.length; e++) {
+	      var t = arguments[e];
+	      for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
+	    }
+	    return n;
+	  }, _extends$2.apply(null, arguments);
+	}
+
+	function _objectWithoutPropertiesLoose(r, e) {
+	  if (null == r) return {};
+	  var t = {};
+	  for (var n in r) if ({}.hasOwnProperty.call(r, n)) {
+	    if (-1 !== e.indexOf(n)) continue;
+	    t[n] = r[n];
+	  }
+	  return t;
+	}
+
+	function _extends$1() {
+	  return _extends$1 = Object.assign ? Object.assign.bind() : function (n) {
+	    for (var e = 1; e < arguments.length; e++) {
+	      var t = arguments[e];
+	      for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
+	    }
+	    return n;
+	  }, _extends$1.apply(null, arguments);
+	}
+
 	// https://github.com/sindresorhus/is-plain-obj/blob/main/index.js
 	function isPlainObject(item) {
 	  if (typeof item !== 'object' || item === null) {
@@ -3893,7 +3923,7 @@
 	  // Sort in ascending order
 	  breakpointsAsArray.sort((breakpoint1, breakpoint2) => breakpoint1.val - breakpoint2.val);
 	  return breakpointsAsArray.reduce((acc, obj) => {
-	    return _extends$1({}, acc, {
+	    return _extends$2({}, acc, {
 	      [obj.key]: obj.val
 	    });
 	  }, {});
@@ -3950,7 +3980,7 @@
 	    }
 	    return between(key, keys[keys.indexOf(key) + 1]).replace('@media', '@media not all and');
 	  }
-	  return _extends$1({
+	  return _extends$2({
 	    keys,
 	    values: sortedValues,
 	    up,
@@ -5039,15 +5069,15 @@
 	    direction: 'ltr',
 	    components: {},
 	    // Inject component definitions.
-	    palette: _extends$1({
+	    palette: _extends$2({
 	      mode: 'light'
 	    }, paletteInput),
 	    spacing,
-	    shape: _extends$1({}, shape, shapeInput)
+	    shape: _extends$2({}, shape, shapeInput)
 	  }, other);
 	  muiTheme.applyStyles = applyStyles;
 	  muiTheme = args.reduce((acc, argument) => deepmerge$1(acc, argument), muiTheme);
-	  muiTheme.unstable_sxConfig = _extends$1({}, defaultSxConfig, other == null ? void 0 : other.unstable_sxConfig);
+	  muiTheme.unstable_sxConfig = _extends$2({}, defaultSxConfig, other == null ? void 0 : other.unstable_sxConfig);
 	  muiTheme.unstable_sx = function sx(props) {
 	    return styleFunctionSx$1({
 	      sx: props,
@@ -5099,12 +5129,12 @@
 	      if (!isPlainObject(result)) {
 	        return systemProps;
 	      }
-	      return _extends$1({}, systemProps, result);
+	      return _extends$2({}, systemProps, result);
 	    };
 	  } else {
-	    finalSx = _extends$1({}, systemProps, inSx);
+	    finalSx = _extends$2({}, systemProps, inSx);
 	  }
-	  return _extends$1({}, otherProps, {
+	  return _extends$2({}, otherProps, {
 	    sx: finalSx
 	  });
 	}
@@ -5627,7 +5657,7 @@
 	}
 
 	function createMixins(breakpoints, mixins) {
-	  return _extends$1({
+	  return _extends$3({
 	    toolbar: {
 	      minHeight: 56,
 	      [breakpoints.up('xs')]: {
@@ -6282,7 +6312,7 @@ The following color spaces are supported: srgb, display-p3, a98-rgb, prophoto-rg
 	      contrastThreshold = 3,
 	      tonalOffset = 0.2
 	    } = palette,
-	    other = _objectWithoutPropertiesLoose(palette, _excluded$5);
+	    other = _objectWithoutPropertiesLoose$1(palette, _excluded$5);
 	  const primary = palette.primary || getDefaultPrimary(mode);
 	  const secondary = palette.secondary || getDefaultSecondary(mode);
 	  const error = palette.error || getDefaultError(mode);
@@ -6310,7 +6340,7 @@ The following color spaces are supported: srgb, display-p3, a98-rgb, prophoto-rg
 	    lightShade = 300,
 	    darkShade = 700
 	  }) => {
-	    color = _extends$1({}, color);
+	    color = _extends$3({}, color);
 	    if (!color.main && color[mainShade]) {
 	      color.main = color[mainShade];
 	    }
@@ -6350,9 +6380,9 @@ const theme2 = createTheme({ palette: {
 	      console.error(`MUI: The palette mode \`${mode}\` is not supported.`);
 	    }
 	  }
-	  const paletteOutput = deepmerge$1(_extends$1({
+	  const paletteOutput = deepmerge$1(_extends$3({
 	    // A collection of common colors.
-	    common: _extends$1({}, common),
+	    common: _extends$3({}, common),
 	    // prevent mutable object.
 	    // The palette mode, can be light or dark.
 	    mode,
@@ -6437,7 +6467,7 @@ const theme2 = createTheme({ palette: {
 	      allVariants,
 	      pxToRem: pxToRem2
 	    } = _ref,
-	    other = _objectWithoutPropertiesLoose(_ref, _excluded$4);
+	    other = _objectWithoutPropertiesLoose$1(_ref, _excluded$4);
 	  if (process.env.NODE_ENV !== 'production') {
 	    if (typeof fontSize !== 'number') {
 	      console.error('MUI: `fontSize` is required to be a number.');
@@ -6448,7 +6478,7 @@ const theme2 = createTheme({ palette: {
 	  }
 	  const coef = fontSize / 14;
 	  const pxToRem = pxToRem2 || (size => `${size / htmlFontSize * coef}rem`);
-	  const buildVariant = (fontWeight, size, lineHeight, letterSpacing, casing) => _extends$1({
+	  const buildVariant = (fontWeight, size, lineHeight, letterSpacing, casing) => _extends$3({
 	    fontFamily,
 	    fontWeight,
 	    fontSize: pxToRem(size),
@@ -6480,7 +6510,7 @@ const theme2 = createTheme({ palette: {
 	      letterSpacing: 'inherit'
 	    }
 	  };
-	  return deepmerge$1(_extends$1({
+	  return deepmerge$1(_extends$3({
 	    htmlFontSize,
 	    pxToRem,
 	    fontFamily,
@@ -6547,15 +6577,15 @@ const theme2 = createTheme({ palette: {
 	  return Math.round((4 + 15 * constant ** 0.25 + constant / 5) * 10);
 	}
 	function createTransitions(inputTransitions) {
-	  const mergedEasing = _extends$1({}, easing, inputTransitions.easing);
-	  const mergedDuration = _extends$1({}, duration, inputTransitions.duration);
+	  const mergedEasing = _extends$3({}, easing, inputTransitions.easing);
+	  const mergedDuration = _extends$3({}, duration, inputTransitions.duration);
 	  const create = (props = ['all'], options = {}) => {
 	    const {
 	        duration: durationOption = mergedDuration.standard,
 	        easing: easingOption = mergedEasing.easeInOut,
 	        delay = 0
 	      } = options,
-	      other = _objectWithoutPropertiesLoose(options, _excluded$3);
+	      other = _objectWithoutPropertiesLoose$1(options, _excluded$3);
 	    if (process.env.NODE_ENV !== 'production') {
 	      const isString = value => typeof value === 'string';
 	      // IE11 support, replace with Number.isNaN
@@ -6582,7 +6612,7 @@ const theme2 = createTheme({ palette: {
 	    }
 	    return (Array.isArray(props) ? props : [props]).map(animatedProp => `${animatedProp} ${typeof durationOption === 'string' ? durationOption : formatMs(durationOption)} ${easingOption} ${typeof delay === 'string' ? delay : formatMs(delay)}`).join(',');
 	  };
-	  return _extends$1({
+	  return _extends$3({
 	    getAutoHeightDuration,
 	    create
 	  }, inputTransitions, {
@@ -6612,7 +6642,7 @@ const theme2 = createTheme({ palette: {
 	      transitions: transitionsInput = {},
 	      typography: typographyInput = {}
 	    } = options,
-	    other = _objectWithoutPropertiesLoose(options, _excluded$2);
+	    other = _objectWithoutPropertiesLoose$1(options, _excluded$2);
 	  if (options.vars &&
 	  // The error should throw only for the root theme creation because user is not allowed to use a custom node `vars`.
 	  // `generateCssVars` is the closest identifier for checking that the `options` is a result of `extendTheme` with CSS variables so that user can create new theme for nested ThemeProvider.
@@ -6629,7 +6659,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	    shadows: shadows.slice(),
 	    typography: createTypography(palette, typographyInput),
 	    transitions: createTransitions(transitionsInput),
-	    zIndex: _extends$1({}, zIndex)
+	    zIndex: _extends$3({}, zIndex)
 	  });
 	  muiTheme = deepmerge$1(muiTheme, other);
 	  muiTheme = args.reduce((acc, argument) => deepmerge$1(acc, argument), muiTheme);
@@ -6663,7 +6693,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	      }
 	    });
 	  }
-	  muiTheme.unstable_sxConfig = _extends$1({}, defaultSxConfig, other == null ? void 0 : other.unstable_sxConfig);
+	  muiTheme.unstable_sxConfig = _extends$3({}, defaultSxConfig, other == null ? void 0 : other.unstable_sxConfig);
 	  muiTheme.unstable_sx = function sx(props) {
 	    return styleFunctionSx$1({
 	      sx: props,
@@ -7096,7 +7126,212 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	  },
 	  fontFamily,
 	  fontSize: 14,
-	  // Used in homepage
+	  h1: {
+	    fontFamily,
+	    fontWeight: 700,
+	    // Bold
+	    fontSize: "28px",
+	    lineHeight: "36px",
+	    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "40px",
+	      lineHeight: "46px"
+	    },
+	    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "48px",
+	      lineHeight: "56px"
+	    }
+	  },
+	  h2: {
+	    fontFamily,
+	    fontWeight: 700,
+	    // Bold
+	    fontSize: "26px",
+	    lineHeight: "32px",
+	    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "35px",
+	      lineHeight: "38px"
+	    },
+	    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "40px",
+	      lineHeight: "44px"
+	    }
+	  },
+	  h3: {
+	    fontFamily,
+	    fontWeight: 700,
+	    // Bold
+	    fontSize: "24px",
+	    lineHeight: "30px",
+	    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "32px",
+	      lineHeight: "26px"
+	    },
+	    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "36px",
+	      lineHeight: "44px"
+	    }
+	  },
+	  h4: {
+	    fontFamily,
+	    fontWeight: 700,
+	    // Bold
+	    fontSize: "22px",
+	    lineHeight: "26px",
+	    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "26px",
+	      lineHeight: "30px"
+	    },
+	    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "28px",
+	      lineHeight: "26px"
+	    }
+	  },
+	  h5: {
+	    fontFamily,
+	    fontWeight: 600,
+	    // SemiBold
+	    fontSize: "20px",
+	    lineHeight: "26px",
+	    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "22px",
+	      lineHeight: "28px"
+	    },
+	    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "24px",
+	      lineHeight: "29px"
+	    }
+	  },
+	  h6: {
+	    fontFamily,
+	    fontWeight: 700,
+	    // Bold
+	    fontSize: "18px",
+	    lineHeight: "26px",
+	    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "18px",
+	      lineHeight: "26px"
+	    },
+	    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "20px",
+	      lineHeight: "26px"
+	    }
+	  },
+	  // Variantes personalizadas de las guías
+	  allCaps: {
+	    fontFamily,
+	    fontWeight: 700,
+	    // Bold
+	    textTransform: "uppercase",
+	    fontSize: "12px",
+	    lineHeight: "18px",
+	    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "15px",
+	      lineHeight: "20px"
+	    },
+	    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+	      fontSize: "17px",
+	      lineHeight: "23px"
+	    }
+	  },
+	  // Bold.18
+	  bold18: {
+	    fontFamily,
+	    fontWeight: 700,
+	    // Bold
+	    fontSize: "18px",
+	    lineHeight: "24px"
+	  },
+	  // Regular.18
+	  regular18: {
+	    fontFamily,
+	    fontWeight: 400,
+	    // Regular
+	    fontSize: "18px",
+	    lineHeight: "24px"
+	  },
+	  // Bold.16
+	  bold16: {
+	    fontFamily,
+	    fontWeight: 700,
+	    // Bold
+	    fontSize: "16px",
+	    lineHeight: "26px"
+	  },
+	  // Regular.16
+	  regular16: {
+	    fontFamily,
+	    fontWeight: 400,
+	    // Regular
+	    fontSize: "16px",
+	    lineHeight: "26px"
+	  },
+	  // Bold.14
+	  bold14: {
+	    fontFamily,
+	    fontWeight: 700,
+	    // Bold
+	    fontSize: "14px",
+	    lineHeight: "20px"
+	  },
+	  // Regular.14
+	  regular14: {
+	    fontFamily,
+	    fontWeight: 400,
+	    // Regular
+	    fontSize: "14px",
+	    lineHeight: "20px"
+	  },
+	  // Bold.12 (SemiBold)
+	  bold12: {
+	    fontFamily,
+	    fontWeight: 600,
+	    // SemiBold
+	    fontSize: "12px",
+	    lineHeight: "16px"
+	  },
+	  // Regular.12
+	  regular12: {
+	    fontFamily,
+	    fontWeight: 400,
+	    // Regular
+	    fontSize: "12px",
+	    lineHeight: "16px"
+	  },
+	  // Bold.10
+	  bold10: {
+	    fontFamily,
+	    fontWeight: 700,
+	    // Bold
+	    fontSize: "10px",
+	    lineHeight: "14px"
+	  },
+	  // Regular.10
+	  regular10: {
+	    fontFamily,
+	    fontWeight: 400,
+	    // Regular
+	    fontSize: "10px",
+	    lineHeight: "14px"
+	  },
+	  // Normal Link
+	  normalLink: {
+	    fontFamily,
+	    fontWeight: 400,
+	    // Regular
+	    fontSize: "12px",
+	    lineHeight: "16px",
+	    textDecoration: "underline"
+	  },
+	  // Button Link
+	  buttonLink: {
+	    fontFamily,
+	    fontWeight: 600,
+	    // SemiBold
+	    fontSize: "12px",
+	    lineHeight: "16px",
+	    textTransform: "capitalize"
+	    // Title Case
+	  },
 	  h1Light: {},
 	  h1Regular: {},
 	  regularBold: {},
@@ -7131,7 +7366,6 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	    fontWeight: "500",
 	    lineHeight: "60px"
 	  },
-	  // Used in homepage
 	  h2Bold: {
 	    fontFamily,
 	    fontSize: "40px",
@@ -7154,7 +7388,6 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	    fontWeight: "400",
 	    lineHeight: "60px"
 	  },
-	  // Used in homepage
 	  h3Bold: {
 	    fontFamily,
 	    fontSize: "28px",
@@ -7185,33 +7418,25 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	    fontWeight: "400",
 	    lineHeight: "150%"
 	  },
-	  // Used in file a claim
 	  smallRegular: {
 	    fontFamily,
 	    fontSize: "12px",
 	    fontWeight: "400",
 	    lineHeight: "16px"
 	  },
-	  // Used in FormAppbar
 	  paragraphBold: {
 	    fontFamily,
 	    fontSize: "16px",
 	    fontWeight: "700",
 	    lineHeight: "30px"
 	  },
-	  // Used in homepage
 	  paragraphMedium: {
 	    fontFamily,
 	    fontSize: "16px",
 	    fontWeight: "500",
 	    lineHeight: "30px"
 	  },
-	  h1: void 0,
-	  h2: void 0,
-	  h3: void 0,
-	  h4: void 0,
-	  h5: void 0,
-	  h6: void 0,
+	  // Otras variantes estándar
 	  subtitle1: void 0,
 	  subtitle2: void 0,
 	  body1: {
@@ -7575,7 +7800,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	})(({
 	  theme,
 	  ownerState
-	}) => _extends$1({
+	}) => _extends$3({
 	  margin: 0
 	}, ownerState.variant === 'inherit' && {
 	  // Some elements, like <button> on Chrome have default font that doesn't inherit, reset this.
@@ -7622,7 +7847,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	    name: 'MuiTypography'
 	  });
 	  const color = transformDeprecatedColors(themeProps.color);
-	  const props = extendSxProp(_extends$1({}, themeProps, {
+	  const props = extendSxProp(_extends$3({}, themeProps, {
 	    color
 	  }));
 	  const {
@@ -7635,8 +7860,8 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	      variant = 'body1',
 	      variantMapping = defaultVariantMapping
 	    } = props,
-	    other = _objectWithoutPropertiesLoose(props, _excluded$1);
-	  const ownerState = _extends$1({}, props, {
+	    other = _objectWithoutPropertiesLoose$1(props, _excluded$1);
+	  const ownerState = _extends$3({}, props, {
 	    align,
 	    color,
 	    className,
@@ -7649,7 +7874,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	  });
 	  const Component = component || (paragraph ? 'p' : variantMapping[variant] || defaultVariantMapping[variant]) || 'span';
 	  const classes = useUtilityClasses$1(ownerState);
-	  return /*#__PURE__*/jsxRuntimeExports.jsx(TypographyRoot, _extends$1({
+	  return /*#__PURE__*/jsxRuntimeExports.jsx(TypographyRoot, _extends$3({
 	    as: Component,
 	    ref: ref,
 	    ownerState: ownerState,
@@ -7778,7 +8003,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	})(({
 	  theme,
 	  ownerState
-	}) => _extends$1({
+	}) => _extends$3({
 	  display: 'flex',
 	  height: '0.01em',
 	  // Fix IE11 flexbox alignment. To remove at some point.
@@ -7815,7 +8040,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	      position,
 	      variant: variantProp
 	    } = props,
-	    other = _objectWithoutPropertiesLoose(props, _excluded);
+	    other = _objectWithoutPropertiesLoose$1(props, _excluded);
 	  const muiFormControl = useFormControl() || {};
 	  let variant = variantProp;
 	  if (variantProp && muiFormControl.variant) {
@@ -7828,7 +8053,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	  if (muiFormControl && !variant) {
 	    variant = muiFormControl.variant;
 	  }
-	  const ownerState = _extends$1({}, props, {
+	  const ownerState = _extends$3({}, props, {
 	    hiddenLabel: muiFormControl.hiddenLabel,
 	    size: muiFormControl.size,
 	    disablePointerEvents,
@@ -7838,7 +8063,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	  const classes = useUtilityClasses(ownerState);
 	  return /*#__PURE__*/jsxRuntimeExports.jsx(FormControlContext.Provider, {
 	    value: null,
-	    children: /*#__PURE__*/jsxRuntimeExports.jsx(InputAdornmentRoot, _extends$1({
+	    children: /*#__PURE__*/jsxRuntimeExports.jsx(InputAdornmentRoot, _extends$3({
 	      as: component,
 	      ownerState: ownerState,
 	      className: clsx(classes.root, className),
