@@ -126,41 +126,6 @@ export const AllTypography: StoryObj = {
         />
       </TypographyContainer>
 
-      <TypographyContainer title="Heading Variants">
-        <TypographyExample
-          variant="h1Bold"
-          description="H1 Bold - Bold primary heading"
-        />
-        <TypographyExample
-          variant="h1SemiBold"
-          description="H1 SemiBold - SemiBold primary heading"
-        />
-        <TypographyExample
-          variant="h1Medium"
-          description="H1 Medium - Medium primary heading"
-        />
-        <TypographyExample
-          variant="h2Bold"
-          description="H2 Bold - Bold secondary heading"
-        />
-        <TypographyExample
-          variant="h2Medium"
-          description="H2 Medium - Medium secondary heading"
-        />
-        <TypographyExample
-          variant="h2Regular"
-          description="H2 Regular - Regular secondary heading"
-        />
-        <TypographyExample
-          variant="h3Bold"
-          description="H3 Bold - Bold tertiary heading"
-        />
-        <TypographyExample
-          variant="h3Regular"
-          description="H3 Regular - Regular tertiary heading"
-        />
-      </TypographyContainer>
-
       <TypographyContainer title="Text Styles">
         <TypographyExample
           variant="allCaps"
@@ -239,28 +204,6 @@ export const AllTypography: StoryObj = {
         <TypographyExample
           variant="smallRegular"
           description="Small Regular - Regular 12px small text"
-        />
-      </TypographyContainer>
-
-      <TypographyContainer title="Responsive Behavior">
-        <Box sx={{ mb: 2 }}>
-          <Typography variant="h6">Responsive Examples:</Typography>
-          <Typography variant="body1" sx={{ mb: 2 }}>
-            Resize the window to see how typography responds to different
-            breakpoints.
-          </Typography>
-        </Box>
-        <TypographyExample
-          variant="h1"
-          description="H1 changes from 28px/mobile to 40px/tablet to 48px/desktop"
-        />
-        <TypographyExample
-          variant="h2"
-          description="H2 changes from 26px/mobile to 35px/tablet to 40px/desktop"
-        />
-        <TypographyExample
-          variant="allCaps"
-          description="ALL CAPS CHANGES FROM 12PX/MOBILE TO 15PX/TABLET TO 17PX/DESKTOP"
         />
       </TypographyContainer>
     </>

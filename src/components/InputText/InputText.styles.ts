@@ -17,10 +17,19 @@ export const TextFieldStyled = styled(TextField)(() => ({
   "& .MuiOutlinedInput-root": {
     lineHeight: "1.5",
     backgroundColor: "#F4FEFE",
+
     "& fieldset": {
       borderColor: "#6FC3C4",
       borderWidth: "1px",
       borderRadius: "8px",
+    },
+    "&.Mui-disabled": {
+      backgroundColor: "#D8DFE3",
+      borderColor: "#828282",
+      "& .MuiInputBase-input": {
+        color: "#828282",
+        WebkitTextFillColor: "#828282",
+      },
     },
     "&:hover fieldset": {
       borderColor: "#0F5C5D",

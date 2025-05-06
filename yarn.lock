@@ -1642,6 +1642,13 @@
   dependencies:
     memoizerific "^1.11.3"
 
+"@storybook/addon-viewport@^8.6.12":
+  version "8.6.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-8.6.12.tgz#70c6b33c03767f9a1b576c713bc984474e33d3a1"
+  integrity sha512-EXK2LArAnABsPP0leJKy78L/lbMWow+EIJfytEP5fHaW4EhMR6h7Hzaqzre6U0IMMr/jVFa1ci+m0PJ0eQc2bw==
+  dependencies:
+    memoizerific "^1.11.3"
+
 "@storybook/api@^7.0.12":
   version "7.6.17"
   resolved "https://registry.yarnpkg.com/@storybook/api/-/api-7.6.17.tgz#78846f1cca1758020594e9f0cf7262506e9fe613"
@@ -5557,6 +5564,7 @@ string-width@^5.0.1, string-width@^5.1.2:
     strip-ansi "^7.0.1"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==

@@ -3,6 +3,7 @@ import palette from "./palette";
 import typography from "./typography";
 import breakpoints from "./breakpoints";
 import overrides from "./overrides";
+import buttons from "./buttons";
 
 const baseTheme: Theme = createTheme({
   typography,
@@ -11,12 +12,11 @@ const baseTheme: Theme = createTheme({
   breakpoints,
 });
 
-const theme = createTheme({
-  ...baseTheme,
+const theme = createTheme(baseTheme, {
   components: {
-    ...baseTheme.components,
     ...overrides(baseTheme),
+    ...buttons(baseTheme),
   },
 });
-
+7;
 export default theme;
