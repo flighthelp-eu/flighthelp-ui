@@ -38,3 +38,10 @@ export const Text: Story = {
     children: "Botón de Texto",
   },
 };
+
+export const SecondaryFilled: Story = {
+  args: {
+    variant: 'btn-lg-secondary-main-filled',
+    children: 'Botón secundario lleno'
+  },
+};

@@ -225,10 +225,12 @@ declare module "@mui/material/Button" {
   }
 }
 
-declare module "@mui/material/Button" {
+declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {
-    primary: true;
-    secondary: true;
-    outline: true;
+    'primary': true;
+    'secondary': true;
+    'system': true;
+    'outline': true;
+    'btn-lg-secondary-main-filled': true;
   }
 }
