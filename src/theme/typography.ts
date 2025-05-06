@@ -16,12 +16,19 @@ const typography: TypographyOptions = {
     fontWeight: 700, // Bold
     fontSize: "28px",
     lineHeight: "36px",
-    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]:
-      {
-        fontSize: "40px",
-        lineHeight: "46px",
-      },
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px)`]: {
+      fontSize: "28px",
+      lineHeight: "36px",
+    },
     [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "40px",
+      lineHeight: "46px",
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.lg}px)`]: {
+      fontSize: "40px",
+      lineHeight: "46px",
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.xl}px)`]: {
       fontSize: "48px",
       lineHeight: "56px",
     },
@@ -32,12 +39,20 @@ const typography: TypographyOptions = {
     fontWeight: 700, // Bold
     fontSize: "26px",
     lineHeight: "32px",
-    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]:
-      {
-        fontSize: "35px",
-        lineHeight: "38px",
-      },
+
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px)`]: {
+      fontSize: "35px",
+      lineHeight: "38px",
+    },
     [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "35px",
+      lineHeight: "38px",
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.lg}px)`]: {
+      fontSize: "40px",
+      lineHeight: "44px",
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.xl}px)`]: {
       fontSize: "40px",
       lineHeight: "44px",
     },
@@ -48,12 +63,20 @@ const typography: TypographyOptions = {
     fontWeight: 700, // Bold
     fontSize: "24px",
     lineHeight: "30px",
-    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]:
-      {
-        fontSize: "32px",
-        lineHeight: "26px",
-      },
+
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px)`]: {
+      fontSize: "24px",
+      lineHeight: "30px",
+    },
     [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "32px",
+      lineHeight: "26px",
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.lg}px)`]: {
+      fontSize: "36px",
+      lineHeight: "44px",
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.xl}px)`]: {
       fontSize: "36px",
       lineHeight: "44px",
     },
@@ -64,12 +87,20 @@ const typography: TypographyOptions = {
     fontWeight: 700, // Bold
     fontSize: "22px",
     lineHeight: "26px",
-    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]:
-      {
-        fontSize: "26px",
-        lineHeight: "30px",
-      },
+
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px)`]: {
+      fontSize: "22px",
+      lineHeight: "26px",
+    },
     [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "26px",
+      lineHeight: "30px",
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.lg}px)`]: {
+      fontSize: "28px",
+      lineHeight: "26px",
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.xl}px)`]: {
       fontSize: "28px",
       lineHeight: "26px",
     },
@@ -80,12 +111,20 @@ const typography: TypographyOptions = {
     fontWeight: 600, // SemiBold
     fontSize: "20px",
     lineHeight: "26px",
-    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]:
-      {
-        fontSize: "22px",
-        lineHeight: "28px",
-      },
+
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px)`]: {
+      fontSize: "20px",
+      lineHeight: "26px",
+    },
     [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "22px",
+      lineHeight: "28px",
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.lg}px)`]: {
+      fontSize: "22px",
+      lineHeight: "28px",
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.xl}px)`]: {
       fontSize: "24px",
       lineHeight: "29px",
     },
@@ -107,19 +146,27 @@ const typography: TypographyOptions = {
     },
   },
 
-  // Variantes personalizadas de las guías
   allCaps: {
     fontFamily,
     fontWeight: 700, // Bold
     textTransform: "uppercase",
     fontSize: "12px",
     lineHeight: "18px",
-    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]:
-      {
-        fontSize: "15px",
-        lineHeight: "20px",
-      },
+    letterSpacing: "4px",
+
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px)`]: {
+      fontSize: "12px",
+      lineHeight: "18px",
+    },
     [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "15px",
+      lineHeight: "20px",
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.lg}px)`]: {
+      fontSize: "15px",
+      lineHeight: "20px",
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.xl}px)`]: {
       fontSize: "17px",
       lineHeight: "23px",
     },

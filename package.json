@@ -60,6 +60,7 @@
     "vitest": "^3.0.9"
   },
   "dependencies": {
+    "@storybook/addon-viewport": "^8.6.12",
     "vite-plugin-svgr": "^4.3.0"
   }
 }
