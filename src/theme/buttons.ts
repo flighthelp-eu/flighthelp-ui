@@ -9,10 +9,29 @@ export default function buttons(theme: Theme) {
       styleOverrides: {
         root: {
           textTransform: "none",
-          borderRadius: '20px',
+          borderRadius: "20px",
+        },
+        sizeMedium: {
+          color: "red",
+          padding: "8px 16px",
+        },
+        sizeLarge: {
+          padding: "19px 22px",
         },
       },
       variants: [
+        {
+          props: { variant: "primary" },
+          style: {
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.common.white,
+            padding: "8px 22px",
+            "&:hover": {
+              backgroundColor: theme.palette.primary.dark,
+              color: theme.palette.common.white,
+            },
+          },
+        },
         {
           props: { variant: "btn-lg-secondary-main-filled" },
           style: {
@@ -23,15 +42,15 @@ export default function buttons(theme: Theme) {
             "&:hover": {
               backgroundColor: theme.palette.secondary.dark,
             },
-            "&:Mui-focused":{
+            "&:Mui-focused": {
               backgroundColor: theme.palette.secondary.main,
               borderColor: theme.palette.secondary.dark,
-              borderWidth: '3px'
+              borderWidth: "3px",
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
               color: "#828282",
-              borderColor:"#828282"
+              borderColor: "#828282",
             },
           },
         },
@@ -45,15 +64,15 @@ export default function buttons(theme: Theme) {
             "&:hover": {
               backgroundColor: theme.palette.secondary.light,
             },
-            "&:Mui-focused":{
+            "&:Mui-focused": {
               color: theme.palette.secondary.dark,
               borderColor: theme.palette.secondary.dark,
-              borderWidth: '3px'
+              borderWidth: "3px",
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
               color: "#828282",
-              borderColor:"#828282"
+              borderColor: "#828282",
             },
           },
         },
@@ -68,15 +87,15 @@ export default function buttons(theme: Theme) {
             "&:hover": {
               backgroundColor: theme.palette.secondary.dark,
             },
-            "&:Mui-focused":{
+            "&:Mui-focused": {
               backgroundColor: theme.palette.secondary.main,
               borderColor: theme.palette.secondary.dark,
-              borderWidth: '3px'
+              borderWidth: "3px",
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
               color: "#828282",
-              borderColor:"#828282"
+              borderColor: "#828282",
             },
           },
         },
@@ -90,15 +109,15 @@ export default function buttons(theme: Theme) {
             "&:hover": {
               backgroundColor: theme.palette.secondary.dark,
             },
-            "&:Mui-focused":{
+            "&:Mui-focused": {
               backgroundColor: theme.palette.secondary.main,
               borderColor: theme.palette.secondary.dark,
-              borderWidth: '3px'
+              borderWidth: "3px",
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
               color: "#828282",
-              borderColor:"#828282"
+              borderColor: "#828282",
             },
           },
         },
@@ -112,15 +131,15 @@ export default function buttons(theme: Theme) {
             "&:hover": {
               backgroundColor: theme.palette.secondary.light,
             },
-            "&:Mui-focused":{
+            "&:Mui-focused": {
               color: theme.palette.secondary.dark,
               borderColor: theme.palette.secondary.dark,
-              borderWidth: '3px'
+              borderWidth: "3px",
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
               color: "#828282",
-              borderColor:"#828282"
+              borderColor: "#828282",
             },
           },
         },
@@ -132,18 +151,18 @@ export default function buttons(theme: Theme) {
             borderColor: theme.palette.primary.dark,
             padding: "8px 22px",
             "&:hover": {
-              backgroundColor: '#063536',
-              borderColor:'#063536',
+              backgroundColor: "#063536",
+              borderColor: "#063536",
             },
-            "&:Mui-focused":{
+            "&:Mui-focused": {
               backgroundColor: theme.palette.primary.dark,
               borderColor: theme.palette.primary.main,
-              borderWidth: '3px'
+              borderWidth: "3px",
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
               color: "#828282",
-              borderColor:"#828282"
+              borderColor: "#828282",
             },
           },
         },
@@ -154,19 +173,19 @@ export default function buttons(theme: Theme) {
             borderColor: theme.palette.primary.dark,
             padding: "8px 22px",
             "&:hover": {
-              backgroundColor: '#063536',
-              borderColor:'#063536',
+              backgroundColor: "#063536",
+              borderColor: "#063536",
               color: theme.palette.common.white,
             },
-            "&:Mui-focused":{
+            "&:Mui-focused": {
               backgroundColor: theme.palette.primary.dark,
               borderColor: theme.palette.primary.main,
-              borderWidth: '3px'
+              borderWidth: "3px",
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
               color: "#828282",
-              borderColor:"#828282"
+              borderColor: "#828282",
             },
           },
         },
@@ -177,15 +196,15 @@ export default function buttons(theme: Theme) {
             borderColor: theme.palette.common.white,
             padding: "8px 22px",
             "&:hover": {
-              opacity: '18%'
+              opacity: "18%",
             },
-            "&:Mui-focused":{
-              borderWidth: '2px'
+            "&:Mui-focused": {
+              borderWidth: "2px",
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
               color: "#828282",
-              borderColor:"#828282"
+              borderColor: "#828282",
             },
           },
         },
@@ -197,18 +216,18 @@ export default function buttons(theme: Theme) {
             borderColor: theme.palette.primary.main,
             padding: "8px 22px",
             "&:hover": {
-              backgroundColor: '#063536',
-              borderColor:'#063536',
+              backgroundColor: "#063536",
+              borderColor: "#063536",
             },
-            "&:Mui-focused":{
+            "&:Mui-focused": {
               backgroundColor: theme.palette.primary.dark,
               borderColor: theme.palette.primary.main,
-              borderWidth: '3px'
+              borderWidth: "3px",
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
               color: "#828282",
-              borderColor:"#828282"
+              borderColor: "#828282",
             },
           },
         },
@@ -220,18 +239,18 @@ export default function buttons(theme: Theme) {
             borderColor: theme.palette.primary.dark,
             padding: "4px 16px 6px 16px",
             "&:hover": {
-              backgroundColor: '#063536',
-              borderColor:'#063536',
+              backgroundColor: "#063536",
+              borderColor: "#063536",
             },
-            "&:Mui-focused":{
+            "&:Mui-focused": {
               backgroundColor: theme.palette.primary.dark,
               borderColor: theme.palette.primary.main,
-              borderWidth: '2px'
+              borderWidth: "2px",
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
               color: "#828282",
-              borderColor:"#828282"
+              borderColor: "#828282",
             },
           },
         },
@@ -245,14 +264,14 @@ export default function buttons(theme: Theme) {
               backgroundColor: theme.palette.common.white,
               borderColor: theme.palette.primary.dark,
             },
-            "&:Mui-focused":{
+            "&:Mui-focused": {
               borderColor: theme.palette.primary.dark,
-              borderWidth: '2px'
+              borderWidth: "2px",
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
               color: "#828282",
-              borderColor:"#828282"
+              borderColor: "#828282",
             },
           },
         },

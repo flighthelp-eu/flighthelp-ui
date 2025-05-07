@@ -85,33 +85,19 @@ const safeExtractColors = (obj: any): Record<string, string> => {
 };
 
 const ColorSystem = () => {
-  // Type assertion for custom properties
   const customPalette = palette as any;
 
-  // Extract all color categories
-  const primaryColors = safeExtractColors(customPalette.primary);
-  const secondaryColors = safeExtractColors(customPalette.secondary);
-  const typographyColors = safeExtractColors(customPalette.typography);
-  const backgroundColors = safeExtractColors(customPalette.backgrounds);
-  const hartColors = safeExtractColors(customPalette.hart);
-  const systemHeaderColors = safeExtractColors(customPalette.systemHeader);
-  const searchColors = safeExtractColors(customPalette.search);
-  const buttonColors = safeExtractColors(customPalette.buttons);
-  const shadowColors = safeExtractColors(customPalette.shadow);
-  const commonColors = safeExtractColors(customPalette.common);
+  const flightHelpColors = safeExtractColors(customPalette.flightHelp);
+  const zborAjutorColors = safeExtractColors(customPalette.zborAjutor);
+  const alertColors = safeExtractColors(customPalette.alerts);
+  const universalColors = safeExtractColors(customPalette.universal);
 
   // Define all sections with titles and colors
   const sections = [
-    { title: "Primary Colors", colors: primaryColors },
-    { title: "Secondary Colors", colors: secondaryColors },
-    { title: "Typography", colors: typographyColors },
-    { title: "Backgrounds", colors: backgroundColors },
-    { title: "Hart", colors: hartColors },
-    { title: "System Header", colors: systemHeaderColors },
-    { title: "Search", colors: searchColors },
-    { title: "Buttons", colors: buttonColors },
-    { title: "Shadows", colors: shadowColors },
-    { title: "Common Colors", colors: commonColors },
+    { title: "Flight Help", colors: flightHelpColors },
+    { title: "Zbor Ajutor", colors: zborAjutorColors },
+    { title: "Alerts", colors: alertColors },
+    { title: "Universal", colors: universalColors },
   ];
 
   // Add divider if it exists
