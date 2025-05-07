@@ -1,6 +1,7 @@
 import { PaletteOptions } from "@mui/material/styles";
 
 const palette: PaletteOptions = {
+  mode: "light",
   flightHelp: {
     "primary.hue": "#F6FBFB",
     "primary.main": "#20ABAD",
@@ -51,6 +52,29 @@ const palette: PaletteOptions = {
     "neutral.lightGrey": "#EEEEEE",
     "flat.grey": "#F9F9F9",
     "stroke.grey": "#DBDFE3",
+  },
+
+  backgrounds: {
+    white: "#FFFFFF",
+    system: "#F4F5F8",
+    form: "#1e6779",
+    login: "#FFFCF5",
+    error: "#FCF6F6",
+    border: "#D6DCE6",
+    addInInfo: "#FFF7E1",
+  },
+
+  buttons: {
+    backgroundLight: "#F6F7FA",
+    backgroundDisable: "#E4E4E4",
+    backgroundSecondary: "#383F50",
+    backgroundDark: "#1F232D",
+    backgroundSystem: "#F4F5F8",
+    negativeDisabled: "#282828",
+    grayHover: "#E2E8F0",
+    grayPressed: "#CED5DF",
+    form: "#EDEFF2",
+    iconButtonBackgroundFocus: "#0000000a",
   },
 };
 // const palette: PaletteOptions = {
