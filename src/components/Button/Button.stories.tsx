@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Button from "./Button";
-import { ThemeProvider } from "@emotion/react";
+import { ThemeProvider } from "@mui/material/styles"; 
 import theme from "@/theme";
 
 const meta: Meta<typeof Button> = {
@@ -20,193 +20,120 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+// Botones individuales con variantes correctas
+export const PrimaryBlue: Story = {
   args: {
-    variant: "primary",
-    children: "Botón Primario",
-    size: "large",
+    variant: "primaryBlue",
+    children: "Botón primario",
+    size: 'large',
   },
 };
 
-export const Secondary: Story = {
+export const SecondaryOrange: Story = {
   args: {
-    variant: "secondary",
+    variant: "secondaryOrange",
     children: "Botón Secundario",
+    size: 'large'
   },
 };
 
-export const System: Story = {
+export const SecondaryOutlined: Story = {
   args: {
-    variant: "system",
-    children: "Botón de Sistema",
-  },
-};
-
-export const Text: Story = {
-  args: {
-    variant: "text",
-    children: "Botón de Texto",
-  },
-};
-
-// Botones secundarios grandes - Fila superior naranja/coral
-export const SecondaryMainFilledLarge: Story = {
-  args: {
-    variant: "btn-lg-secondary-main-filled",
+    variant: "secondaryOutlined",
     children: "Action",
+    size: 'large'
   },
 };
 
-export const SecondaryOutlinedLarge: Story = {
+export const PrimaryOutline: Story = {
   args: {
-    variant: "btn-lg-secondary-outlined",
+    variant: "primaryOutline",
     children: "Action",
+    size: 'large'
   },
 };
 
-export const SecondaryDropdownLarge: Story = {
+export const PrimaryMain: Story = {
   args: {
-    variant: "btn-lg-secondary-dropdown",
-    children: "Options",
-    hasDropdownIcon: true,
+    variant: "primaryMain",
+    children: "Botón Primary Main",
+    size: 'large'
   },
 };
 
-// Botones secundarios pequeños - Fila inferior naranja/coral
-export const SecondaryMainFilledSmall: Story = {
-  args: {
-    variant: "btn-sm-secondary-main-filled",
-    children: "Action",
-  },
+export const Transparent: Story = {
+  render: () => (
+    <div
+      style={{ 
+        background: "#D3D3D3",
+        padding: "16px",
+      }}
+    >
+      <Button size="large" variant="transparent">Action</Button>
+    </div>
+  ),
 };
 
-export const SecondaryOutlinedSmall: Story = {
+// Botones deshabilitados
+export const DisabledPrimaryBlue: Story = {
   args: {
-    variant: "btn-sm-secondary-outlined",
-    children: "Action",
-  },
-};
-
-// Botones primarios grandes - Fila superior verde/teal
-export const PrimaryDarkFilledLarge: Story = {
-  args: {
-    variant: "btn-lg-primary-dark-filled",
-    children: "Action",
-  },
-};
-
-export const PrimaryOutlineLarge: Story = {
-  args: {
-    variant: "btn-lg-primary-outline",
-    children: "Action",
-  },
-};
-
-export const TransparentOutlineLarge: Story = {
-  args: {
-    variant: "btn-lg-transparent-outline",
-    children: "Action",
-  },
-  parameters: {
-    backgrounds: { default: "dark" },
-  },
-};
-
-export const PrimaryMainFilledLarge: Story = {
-  args: {
-    variant: "btn-lg-primary-main-filled",
-    children: "Action",
-  },
-};
-
-// Botones primarios pequeños
-export const PrimaryDarkFilledSmall: Story = {
-  args: {
-    variant: "btn-sm-primary-dark-filled",
-    children: "Action",
-  },
-};
-
-export const PrimaryOutlineSmall: Story = {
-  args: {
-    variant: "btn-sm-primary-outline",
-    children: "Action",
-  },
-};
-
-// Estados de botones
-export const DisabledPrimaryButton: Story = {
-  args: {
-    variant: "btn-lg-primary-dark-filled",
+    variant: "primaryBlue",
     children: "Action",
     disabled: true,
+    size: 'large'
   },
 };
 
-export const DisabledSecondaryButton: Story = {
+export const DisabledSecondaryOrange: Story = {
   args: {
-    variant: "btn-lg-secondary-main-filled",
+    variant: "secondaryOrange",
     children: "Action",
     disabled: true,
+    size: 'large'
   },
 };
 
-export const DisabledDropdownButton: Story = {
+export const DisabledSecondaryOutlined: Story = {
   args: {
-    variant: "btn-lg-secondary-dropdown",
-    children: "Options",
-    hasDropdownIcon: true,
+    variant: "secondaryOutlined",
+    children: "Action",
     disabled: true,
+    size: 'large'
   },
 };
 
-// Grupos de botones que muestran las variantes como en el diseño Figma
+// Grupos de botones (secundarios)
 export const SecondaryButtonsGroup: Story = {
   render: () => (
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(3, auto)",
+        gridTemplateColumns: "repeat(2, auto)",
         gap: "16px",
         background: "#f5f5f5",
         padding: "16px",
       }}
     >
-      <Button variant="btn-lg-secondary-main-filled">Action</Button>
-      <Button variant="btn-lg-secondary-outlined">Action</Button>
-      <Button variant="btn-lg-secondary-dropdown" hasDropdownIcon={true}>
-        Options
-      </Button>
+      <Button variant="secondaryOrange">Action</Button>
+      <Button variant="secondaryOutlined">Action</Button>
 
-      <Button variant="btn-lg-secondary-main-filled">Action</Button>
-      <Button variant="btn-lg-secondary-outlined">Action</Button>
-      <Button variant="btn-lg-secondary-dropdown" hasDropdownIcon={true}>
-        Options
-      </Button>
+      <Button variant="secondaryOrange">Action</Button>
+      <Button variant="secondaryOutlined">Action</Button>
 
-      <Button variant="btn-lg-secondary-main-filled">Action</Button>
-      <Button variant="btn-lg-secondary-outlined">Action</Button>
-      <Button variant="btn-lg-secondary-dropdown" hasDropdownIcon={true}>
-        Options
-      </Button>
+      <Button variant="secondaryOrange">Action</Button>
+      <Button variant="secondaryOutlined">Action</Button>
 
-      <Button variant="btn-lg-secondary-main-filled" disabled>
+      <Button variant="secondaryOrange" disabled>
         Action
       </Button>
-      <Button variant="btn-lg-secondary-outlined" disabled>
+      <Button variant="secondaryOutlined" disabled>
         Action
-      </Button>
-      <Button
-        variant="btn-lg-secondary-dropdown"
-        hasDropdownIcon={true}
-        disabled
-      >
-        Options
       </Button>
     </div>
   ),
 };
 
+// Grupo de botones primarios
 export const PrimaryButtonsGroup: Story = {
   render: () => (
     <div
@@ -218,82 +145,30 @@ export const PrimaryButtonsGroup: Story = {
         padding: "16px",
       }}
     >
-      <Button variant="btn-lg-primary-dark-filled">Action</Button>
-      <Button variant="btn-lg-primary-outline">Action</Button>
-      <Button variant="btn-lg-transparent-outline">Action</Button>
-      <Button variant="btn-lg-primary-main-filled">Action</Button>
+      <Button variant="primaryBlue">Action</Button>
+      <Button variant="primaryOutline">Action</Button>
+      <Button variant="transparent">Action</Button>
+      <Button variant="primaryMain">Action</Button>
 
-      <Button variant="btn-lg-primary-dark-filled">Action</Button>
-      <Button variant="btn-lg-primary-dark-filled">Action</Button>
-      <Button variant="btn-lg-transparent-outline">Action</Button>
-      <Button variant="btn-sm-primary-dark-filled">Action</Button>
+      <Button variant="primaryBlue">Action</Button>
+      <Button variant="primaryOutline">Action</Button>
+      <Button variant="transparent">Action</Button>
+      <Button variant="primaryMain">Action</Button>
 
-      <Button variant="btn-lg-primary-main-filled">Action</Button>
-      <Button variant="btn-lg-primary-dark-filled">Action</Button>
-      <Button variant="btn-lg-transparent-outline">Action</Button>
-      <Button variant="btn-lg-primary-main-filled">Action</Button>
+      <Button variant="primaryBlue">Action</Button>
+      <Button variant="primaryOutline">Action</Button>
+      <Button variant="transparent">Action</Button>
+      <Button variant="primaryMain">Action</Button>
 
-      <Button disabled>Action</Button>
-      <Button disabled>Action</Button>
-      <Button disabled>Action</Button>
-      <Button disabled>Action</Button>
+      <Button variant="primaryBlue" disabled>Action</Button>
+      <Button variant="primaryOutline" disabled>Action</Button>
+      <Button variant="transparent" disabled>Action</Button>
+      <Button variant="primaryMain" disabled>Action</Button>
     </div>
   ),
 };
 
-export const SmallButtonsGroup: Story = {
-  render: () => (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(4, auto)",
-        gap: "16px",
-        background: "#f5f5f5",
-        padding: "16px",
-      }}
-    >
-      <Button variant="btn-sm-secondary-main-filled">Action</Button>
-      <Button variant="btn-sm-secondary-outlined">Action</Button>
-      <Button variant="btn-sm-secondary-main-filled">Action</Button>
-      <Button variant="btn-sm-secondary-outlined">Action</Button>
-
-      <Button variant="btn-sm-primary-dark-filled">Action</Button>
-      <Button variant="btn-sm-primary-outline">Action</Button>
-      <Button variant="btn-sm-primary-dark-filled">Action</Button>
-      <Button variant="btn-sm-primary-outline">Action</Button>
-
-      <Button variant="btn-sm-secondary-main-filled">Action</Button>
-      <Button variant="btn-sm-secondary-outlined">Action</Button>
-      <Button variant="btn-sm-secondary-main-filled">Action</Button>
-      <Button variant="btn-sm-secondary-outlined">Action</Button>
-
-      <Button variant="btn-sm-primary-dark-filled">Action</Button>
-      <Button variant="btn-sm-primary-outline">Action</Button>
-
-      <Button variant="btn-sm-secondary-main-filled" disabled>
-        Action
-      </Button>
-      <Button variant="btn-sm-secondary-outlined" disabled>
-        Action
-      </Button>
-      <Button variant="btn-sm-secondary-main-filled" disabled>
-        Action
-      </Button>
-      <Button variant="btn-sm-secondary-outlined" disabled>
-        Action
-      </Button>
-
-      <Button variant="btn-sm-primary-dark-filled" disabled>
-        Action
-      </Button>
-      <Button variant="btn-sm-primary-outline" disabled>
-        Action
-      </Button>
-    </div>
-  ),
-};
-
-// Muestra completa de botones como el diseño de Figma
+// Vista completa de todas las variantes
 export const AllButtonVariants: Story = {
   render: () => (
     <div style={{ padding: "20px" }}>
@@ -332,79 +207,30 @@ export const AllButtonVariants: Story = {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(3, auto)",
+              gridTemplateColumns: "repeat(2, auto)",
               gap: "16px",
               marginBottom: "16px",
             }}
           >
-            <Button variant="btn-lg-secondary-main-filled">Action</Button>
-            <Button variant="btn-lg-secondary-outlined">Action</Button>
-            <Button variant="btn-lg-secondary-dropdown" hasDropdownIcon={true}>
-              Options
-            </Button>
+            <Button variant="secondaryOrange">Action</Button>
+            <Button variant="secondaryOutlined">Action</Button>
 
-            <Button variant="btn-lg-secondary-main-filled">Action</Button>
-            <Button variant="btn-lg-secondary-outlined">Action</Button>
-            <Button variant="btn-lg-secondary-dropdown" hasDropdownIcon={true}>
-              Options
-            </Button>
+            <Button variant="secondaryOrange">Action</Button>
+            <Button variant="secondaryOutlined">Action</Button>
 
-            <Button variant="btn-lg-secondary-main-filled">Action</Button>
-            <Button variant="btn-lg-secondary-outlined">Action</Button>
-            <Button variant="btn-lg-secondary-dropdown" hasDropdownIcon={true}>
-              Options
-            </Button>
+            <Button variant="secondaryOrange">Action</Button>
+            <Button variant="secondaryOutlined">Action</Button>
 
-            <Button variant="btn-lg-secondary-main-filled" disabled>
+            <Button variant="secondaryOrange" disabled>
               Action
             </Button>
-            <Button variant="btn-lg-secondary-outlined" disabled>
-              Action
-            </Button>
-            <Button
-              variant="btn-lg-secondary-dropdown"
-              hasDropdownIcon={true}
-              disabled
-            >
-              Options
-            </Button>
-          </div>
-
-          {/* Botones pequeños */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, auto)",
-              gap: "16px",
-              marginTop: "32px",
-            }}
-          >
-            <Button variant="btn-sm-secondary-main-filled">Action</Button>
-            <Button variant="btn-sm-secondary-outlined">Action</Button>
-            <Button variant="btn-sm-secondary-main-filled">Action</Button>
-            <Button variant="btn-sm-secondary-outlined">Action</Button>
-
-            <Button variant="btn-sm-secondary-main-filled">Action</Button>
-            <Button variant="btn-sm-secondary-outlined">Action</Button>
-            <Button variant="btn-sm-secondary-main-filled">Action</Button>
-            <Button variant="btn-sm-secondary-outlined">Action</Button>
-
-            <Button variant="btn-sm-secondary-main-filled" disabled>
-              Action
-            </Button>
-            <Button variant="btn-sm-secondary-outlined" disabled>
-              Action
-            </Button>
-            <Button variant="btn-sm-secondary-main-filled" disabled>
-              Action
-            </Button>
-            <Button variant="btn-sm-secondary-outlined" disabled>
+            <Button variant="secondaryOutlined" disabled>
               Action
             </Button>
           </div>
         </div>
 
-        {/* Columna derecha - Botones verdes/teal */}
+        {/* Columna derecha - Botones azules/verdes */}
         <div>
           <div
             style={{
@@ -414,50 +240,25 @@ export const AllButtonVariants: Story = {
               marginBottom: "16px",
             }}
           >
-            <Button variant="btn-lg-primary-dark-filled">Action</Button>
-            <Button variant="btn-lg-primary-outline">Action</Button>
-            <Button variant="btn-lg-transparent-outline">Action</Button>
-            <Button variant="btn-lg-primary-main-filled">Action</Button>
+            <Button variant="primaryBlue">Action</Button>
+            <Button variant="primaryOutline">Action</Button>
+            <Button variant="transparent">Action</Button>
+            <Button variant="primaryMain">Action</Button>
 
-            <Button variant="btn-lg-primary-dark-filled">Action</Button>
-            <Button variant="btn-lg-primary-dark-filled">Action</Button>
-            <Button variant="btn-lg-transparent-outline">Action</Button>
-            <Button variant="btn-sm-primary-dark-filled">Action</Button>
+            <Button variant="primaryBlue">Action</Button>
+            <Button variant="primaryOutline">Action</Button>
+            <Button variant="transparent">Action</Button>
+            <Button variant="primaryMain">Action</Button>
 
-            <Button variant="btn-lg-primary-main-filled">Action</Button>
-            <Button variant="btn-lg-primary-dark-filled">Action</Button>
-            <Button variant="btn-lg-transparent-outline">Action</Button>
-            <Button variant="btn-lg-primary-main-filled">Action</Button>
+            <Button variant="primaryBlue">Action</Button>
+            <Button variant="primaryOutline">Action</Button>
+            <Button variant="transparent">Action</Button>
+            <Button variant="primaryMain">Action</Button>
 
-            <Button disabled>Action</Button>
-            <Button disabled>Action</Button>
-            <Button disabled>Action</Button>
-            <Button disabled>Action</Button>
-          </div>
-
-          {/* Botones pequeños */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, auto)",
-              gap: "16px",
-              marginTop: "32px",
-            }}
-          >
-            <Button variant="btn-sm-primary-dark-filled">Action</Button>
-            <Button variant="btn-sm-primary-outline">Action</Button>
-            <Button variant="btn-sm-primary-dark-filled">Action</Button>
-            <Button variant="btn-sm-primary-outline">Action</Button>
-
-            <Button variant="btn-sm-primary-dark-filled">Action</Button>
-            <Button variant="btn-sm-primary-outline">Action</Button>
-
-            <Button variant="btn-sm-primary-dark-filled" disabled>
-              Action
-            </Button>
-            <Button variant="btn-sm-primary-outline" disabled>
-              Action
-            </Button>
+            <Button variant="primaryBlue" disabled>Action</Button>
+            <Button variant="primaryOutline" disabled>Action</Button>
+            <Button variant="transparent" disabled>Action</Button>
+            <Button variant="primaryMain" disabled>Action</Button>
           </div>
         </div>
       </div>

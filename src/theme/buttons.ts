@@ -12,40 +12,30 @@ export default function buttons(theme: Theme) {
           borderRadius: "20px",
         },
         sizeMedium: {
-          color: "red",
-          padding: "8px 16px",
+          padding: "8px 22px",
         },
         sizeLarge: {
           padding: "19px 22px",
         },
+        sizeSmall:
+        {
+          padding: "4px 16px 6px 16px"
+        }
       },
+     
       variants: [
         {
-          props: { variant: "primary" },
+          props: { variant: "primaryBlue" },
           style: {
-            backgroundColor: theme.palette.primary.main,
+            backgroundColor: theme.palette.flightHelp?.primaryDark,
             color: theme.palette.common.white,
-            padding: "8px 22px",
             "&:hover": {
-              backgroundColor: theme.palette.primary.dark,
+              backgroundColor:theme.palette.flightHelp?.primaryDark2,
               color: theme.palette.common.white,
             },
-          },
-        },
-        {
-          props: { variant: "btn-lg-secondary-main-filled" },
-          style: {
-            backgroundColor: theme.palette.secondary.main,
-            color: theme.palette.common.white,
-            borderColor: theme.palette.secondary.main,
-            padding: "8px 22px",
-            "&:hover": {
-              backgroundColor: theme.palette.secondary.dark,
-            },
-            "&:Mui-focused": {
-              backgroundColor: theme.palette.secondary.main,
-              borderColor: theme.palette.secondary.dark,
-              borderWidth: "3px",
+            "&:focus": {
+              backgroundColor: theme.palette.flightHelp?.primaryDark2,
+              border: `3px solid ${theme.palette.flightHelp?.primaryMain}`
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
@@ -55,19 +45,37 @@ export default function buttons(theme: Theme) {
           },
         },
         {
-          props: { variant: "btn-lg-secondary-outlined" },
+          props: { variant: "secondaryOrange" },
+          style: {
+            backgroundColor: theme.palette.flightHelp?.secondaryMain,
+            color: theme.palette.common.white,
+            borderColor: theme.palette.flightHelp?.secondaryMain,
+            "&:hover": {
+              backgroundColor: theme.palette.flightHelp?.secondaryDark,
+            },
+            "&:focus": {
+              backgroundColor: theme.palette.flightHelp?.secondaryMain,
+             border: `3px solid ${ theme.palette.flightHelp?.secondaryDark}`
+            },
+            "&.Mui-disabled": {
+              backgroundColor: "#D8DFE3",
+              color: "#828282",
+              borderColor: "#828282",
+            },
+          },
+        },
+        {
+          props: { variant: "secondaryOutlined" },
           style: {
             backgroundColor: theme.palette.common.white,
-            color: theme.palette.secondary.main,
-            padding: "8px 22px",
-            borderColor: theme.palette.secondary.main,
+            color: theme.palette.flightHelp?.secondaryMain,
+            border: `1px solid ${theme.palette.flightHelp?.secondaryMain}`,
             "&:hover": {
-              backgroundColor: theme.palette.secondary.light,
+              backgroundColor: theme.palette.flightHelp?.secondaryLight,
             },
-            "&:Mui-focused": {
-              color: theme.palette.secondary.dark,
+            "&:focus": {
               borderColor: theme.palette.secondary.dark,
-              borderWidth: "3px",
+              border: `3px solid ${theme.palette.flightHelp?.secondaryMain}`,
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
@@ -76,111 +84,20 @@ export default function buttons(theme: Theme) {
             },
           },
         },
+
         {
-          props: { variant: "btn-lg-secondary-dropdown" },
-          style: {
-            //añadir icono
-            backgroundColor: theme.palette.secondary.main,
-            color: theme.palette.common.white,
-            borderColor: theme.palette.secondary.main,
-            padding: "8px 22px",
-            "&:hover": {
-              backgroundColor: theme.palette.secondary.dark,
-            },
-            "&:Mui-focused": {
-              backgroundColor: theme.palette.secondary.main,
-              borderColor: theme.palette.secondary.dark,
-              borderWidth: "3px",
-            },
-            "&.Mui-disabled": {
-              backgroundColor: "#D8DFE3",
-              color: "#828282",
-              borderColor: "#828282",
-            },
-          },
-        },
-        {
-          props: { variant: "btn-sm-secondary-main-filled" },
-          style: {
-            backgroundColor: theme.palette.secondary.main,
-            borderColor: theme.palette.secondary.main,
-            color: theme.palette.common.white,
-            padding: "4px 16px 6px 16px",
-            "&:hover": {
-              backgroundColor: theme.palette.secondary.dark,
-            },
-            "&:Mui-focused": {
-              backgroundColor: theme.palette.secondary.main,
-              borderColor: theme.palette.secondary.dark,
-              borderWidth: "3px",
-            },
-            "&.Mui-disabled": {
-              backgroundColor: "#D8DFE3",
-              color: "#828282",
-              borderColor: "#828282",
-            },
-          },
-        },
-        {
-          props: { variant: "btn-sm-secondary-outlined" },
+          props: { variant: "primaryOutline" },
           style: {
             backgroundColor: theme.palette.common.white,
-            color: theme.palette.secondary.main,
-            padding: "4px 16px 6px 16px",
-            borderColor: theme.palette.secondary.main,
+            color: theme.palette.flightHelp?.primaryDark,
+            border: `1px solid ${theme.palette.flightHelp?.primaryDark}`,
             "&:hover": {
-              backgroundColor: theme.palette.secondary.light,
-            },
-            "&:Mui-focused": {
-              color: theme.palette.secondary.dark,
-              borderColor: theme.palette.secondary.dark,
-              borderWidth: "3px",
-            },
-            "&.Mui-disabled": {
-              backgroundColor: "#D8DFE3",
-              color: "#828282",
-              borderColor: "#828282",
-            },
-          },
-        },
-        {
-          props: { variant: "btn-lg-primary-dark-filled" },
-          style: {
-            backgroundColor: theme.palette.primary.dark,
-            color: theme.palette.common.white,
-            borderColor: theme.palette.primary.dark,
-            padding: "8px 22px",
-            "&:hover": {
-              backgroundColor: "#063536",
-              borderColor: "#063536",
-            },
-            "&:Mui-focused": {
-              backgroundColor: theme.palette.primary.dark,
-              borderColor: theme.palette.primary.main,
-              borderWidth: "3px",
-            },
-            "&.Mui-disabled": {
-              backgroundColor: "#D8DFE3",
-              color: "#828282",
-              borderColor: "#828282",
-            },
-          },
-        },
-        {
-          props: { variant: "btn-lg-primary-outline" },
-          style: {
-            color: theme.palette.primary.dark,
-            borderColor: theme.palette.primary.dark,
-            padding: "8px 22px",
-            "&:hover": {
-              backgroundColor: "#063536",
-              borderColor: "#063536",
+              backgroundColor:theme.palette.flightHelp?.primaryDark2,
               color: theme.palette.common.white,
             },
-            "&:Mui-focused": {
-              backgroundColor: theme.palette.primary.dark,
-              borderColor: theme.palette.primary.main,
-              borderWidth: "3px",
+            "&:focus": {
+              backgroundColor: theme.palette.flightHelp?.primaryDark2,
+              border: `3px solid ${theme.palette.flightHelp?.primaryMain}`
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
@@ -190,16 +107,15 @@ export default function buttons(theme: Theme) {
           },
         },
         {
-          props: { variant: "btn-lg-transparent-outline" },
+          props: { variant: "transparent" },
           style: {
             color: theme.palette.common.white,
-            borderColor: theme.palette.common.white,
-            padding: "8px 22px",
+            border: `1px solid ${theme.palette.common.white}`,
             "&:hover": {
-              opacity: "18%",
+              opacity: 0.82,
             },
-            "&:Mui-focused": {
-              borderWidth: "2px",
+            "&:focus": {
+              border: `2px solid ${theme.palette.common.white}`,
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
@@ -209,20 +125,17 @@ export default function buttons(theme: Theme) {
           },
         },
         {
-          props: { variant: "btn-lg-primary-main-filled" },
+          props: { variant: "primaryMain" },
           style: {
-            backgroundColor: theme.palette.primary.main,
+            backgroundColor: theme.palette.flightHelp?.primaryMain,
             color: theme.palette.common.white,
-            borderColor: theme.palette.primary.main,
-            padding: "8px 22px",
             "&:hover": {
-              backgroundColor: "#063536",
-              borderColor: "#063536",
+              backgroundColor:theme.palette.flightHelp?.primaryDark2,
+              color: theme.palette.common.white,
             },
-            "&:Mui-focused": {
-              backgroundColor: theme.palette.primary.dark,
-              borderColor: theme.palette.primary.main,
-              borderWidth: "3px",
+            "&:focus": {
+              backgroundColor: theme.palette.flightHelp?.primaryDark2,
+              border: `3px solid ${theme.palette.flightHelp?.primaryMain}`
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
@@ -231,50 +144,8 @@ export default function buttons(theme: Theme) {
             },
           },
         },
-        {
-          props: { variant: "btn-sm-primary-dark-filled" },
-          style: {
-            backgroundColor: theme.palette.primary.dark,
-            color: theme.palette.common.white,
-            borderColor: theme.palette.primary.dark,
-            padding: "4px 16px 6px 16px",
-            "&:hover": {
-              backgroundColor: "#063536",
-              borderColor: "#063536",
-            },
-            "&:Mui-focused": {
-              backgroundColor: theme.palette.primary.dark,
-              borderColor: theme.palette.primary.main,
-              borderWidth: "2px",
-            },
-            "&.Mui-disabled": {
-              backgroundColor: "#D8DFE3",
-              color: "#828282",
-              borderColor: "#828282",
-            },
-          },
-        },
-        {
-          props: { variant: "btn-sm-primary-outline" },
-          style: {
-            color: theme.palette.primary.dark,
-            borderColor: theme.palette.primary.dark,
-            padding: "4px 16px 6px 16px",
-            "&:hover": {
-              backgroundColor: theme.palette.common.white,
-              borderColor: theme.palette.primary.dark,
-            },
-            "&:Mui-focused": {
-              borderColor: theme.palette.primary.dark,
-              borderWidth: "2px",
-            },
-            "&.Mui-disabled": {
-              backgroundColor: "#D8DFE3",
-              color: "#828282",
-              borderColor: "#828282",
-            },
-          },
-        },
+
+    
       ],
     },
   };

@@ -18,5 +18,5 @@ const theme = createTheme(baseTheme, {
     ...buttons(baseTheme),
   },
 });
-;
+
 export default theme;

@@ -3,14 +3,15 @@ import { PaletteOptions } from "@mui/material/styles";
 const palette: PaletteOptions = {
   mode: "light",
   flightHelp: {
-    "primary.hue": "#F6FBFB",
-    "primary.main": "#20ABAD",
-    "primary.main60": "#6FC3C4",
-    "primary.light": "#8FB2B2",
-    "primary.dark": "#0F5C5D",
-    "secondary.light": "#F9D8D0",
-    "secondary.main": "#FE5B35",
-    "secondary.dark": "#E64722",
+    "primaryHue": "#F6FBFB",
+    "primaryMain": "#20ABAD",
+    "primaryMain60": "#6FC3C4",
+    "primaryLight": "#8FB2B2",
+    "primaryDark": "#0F5C5D",
+    "secondaryLight": "#F9D8D0",
+    "secondaryMain": "#FE5B35",
+    "secondaryDark": "#E64722",
+    "primaryDark2": "#063536"
   },
   zaborAjutor: {
     "primary.hue": "#EFF7F1",
@@ -65,16 +66,16 @@ const palette: PaletteOptions = {
   },
 
   buttons: {
-    backgroundLight: "#F6F7FA",
-    backgroundDisable: "#E4E4E4",
-    backgroundSecondary: "#383F50",
-    backgroundDark: "#1F232D",
-    backgroundSystem: "#F4F5F8",
-    negativeDisabled: "#282828",
+    backgroundLight: "#8FB2B2",
+    backgroundDisable: "#CACACA",
+    backgroundSecondary: "#FE5B35",
+    backgroundDark: "#0F5C5D",
+    backgroundSystem: "#F6FBFB",
+    negativeDisabled: "#828282",
     grayHover: "#E2E8F0",
     grayPressed: "#CED5DF",
     form: "#EDEFF2",
-    iconButtonBackgroundFocus: "#0000000a",
+    iconButtonBackgroundFocus: "#0000000",
   },
 };
 // const palette: PaletteOptions = {

@@ -7,7 +7,12 @@ export type ButtonVariant =
   | "system" 
   | "text" 
   | "outline"
-  | "btn-lg-secondary-main-filled";
+  | "secondaryOutlined"
+  | "primaryBlue"
+  | "primaryOutline"
+  | "transparent"
+  | "secondaryOrange"
+  | "primaryMain";
 
 export interface ButtonProps {
   variant?: ButtonVariant;
@@ -22,7 +27,7 @@ export interface ButtonProps {
 function Button(props: ButtonProps) {
   const { variant = "primary", children, className, color, ...rest } = props;
   
-  if (variant === "btn-lg-secondary-main-filled") {
+  if (variant === "secondaryOutlined" || "primaryBlue" || "secondaryOrange" || "primaryOutline" || "transparent" || "primaryMain") {
     return (
       <MuiButton
         {...{
@@ -36,6 +41,7 @@ function Button(props: ButtonProps) {
       </MuiButton>
     );
   }
+
   
   let muiVariant: "text" | "outlined" | "contained" = "contained";
   let muiColor: "primary" | "secondary" | "inherit" | "success" | "error" | "info" | "warning" | undefined = "primary";
