@@ -7,59 +7,145 @@ export default function buttons(theme: Theme) {
         disableElevation: true,
       },
       styleOverrides: {
-        // Estilos globales para todos los botones si los necesitas
         root: {
           textTransform: "none",
-          borderRadius: 8,
+          borderRadius: "20px",
         },
+        sizeMedium: {
+          padding: "8px 22px",
+        },
+        sizeLarge: {
+          padding: "19px 22px",
+        },
+        sizeSmall:
+        {
+          padding: "4px 16px 6px 16px"
+        }
       },
+     
       variants: [
         {
-          props: { variant: "primary" as any },
+          props: { variant: "primaryBlue" },
           style: {
-            backgroundColor: theme.palette.primary.main,
+            backgroundColor: theme.palette.flightHelp?.primaryDark,
             color: theme.palette.common.white,
-            padding: "10px 24px",
             "&:hover": {
-              backgroundColor: theme.palette.primary.dark,
+              backgroundColor:theme.palette.flightHelp?.primaryDark2,
+              color: theme.palette.common.white,
+            },
+            "&:focus": {
+              backgroundColor: theme.palette.flightHelp?.primaryDark2,
+              border: `3px solid ${theme.palette.flightHelp?.primaryMain}`
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
               color: "#828282",
-            },
-          },
-        },
-        {
-          props: { variant: "secondary" as any },
-          style: {
-            backgroundColor: theme.palette.secondary.main,
-            color: theme.palette.common.white,
-            padding: "10px 24px",
-            "&:hover": {
-              backgroundColor: theme.palette.secondary.dark,
-            },
-            "&.Mui-disabled": {
-              backgroundColor: "#D8DFE3",
-              color: "#828282",
-            },
-          },
-        },
-        {
-          props: { variant: "outline" as any },
-          style: {
-            backgroundColor: "transparent",
-            color: theme.palette.primary.main,
-            padding: "9px 23px",
-            border: `1px solid ${theme.palette.primary.main}`,
-            "&:hover": {
-              backgroundColor: "rgba(0, 0, 0, 0.04)",
-            },
-            "&.Mui-disabled": {
               borderColor: "#828282",
-              color: "#828282",
             },
           },
         },
+        {
+          props: { variant: "secondaryOrange" },
+          style: {
+            backgroundColor: theme.palette.flightHelp?.secondaryMain,
+            color: theme.palette.common.white,
+            borderColor: theme.palette.flightHelp?.secondaryMain,
+            "&:hover": {
+              backgroundColor: theme.palette.flightHelp?.secondaryDark,
+            },
+            "&:focus": {
+              backgroundColor: theme.palette.flightHelp?.secondaryMain,
+             border: `3px solid ${ theme.palette.flightHelp?.secondaryDark}`
+            },
+            "&.Mui-disabled": {
+              backgroundColor: "#D8DFE3",
+              color: "#828282",
+              borderColor: "#828282",
+            },
+          },
+        },
+        {
+          props: { variant: "secondaryOutlined" },
+          style: {
+            backgroundColor: theme.palette.common.white,
+            color: theme.palette.flightHelp?.secondaryMain,
+            border: `1px solid ${theme.palette.flightHelp?.secondaryMain}`,
+            "&:hover": {
+              backgroundColor: theme.palette.flightHelp?.secondaryLight,
+            },
+            "&:focus": {
+              borderColor: theme.palette.secondary.dark,
+              border: `3px solid ${theme.palette.flightHelp?.secondaryMain}`,
+            },
+            "&.Mui-disabled": {
+              backgroundColor: "#D8DFE3",
+              color: "#828282",
+              borderColor: "#828282",
+            },
+          },
+        },
+
+        {
+          props: { variant: "primaryOutline" },
+          style: {
+            backgroundColor: theme.palette.common.white,
+            color: theme.palette.flightHelp?.primaryDark,
+            border: `1px solid ${theme.palette.flightHelp?.primaryDark}`,
+            "&:hover": {
+              backgroundColor:theme.palette.flightHelp?.primaryDark2,
+              color: theme.palette.common.white,
+            },
+            "&:focus": {
+              backgroundColor: theme.palette.flightHelp?.primaryDark2,
+              border: `3px solid ${theme.palette.flightHelp?.primaryMain}`
+            },
+            "&.Mui-disabled": {
+              backgroundColor: "#D8DFE3",
+              color: "#828282",
+              borderColor: "#828282",
+            },
+          },
+        },
+        {
+          props: { variant: "transparent" },
+          style: {
+            color: theme.palette.common.white,
+            border: `1px solid ${theme.palette.common.white}`,
+            "&:hover": {
+              opacity: 0.82,
+            },
+            "&:focus": {
+              border: `2px solid ${theme.palette.common.white}`,
+            },
+            "&.Mui-disabled": {
+              backgroundColor: "#D8DFE3",
+              color: "#828282",
+              borderColor: "#828282",
+            },
+          },
+        },
+        {
+          props: { variant: "primaryMain" },
+          style: {
+            backgroundColor: theme.palette.flightHelp?.primaryMain,
+            color: theme.palette.common.white,
+            "&:hover": {
+              backgroundColor:theme.palette.flightHelp?.primaryDark2,
+              color: theme.palette.common.white,
+            },
+            "&:focus": {
+              backgroundColor: theme.palette.flightHelp?.primaryDark2,
+              border: `3px solid ${theme.palette.flightHelp?.primaryMain}`
+            },
+            "&.Mui-disabled": {
+              backgroundColor: "#D8DFE3",
+              color: "#828282",
+              borderColor: "#828282",
+            },
+          },
+        },
+
+    
       ],
     },
   };

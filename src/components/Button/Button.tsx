@@ -1,11 +1,22 @@
 import React from "react";
 import MuiButton from "@mui/material/Button";
 
-export type ButtonVariant = "primary" | "secondary" | "system" | "text";
+export type ButtonVariant = 
+  | "primary" 
+  | "secondary" 
+  | "system" 
+  | "text" 
+  | "outline"
+  | "secondaryOutlined"
+  | "primaryBlue"
+  | "primaryOutline"
+  | "transparent"
+  | "secondaryOrange"
+  | "primaryMain";
 
 export interface ButtonProps {
   variant?: ButtonVariant;
-  color?: string;
+  color?: "primary" | "secondary" | "success" | "error" | "info" | "warning" | undefined; 
   className?: string;
   disabled?: boolean;
   children?: React.ReactNode;
@@ -14,12 +25,28 @@ export interface ButtonProps {
 }
 
 function Button(props: ButtonProps) {
-  const { variant = "primary", children, className, ...rest } = props;
+  const { variant = "primary", children, className, color, ...rest } = props;
+  
+  if (["secondaryOutlined", "primaryBlue", "secondaryOrange", "primaryOutline", "transparent", "primaryMain"].includes(variant)) {
+    return (
+      <MuiButton
+        {...{
+          variant: variant,
+          className,
+          disableElevation: true,
+          ...rest
+        } as any}
+      >
+        {children}
+      </MuiButton>
+    );
+  }
 
-  let muiVariant = "contained";
-  let muiColor = "primary";
+  
+  let muiVariant: "text" | "outlined" | "contained" = "contained";
+  let muiColor: "primary" | "secondary" | "inherit" | "success" | "error" | "info" | "warning" | undefined = "primary";
   let buttonClassName = "";
-
+  
   switch (variant) {
     case "primary":
       muiVariant = "contained";
@@ -37,11 +64,11 @@ function Button(props: ButtonProps) {
       muiVariant = "text";
       break;
   }
-
+  
   return (
     <MuiButton
-      variant={muiVariant as any}
-      color={muiColor as any}
+      variant={muiVariant}
+      color={muiColor}
       className={
         buttonClassName ? `${buttonClassName} ${className || ""}` : className
       }
@@ -54,5 +81,4 @@ function Button(props: ButtonProps) {
 }
 
 Button.displayName = "Button";
-
 export default Button;

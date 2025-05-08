@@ -80,10 +80,62 @@ declare module "@mui/material/styles" {
   }
 
   interface PaletteOptions {
+    flightHelp: {
+      "primary.hue": string;
+      "primary.main": string;
+      "primary.main60": string;
+      "primary.light": string;
+      "primary.dark": string;
+      "secondary.light": string;
+      "secondary.main": string;
+      "secondary.dark": string;
+    };
+    zaborAjutor: {
+      "primary.hue": string;
+      "primary.main": string;
+      "primary.main60": string;
+      "primary.light": string;
+      "primary.dark": string;
+      "secondary.light": string;
+      "secondary.main": string;
+      "secondary.dark": string;
+    };
+    universal: {
+      "white.light": string;
+      "navy.dark": string;
+      "black.dark": string;
+      "neutral.darkGrey": string;
+      "neutral.grey2": string;
+      "neutral.lightGrey": string;
+      "flat.grey": string;
+      "stroke.grey": string;
+    };
+
+    alerts: {
+      "yellow.alert": string;
+      "yellow.border": string;
+      "yellow.accent": string;
+      "yellow.dark": string;
+      "blue.alert": string;
+      "blue.light": string;
+      "blue.accent": string;
+      "blue.dark": string;
+      "blue.border": string;
+      "green.alert": string;
+      "green.light": string;
+      "green.border": string;
+      "green.accent": string;
+      "green.dark": string;
+      "red.alert": string;
+      "red.light": string;
+      "red.border": string;
+      "red.accent": string;
+      "red.dark": string;
+    };
+
     hart: HartPaletteColorOptions;
     primary: PalettePrimary;
     systemHeader: SystemHeaderPaletteColorOptions;
-    typography: TypographyPaletteColorOptions;
     buttons: ButtonPaletteColorOptions;
     shadow: ShadowPaletteColorOptions;
     backgrounds: BackgroundsPaletteColorOptions;
@@ -229,6 +281,8 @@ declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
     primary: true;
     secondary: true;
+    system: true;
     outline: true;
+    "btn-lg-secondary-main-filled": true;
   }
 }
