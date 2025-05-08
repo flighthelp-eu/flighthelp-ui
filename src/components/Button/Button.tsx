@@ -27,7 +27,7 @@ export interface ButtonProps {
 function Button(props: ButtonProps) {
   const { variant = "primary", children, className, color, ...rest } = props;
   
-  if (variant === "secondaryOutlined" || "primaryBlue" || "secondaryOrange" || "primaryOutline" || "transparent" || "primaryMain") {
+  if (["secondaryOutlined", "primaryBlue", "secondaryOrange", "primaryOutline", "transparent", "primaryMain"].includes(variant)) {
     return (
       <MuiButton
         {...{
