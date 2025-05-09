@@ -69,14 +69,18 @@ interface PalettePrimary extends PaletteColorOptions {
 
 declare module "@mui/material/styles" {
   interface Palette {
-    hart: HartPaletteColorOptions;
+    // hart: HartPaletteColorOptions;
     primary: PalettePrimary;
     systemHeader: SystemHeaderPaletteColorOptions;
     typography: TypographyPaletteColorOptions;
     buttons: ButtonPaletteColorOptions;
-    shadow: ShadowPaletteColorOptions;
+    // shadow: ShadowPaletteColorOptions;
     backgrounds: BackgroundsPaletteColorOptions;
-    search: SelectPaletteColorOptions;
+    // search: SelectPaletteColorOptions;
+    flightHelp: PaletteOptions["flightHelp"];
+    zaborAjutor: PaletteOptions["zaborAjutor"];
+    alerts: PaletteOptions["alerts"];
+    universal: PaletteOptions["universal"];
   }
 
   interface PaletteOptions {
@@ -89,6 +93,7 @@ declare module "@mui/material/styles" {
       "secondary.light": string;
       "secondary.main": string;
       "secondary.dark": string;
+      "primary.dark2": string;
     };
     zaborAjutor: {
       "primary.hue": string;
@@ -133,13 +138,13 @@ declare module "@mui/material/styles" {
       "red.dark": string;
     };
 
-    hart: HartPaletteColorOptions;
+    // hart: HartPaletteColorOptions;
     primary: PalettePrimary;
-    systemHeader: SystemHeaderPaletteColorOptions;
+    // systemHeader: SystemHeaderPaletteColorOptions;
     buttons: ButtonPaletteColorOptions;
-    shadow: ShadowPaletteColorOptions;
+    // shadow: ShadowPaletteColorOptions;
     backgrounds: BackgroundsPaletteColorOptions;
-    search: SelectPaletteColorOptions;
+    // search: SelectPaletteColorOptions;
   }
 
   interface TypographyVariants {

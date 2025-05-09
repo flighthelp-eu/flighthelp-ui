@@ -3,15 +3,15 @@ import { PaletteOptions } from "@mui/material/styles";
 const palette: PaletteOptions = {
   mode: "light",
   flightHelp: {
-    "primaryHue": "#F6FBFB",
-    "primaryMain": "#20ABAD",
-    "primaryMain60": "#6FC3C4",
-    "primaryLight": "#8FB2B2",
-    "primaryDark": "#0F5C5D",
-    "secondaryLight": "#F9D8D0",
-    "secondaryMain": "#FE5B35",
-    "secondaryDark": "#E64722",
-    "primaryDark2": "#063536"
+    "primary.hue": "#F6FBFB",
+    "primary.main": "#20ABAD",
+    "primary.main60": "#6FC3C4",
+    "primary.light": "#8FB2B2",
+    "primary.dark": "#0F5C5D",
+    "secondary.light": "#F9D8D0",
+    "secondary.main": "#FE5B35",
+    "secondary.dark": "#E64722",
+    "primary.dark2": "#063536",
   },
   zaborAjutor: {
     "primary.hue": "#EFF7F1",

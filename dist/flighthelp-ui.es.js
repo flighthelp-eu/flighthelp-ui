@@ -1383,7 +1383,21 @@ function requireJsxRuntime () {
 var jsxRuntimeExports = requireJsxRuntime();
 
 function Button(props) {
-  const { variant = "primary", children, className, ...rest } = props;
+  const { variant = "primary", children, className, color, ...rest } = props;
+  if (["secondaryOutlined", "primaryBlue", "secondaryOrange", "primaryOutline", "transparent", "primaryMain"].includes(variant)) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      MuiButton$1,
+      {
+        ...{
+          variant,
+          className,
+          disableElevation: true,
+          ...rest
+        },
+        children
+      }
+    );
+  }
   let muiVariant = "contained";
   let muiColor = "primary";
   let buttonClassName = "";
@@ -7017,28 +7031,57 @@ const styled = createStyled({
 
 const palette = {
   mode: "light",
-  common: {
-    white: "#FFFFFF",
-    black: "#000000"
+  flightHelp: {
+    "primary.hue": "#F6FBFB",
+    "primary.main": "#20ABAD",
+    "primary.main60": "#6FC3C4",
+    "primary.light": "#8FB2B2",
+    "primary.dark": "#0F5C5D",
+    "secondary.light": "#F9D8D0",
+    "secondary.main": "#FE5B35",
+    "secondary.dark": "#E64722",
+    "primary.dark2": "#063536"
   },
-  primary: {
-    light: "#EDEFF2",
-    main: "#20ABAD",
-    dark: "#E64722"
+  zaborAjutor: {
+    "primary.hue": "#EFF7F1",
+    "primary.main": "#149F42",
+    "primary.main60": "#72C58E",
+    "primary.light": "#A9DCBA",
+    "primary.dark": "#0E1726",
+    "secondary.light": "#DEF9D0",
+    "secondary.main": "#218141",
+    "secondary.dark": "#115026"
   },
-  secondary: {
-    light: "#EDEFF2",
-    main: "#FE5B35",
-    dark: "#EDEFF2"
+  alerts: {
+    "yellow.alert": "#FFF4E5",
+    "yellow.border": "#D4CBBE",
+    "yellow.accent": "#EF6C00",
+    "yellow.dark": "#663C00",
+    "blue.alert": "#E5F6FD",
+    "blue.light": "#D4EBF5",
+    "blue.border": "#C1C9D8",
+    "blue.accent": "#0288D1",
+    "blue.dark": "#014361",
+    "green.alert": "#EDF7ED",
+    "green.light": "#DFF1D5",
+    "green.border": "#A5B5A5",
+    "green.accent": "#2E7D32",
+    "green.dark": "#1E4620",
+    "red.alert": "#FDEDED",
+    "red.light": "#F9D8D0",
+    "red.border": "#DCCDCD",
+    "red.accent": "#D32F2F",
+    "red.dark": "#5F2120"
   },
-  typography: {
-    light: "#EDEFF2",
-    secondary: "#5F6677",
-    primary: "#1F232D",
-    disabled: "#B8B8B8",
-    negativeDisabled: "#707070",
-    tag: "#1773FD",
-    termsAndCondition: "#5E5E5E"
+  universal: {
+    "white.light": "#FFFFFF",
+    "navy.dark": "#293747",
+    "black.dark": "#000000",
+    "neutral.darkGrey": "#828282",
+    "neutral.grey2": "#CACACA",
+    "neutral.lightGrey": "#EEEEEE",
+    "flat.grey": "#F9F9F9",
+    "stroke.grey": "#DBDFE3"
   },
   backgrounds: {
     white: "#FFFFFF",
@@ -7049,41 +7092,17 @@ const palette = {
     border: "#D6DCE6",
     addInInfo: "#FFF7E1"
   },
-  hart: {
-    primary: "#FDE5F4",
-    hover: "#FFCAEB",
-    active: "#D93098"
-  },
-  systemHeader: {
-    main: "#131720",
-    secondary: "#2E2E2E",
-    light: "#707070"
-  },
-  search: {
-    background: "#edeff2",
-    border: "#1773fd"
-  },
   buttons: {
-    backgroundLight: "#F6F7FA",
-    backgroundDisable: "#E4E4E4",
-    backgroundSecondary: "#383F50",
-    backgroundDark: "#1F232D",
-    backgroundSystem: "#F4F5F8",
-    negativeDisabled: "#282828",
+    backgroundLight: "#8FB2B2",
+    backgroundDisable: "#CACACA",
+    backgroundSecondary: "#FE5B35",
+    backgroundDark: "#0F5C5D",
+    backgroundSystem: "#F6FBFB",
+    negativeDisabled: "#828282",
     grayHover: "#E2E8F0",
     grayPressed: "#CED5DF",
     form: "#EDEFF2",
-    iconButtonBackgroundFocus: "#0000000a"
-  },
-  divider: "#c7c7c7",
-  shadow: {
-    main: "-1px 1px 0px #1F232D;",
-    solid: "-1px 1px 0px #CED5DF",
-    drop: "rgba(52, 54, 91, 0.08)",
-    avatarBadge: "0px 4px 12px rgba(31, 35, 45, 0.12)",
-    tooltip: "0px 5px 5px rgba(0, 0, 0, 0.1), -1px 1px 0px #1F232D, 0px 10px 14px rgba(52, 54, 91, 0.14)",
-    disabled: " -1px 1px 0px #B8B8B8",
-    addInShadow: `-1px 1px 0px #D6DCE5, 0px 1px 0px #E0E4EB`
+    iconButtonBackgroundFocus: "#0000000"
   }
 };
 
@@ -7110,11 +7129,19 @@ const typography = {
     // Bold
     fontSize: "28px",
     lineHeight: "36px",
-    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]: {
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px)`]: {
+      fontSize: "28px",
+      lineHeight: "36px"
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
       fontSize: "40px",
       lineHeight: "46px"
     },
-    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+    [`@media screen and (min-width: ${breakpoints?.values?.lg}px)`]: {
+      fontSize: "40px",
+      lineHeight: "46px"
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.xl}px)`]: {
       fontSize: "48px",
       lineHeight: "56px"
     }
@@ -7125,11 +7152,19 @@ const typography = {
     // Bold
     fontSize: "26px",
     lineHeight: "32px",
-    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]: {
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px)`]: {
       fontSize: "35px",
       lineHeight: "38px"
     },
     [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+      fontSize: "35px",
+      lineHeight: "38px"
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.lg}px)`]: {
+      fontSize: "40px",
+      lineHeight: "44px"
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.xl}px)`]: {
       fontSize: "40px",
       lineHeight: "44px"
     }
@@ -7140,11 +7175,19 @@ const typography = {
     // Bold
     fontSize: "24px",
     lineHeight: "30px",
-    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]: {
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px)`]: {
+      fontSize: "24px",
+      lineHeight: "30px"
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
       fontSize: "32px",
       lineHeight: "26px"
     },
-    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+    [`@media screen and (min-width: ${breakpoints?.values?.lg}px)`]: {
+      fontSize: "36px",
+      lineHeight: "44px"
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.xl}px)`]: {
       fontSize: "36px",
       lineHeight: "44px"
     }
@@ -7155,11 +7198,19 @@ const typography = {
     // Bold
     fontSize: "22px",
     lineHeight: "26px",
-    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]: {
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px)`]: {
+      fontSize: "22px",
+      lineHeight: "26px"
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
       fontSize: "26px",
       lineHeight: "30px"
     },
-    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+    [`@media screen and (min-width: ${breakpoints?.values?.lg}px)`]: {
+      fontSize: "28px",
+      lineHeight: "26px"
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.xl}px)`]: {
       fontSize: "28px",
       lineHeight: "26px"
     }
@@ -7170,11 +7221,19 @@ const typography = {
     // SemiBold
     fontSize: "20px",
     lineHeight: "26px",
-    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]: {
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px)`]: {
+      fontSize: "20px",
+      lineHeight: "26px"
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
       fontSize: "22px",
       lineHeight: "28px"
     },
-    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+    [`@media screen and (min-width: ${breakpoints?.values?.lg}px)`]: {
+      fontSize: "22px",
+      lineHeight: "28px"
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.xl}px)`]: {
       fontSize: "24px",
       lineHeight: "29px"
     }
@@ -7194,7 +7253,6 @@ const typography = {
       lineHeight: "26px"
     }
   },
-  // Variantes personalizadas de las guías
   allCaps: {
     fontFamily,
     fontWeight: 700,
@@ -7202,11 +7260,20 @@ const typography = {
     textTransform: "uppercase",
     fontSize: "12px",
     lineHeight: "18px",
-    [`@media screen and (min-width: ${breakpoints?.values?.sm}px) and (max-width: ${breakpoints?.values?.md}px)`]: {
+    letterSpacing: "4px",
+    [`@media screen and (min-width: ${breakpoints?.values?.sm}px)`]: {
+      fontSize: "12px",
+      lineHeight: "18px"
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
       fontSize: "15px",
       lineHeight: "20px"
     },
-    [`@media screen and (min-width: ${breakpoints?.values?.md}px)`]: {
+    [`@media screen and (min-width: ${breakpoints?.values?.lg}px)`]: {
+      fontSize: "15px",
+      lineHeight: "20px"
+    },
+    [`@media screen and (min-width: ${breakpoints?.values?.xl}px)`]: {
       fontSize: "17px",
       lineHeight: "23px"
     }
@@ -7658,17 +7725,162 @@ const overrides = (theme) => {
   };
 };
 
+function buttons(theme) {
+  return {
+    MuiButton: {
+      defaultProps: {
+        disableElevation: true
+      },
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+          borderRadius: "20px"
+        },
+        sizeMedium: {
+          padding: "8px 22px"
+        },
+        sizeLarge: {
+          padding: "19px 22px"
+        },
+        sizeSmall: {
+          padding: "4px 16px 6px 16px"
+        }
+      },
+      variants: [
+        {
+          props: { variant: "primaryBlue" },
+          style: {
+            backgroundColor: theme.palette.flightHelp?.["primary.dark"],
+            color: theme.palette.common.white,
+            "&:hover": {
+              backgroundColor: theme.palette.flightHelp?.["primary.dark2"],
+              color: theme.palette.common.white
+            },
+            "&:focus": {
+              backgroundColor: theme.palette.flightHelp?.["primary.dark2"],
+              border: `3px solid ${theme.palette.flightHelp?.["primary.main"]}`
+            },
+            "&.Mui-disabled": {
+              backgroundColor: "#D8DFE3",
+              color: "#828282",
+              borderColor: "#828282"
+            }
+          }
+        },
+        {
+          props: { variant: "secondaryOrange" },
+          style: {
+            backgroundColor: theme.palette.flightHelp?.["secondary.main"],
+            color: theme.palette.common.white,
+            borderColor: theme.palette.flightHelp?.["secondary.main"],
+            "&:hover": {
+              backgroundColor: theme.palette.flightHelp?.["secondary.dark"]
+            },
+            "&:focus": {
+              backgroundColor: theme.palette.flightHelp?.["secondary.main"],
+              border: `3px solid ${theme.palette.flightHelp?.["secondary.dark"]}`
+            },
+            "&.Mui-disabled": {
+              backgroundColor: "#D8DFE3",
+              color: "#828282",
+              borderColor: "#828282"
+            }
+          }
+        },
+        {
+          props: { variant: "secondaryOutlined" },
+          style: {
+            backgroundColor: theme.palette.common.white,
+            color: theme.palette.flightHelp?.["secondary.main"],
+            border: `1px solid ${theme.palette.flightHelp?.["secondary.dark"]}`,
+            "&:hover": {
+              backgroundColor: theme.palette.flightHelp?.["secondary.light"]
+            },
+            "&:focus": {
+              borderColor: theme.palette.secondary.dark,
+              border: `3px solid ${theme.palette.flightHelp?.["secondary.main"]}`
+            },
+            "&.Mui-disabled": {
+              backgroundColor: "#D8DFE3",
+              color: "#828282",
+              borderColor: "#828282"
+            }
+          }
+        },
+        {
+          props: { variant: "primaryOutline" },
+          style: {
+            backgroundColor: theme.palette.common.white,
+            color: theme.palette.flightHelp?.["primary.dark"],
+            border: `1px solid ${theme.palette.flightHelp?.["primary.dark"]}`,
+            "&:hover": {
+              backgroundColor: theme.palette.flightHelp?.["primary.dark2"],
+              color: theme.palette.common.white
+            },
+            "&:focus": {
+              backgroundColor: theme.palette.flightHelp?.["primary.dark2"],
+              border: `3px solid ${theme.palette.flightHelp?.["primary.main"]}`
+            },
+            "&.Mui-disabled": {
+              backgroundColor: "#D8DFE3",
+              color: "#828282",
+              borderColor: "#828282"
+            }
+          }
+        },
+        {
+          props: { variant: "transparent" },
+          style: {
+            color: theme.palette.common.white,
+            border: `1px solid ${theme.palette.common.white}`,
+            "&:hover": {
+              opacity: 0.82
+            },
+            "&:focus": {
+              border: `2px solid ${theme.palette.common.white}`
+            },
+            "&.Mui-disabled": {
+              backgroundColor: "#D8DFE3",
+              color: "#828282",
+              borderColor: "#828282"
+            }
+          }
+        },
+        {
+          props: { variant: "primaryMain" },
+          style: {
+            backgroundColor: theme.palette.flightHelp["primary.main"],
+            color: theme.palette.common.white,
+            "&:hover": {
+              backgroundColor: theme.palette.flightHelp?.["primary.dark"],
+              color: theme.palette.common.white
+            },
+            "&:focus": {
+              backgroundColor: theme.palette.flightHelp?.["primary.dark2"],
+              border: `3px solid ${theme.palette.flightHelp?.["primary.main"]}`
+            },
+            "&.Mui-disabled": {
+              backgroundColor: "#D8DFE3",
+              color: "#828282",
+              borderColor: "#828282"
+            }
+          }
+        }
+      ]
+    }
+  };
+}
+
 const baseTheme = createTheme({
   typography,
   spacing: 4,
   palette,
   breakpoints
 });
-const theme = createTheme({
-  ...baseTheme,
+const theme = createTheme(baseTheme, {
   components: {
-    ...baseTheme.components,
-    ...overrides(baseTheme)
+    ...overrides(baseTheme),
+    ...buttons(baseTheme)
   }
 });
 
@@ -7708,6 +7920,14 @@ const TextFieldStyled = styled$2(TextField)(() => ({
       borderColor: "#6FC3C4",
       borderWidth: "1px",
       borderRadius: "8px"
+    },
+    "&.Mui-disabled": {
+      backgroundColor: "#D8DFE3",
+      borderColor: "#828282",
+      "& .MuiInputBase-input": {
+        color: "#828282",
+        WebkitTextFillColor: "#828282"
+      }
     },
     "&:hover fieldset": {
       borderColor: "#0F5C5D"

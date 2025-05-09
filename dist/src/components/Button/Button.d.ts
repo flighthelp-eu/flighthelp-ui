@@ -1,8 +1,8 @@
 import { default as React } from 'react';
-export type ButtonVariant = "primary" | "secondary" | "system" | "text";
+export type ButtonVariant = "primary" | "secondary" | "system" | "text" | "outline" | "secondaryOutlined" | "primaryBlue" | "primaryOutline" | "transparent" | "secondaryOrange" | "primaryMain";
 export interface ButtonProps {
     variant?: ButtonVariant;
-    color?: string;
+    color?: "primary" | "secondary" | "success" | "error" | "info" | "warning" | undefined;
     className?: string;
     disabled?: boolean;
     children?: React.ReactNode;
