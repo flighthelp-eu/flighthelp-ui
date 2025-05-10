@@ -7429,7 +7429,11 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	  },
 	  h1Light: {},
 	  h1Regular: {},
-	  regularBold: {},
+	  regularBold: {
+	    fontWeight: 600,
+	    fontSize: "14px",
+	    lineHeight: "16px"
+	  },
 	  regularRegular: {},
 	  smallBold: {},
 	  smallSemiBold: {},
