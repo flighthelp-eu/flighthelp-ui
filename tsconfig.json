@@ -6,7 +6,8 @@
     "moduleResolution": "node",
     "jsx": "react-jsx",
     "declaration": true,
-    "declarationDir": "dist/types",
+    "declarationDir": "dist",
+    "emitDeclarationOnly": false,
     "sourceMap": true,
     "outDir": "dist",
     "esModuleInterop": true,
@@ -20,8 +21,20 @@
       "@/*": ["src/*"]
     },
     "types": ["vite/client"],
-    "typeRoots": ["./src/theme/types"]
+    "typeRoots": ["./node_modules/@types", "./src/theme/types"]
   },
-  "include": ["src", "index.ts"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts",
+    "index.ts",
+    "src/theme/types/material-ui-styles.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.stories.tsx"
+  ]
 }
