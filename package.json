@@ -3,7 +3,8 @@
   "version": "0.0.7",
   "description": "",
   "files": [
-    "dist"
+    "dist",
+    "src/theme/types/material-ui-styles.d.ts"
   ],
   "exports": {
     ".": {
