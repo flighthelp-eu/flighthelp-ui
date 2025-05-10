@@ -71,42 +71,62 @@ const ColorPalette = ({ title, colors }: ColorPaletteProps) => (
   </div>
 );
 
-// Helper function to safely extract colors from the palette
-const safeExtractColors = (obj: any): Record<string, string> => {
+// Helper function to safely extract colors from the nested palette structure
+const safeExtractColors = (obj: any, prefix = ""): Record<string, string> => {
   if (!obj) return {};
 
   const result: Record<string, string> = {};
+
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === "string") {
-      result[key] = value;
+      result[prefix ? `${prefix}.${key}` : key] = value;
+    } else if (typeof value === "object" && value !== null) {
+      // For nested objects, recursively extract colors with prefixed keys
+      const nestedPrefix = prefix ? `${prefix}.${key}` : key;
+      const nestedColors = safeExtractColors(value, nestedPrefix);
+      Object.assign(result, nestedColors);
     }
   }
+
   return result;
 };
 
 const ColorSystem = () => {
   const customPalette = palette as any;
 
-  const flightHelpColors = safeExtractColors(customPalette.flightHelp);
-  const zborAjutorColors = safeExtractColors(customPalette.zborAjutor);
-  const alertColors = safeExtractColors(customPalette.alerts);
-  const universalColors = safeExtractColors(customPalette.universal);
+  // Create a function to build sections from the palette
+  const buildSections = () => {
+    const sections = [];
 
-  // Define all sections with titles and colors
-  const sections = [
-    { title: "Flight Help", colors: flightHelpColors },
-    { title: "Zbor Ajutor", colors: zborAjutorColors },
-    { title: "Alerts", colors: alertColors },
-    { title: "Universal", colors: universalColors },
-  ];
+    // Process each top-level key in the palette
+    for (const [key, value] of Object.entries(customPalette)) {
+      // Skip mode or other non-object properties
+      if (typeof value !== "object" || value === null) {
+        if (key === "divider" && typeof value === "string") {
+          sections.push({
+            title: "Divider",
+            colors: { divider: value },
+          });
+        }
+        continue;
+      }
 
-  // Add divider if it exists
-  if (typeof customPalette.divider === "string") {
-    sections.push({
-      title: "Divider",
-      colors: { divider: customPalette.divider },
-    });
-  }
+      // Extract colors for this section
+      const colors = safeExtractColors(value);
+
+      // Only add sections with colors
+      if (Object.keys(colors).length > 0) {
+        sections.push({
+          title: key.charAt(0).toUpperCase() + key.slice(1), // Capitalize first letter
+          colors: colors,
+        });
+      }
+    }
+
+    return sections;
+  };
+
+  const sections = buildSections();
 
   return (
     <Container>
@@ -115,15 +135,13 @@ const ColorSystem = () => {
         These are the colors available in the FlightHelp UI theme.
       </p>
 
-      {sections
-        .filter((section) => Object.keys(section.colors).length > 0)
-        .map((section) => (
-          <ColorPalette
-            key={section.title}
-            title={section.title}
-            colors={section.colors}
-          />
-        ))}
+      {sections.map((section) => (
+        <ColorPalette
+          key={section.title}
+          title={section.title}
+          colors={section.colors}
+        />
+      ))}
     </Container>
   );
 };

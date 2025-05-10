@@ -3,58 +3,85 @@ import { PaletteOptions } from "@mui/material/styles";
 const palette: PaletteOptions = {
   mode: "light",
   flightHelp: {
-    "primary.hue": "#F6FBFB",
-    "primary.main": "#20ABAD",
-    "primary.main60": "#6FC3C4",
-    "primary.light": "#8FB2B2",
-    "primary.dark": "#0F5C5D",
-    "secondary.light": "#F9D8D0",
-    "secondary.main": "#FE5B35",
-    "secondary.dark": "#E64722",
-    "primary.dark2": "#063536",
+    primary: {
+      hue: "#F6FBFB",
+      main: "#20ABAD",
+      main60: "#6FC3C4",
+      light: "#8FB2B2",
+      dark: "#0F5C5D",
+      dark2: "#063536",
+    },
+    secondary: {
+      light: "#F9D8D0",
+      main: "#FE5B35",
+      dark: "#E64722",
+    },
   },
   zaborAjutor: {
-    "primary.hue": "#EFF7F1",
-    "primary.main": "#149F42",
-    "primary.main60": "#72C58E",
-    "primary.light": "#A9DCBA",
-    "primary.dark": "#0E1726",
-    "secondary.light": "#DEF9D0",
-    "secondary.main": "#218141",
-    "secondary.dark": "#115026",
+    primary: {
+      hue: "#EFF7F1",
+      main: "#149F42",
+      main60: "#72C58E",
+      light: "#A9DCBA",
+      dark: "#0E1726",
+    },
+    secondary: {
+      light: "#DEF9D0",
+      main: "#218141",
+      dark: "#115026",
+    },
   },
   alerts: {
-    "yellow.alert": "#FFF4E5",
-    "yellow.border": "#D4CBBE",
-    "yellow.accent": "#EF6C00",
-    "yellow.dark": "#663C00",
-    "blue.alert": "#E5F6FD",
-    "blue.light": "#D4EBF5",
-    "blue.border": "#C1C9D8",
-    "blue.accent": "#0288D1",
-    "blue.dark": "#014361",
-    "green.alert": "#EDF7ED",
-    "green.light": "#DFF1D5",
-    "green.border": "#A5B5A5",
-    "green.accent": "#2E7D32",
-    "green.dark": "#1E4620",
-    "red.alert": "#FDEDED",
-    "red.light": "#F9D8D0",
-    "red.border": "#DCCDCD",
-    "red.accent": "#D32F2F",
-    "red.dark": "#5F2120",
+    yellow: {
+      alert: "#FFF4E5",
+      border: "#D4CBBE",
+      accent: "#EF6C00",
+      dark: "#663C00",
+    },
+    blue: {
+      alert: "#E5F6FD",
+      light: "#D4EBF5",
+      border: "#C1C9D8",
+      accent: "#0288D1",
+      dark: "#014361",
+    },
+    green: {
+      alert: "#EDF7ED",
+      light: "#DFF1D5",
+      border: "#A5B5A5",
+      accent: "#2E7D32",
+      dark: "#1E4620",
+    },
+    red: {
+      alert: "#FDEDED",
+      light: "#F9D8D0",
+      border: "#DCCDCD",
+      accent: "#D32F2F",
+      dark: "#5F2120",
+    },
   },
   universal: {
-    "white.light": "#FFFFFF",
-    "navy.dark": "#293747",
-    "black.dark": "#000000",
-    "neutral.darkGrey": "#828282",
-    "neutral.grey2": "#CACACA",
-    "neutral.lightGrey": "#EEEEEE",
-    "flat.grey": "#F9F9F9",
-    "stroke.grey": "#DBDFE3",
+    white: {
+      light: "#FFFFFF",
+    },
+    navy: {
+      dark: "#293747",
+    },
+    black: {
+      dark: "#000000",
+    },
+    neutral: {
+      darkGrey: "#828282",
+      grey2: "#CACACA",
+      lightGrey: "#EEEEEE",
+    },
+    flat: {
+      grey: "#F9F9F9",
+    },
+    stroke: {
+      grey: "#DBDFE3",
+    },
   },
-
   backgrounds: {
     white: "#FFFFFF",
     system: "#F4F5F8",
@@ -64,7 +91,6 @@ const palette: PaletteOptions = {
     border: "#D6DCE6",
     addInInfo: "#FFF7E1",
   },
-
   buttons: {
     backgroundLight: "#8FB2B2",
     backgroundDisable: "#CACACA",
@@ -78,6 +104,7 @@ const palette: PaletteOptions = {
     iconButtonBackgroundFocus: "#0000000",
   },
 };
+
 // const palette: PaletteOptions = {
 //   mode: "light",
 //   common: {

@@ -84,69 +84,110 @@ declare module "@mui/material/styles" {
   }
 
   interface PaletteOptions {
+    mode?: string;
     flightHelp: {
-      "primary.hue": string;
-      "primary.main": string;
-      "primary.main60": string;
-      "primary.light": string;
-      "primary.dark": string;
-      "secondary.light": string;
-      "secondary.main": string;
-      "secondary.dark": string;
-      "primary.dark2": string;
+      primary: {
+        hue: string;
+        main: string;
+        main60: string;
+        light: string;
+        dark: string;
+        dark2: string;
+      };
+      secondary: {
+        light: string;
+        main: string;
+        dark: string;
+      };
     };
     zaborAjutor: {
-      "primary.hue": string;
-      "primary.main": string;
-      "primary.main60": string;
-      "primary.light": string;
-      "primary.dark": string;
-      "secondary.light": string;
-      "secondary.main": string;
-      "secondary.dark": string;
+      primary: {
+        hue: string;
+        main: string;
+        main60: string;
+        light: string;
+        dark: string;
+      };
+      secondary: {
+        light: string;
+        main: string;
+        dark: string;
+      };
+    };
+    alerts: {
+      yellow: {
+        alert: string;
+        border: string;
+        accent: string;
+        dark: string;
+      };
+      blue: {
+        alert: string;
+        light: string;
+        border: string;
+        accent: string;
+        dark: string;
+      };
+      green: {
+        alert: string;
+        light: string;
+        border: string;
+        accent: string;
+        dark: string;
+      };
+      red: {
+        alert: string;
+        light: string;
+        border: string;
+        accent: string;
+        dark: string;
+      };
     };
     universal: {
-      "white.light": string;
-      "navy.dark": string;
-      "black.dark": string;
-      "neutral.darkGrey": string;
-      "neutral.grey2": string;
-      "neutral.lightGrey": string;
-      "flat.grey": string;
-      "stroke.grey": string;
+      white: {
+        light: string;
+      };
+      navy: {
+        dark: string;
+      };
+      black: {
+        dark: string;
+      };
+      neutral: {
+        darkGrey: string;
+        grey2: string;
+        lightGrey: string;
+      };
+      flat: {
+        grey: string;
+      };
+      stroke: {
+        grey: string;
+      };
     };
-
-    alerts: {
-      "yellow.alert": string;
-      "yellow.border": string;
-      "yellow.accent": string;
-      "yellow.dark": string;
-      "blue.alert": string;
-      "blue.light": string;
-      "blue.accent": string;
-      "blue.dark": string;
-      "blue.border": string;
-      "green.alert": string;
-      "green.light": string;
-      "green.border": string;
-      "green.accent": string;
-      "green.dark": string;
-      "red.alert": string;
-      "red.light": string;
-      "red.border": string;
-      "red.accent": string;
-      "red.dark": string;
+    primary?: PalettePrimary; // Optional since it wasn't in your original palette
+    buttons: {
+      backgroundLight: string;
+      backgroundDisable: string;
+      backgroundSecondary: string;
+      backgroundDark: string;
+      backgroundSystem: string;
+      negativeDisabled: string;
+      grayHover: string;
+      grayPressed: string;
+      form: string;
+      iconButtonBackgroundFocus: string;
     };
-
-    // hart: HartPaletteColorOptions;
-    primary: PalettePrimary;
-    // systemHeader: SystemHeaderPaletteColorOptions;
-    buttons: ButtonPaletteColorOptions;
-    // shadow: ShadowPaletteColorOptions;
-    backgrounds: BackgroundsPaletteColorOptions;
-    // search: SelectPaletteColorOptions;
+    backgrounds: {
+      white: string;
+      system: string;
+      form: string;
+      login: string;
+      error: string;
+      border: string;
+      addInInfo: string;
+    };
   }
-
   interface TypographyVariants {
     allCaps: React.CSSProperties;
     bold18: React.CSSProperties;
