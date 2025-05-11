@@ -1,18 +1,35 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Button from "./Button";
-import { ThemeProvider } from "@mui/material/styles"; 
-import theme from "@/theme";
+import { ThemeProvider } from "@mui/material/styles";
+import { customCreateTheme } from "../../theme/themeFlighthelp";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
   component: Button,
+  parameters: {
+    themeMode: {
+      defaultValue: "flightHelp",
+    },
+  },
+  argTypes: {
+    themeVariant: {
+      control: "select",
+      options: ["flightHelp", "zaborAjutor"],
+      defaultValue: "flightHelp",
+      description: "Select theme variant",
+    },
+  },
   decorators: [
-    (Story) => (
-      <ThemeProvider theme={theme}>
-        <Story />
-      </ThemeProvider>
-    ),
+    (Story, context) => {
+      const selectedTheme =
+        context.args.themeVariant || context.globals.theme || "flightHelp";
+      return (
+        <ThemeProvider theme={customCreateTheme(selectedTheme)}>
+          <Story />
+        </ThemeProvider>
+      );
+    },
   ],
 };
 
@@ -20,12 +37,18 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-// Botones individuales con variantes correctas
+export const DefaultVariant: Story = {
+  args: {
+    children: "Botón primario",
+    size: "large",
+  },
+};
+
 export const PrimaryBlue: Story = {
   args: {
     variant: "primaryBlue",
     children: "Botón primario",
-    size: 'large',
+    size: "large",
   },
 };
 
@@ -33,7 +56,7 @@ export const SecondaryOrange: Story = {
   args: {
     variant: "secondaryOrange",
     children: "Botón Secundario",
-    size: 'large'
+    size: "large",
   },
 };
 
@@ -41,7 +64,7 @@ export const SecondaryOutlined: Story = {
   args: {
     variant: "secondaryOutlined",
     children: "Action",
-    size: 'large'
+    size: "large",
   },
 };
 
@@ -49,7 +72,7 @@ export const PrimaryOutline: Story = {
   args: {
     variant: "primaryOutline",
     children: "Action",
-    size: 'large'
+    size: "large",
   },
 };
 
@@ -57,19 +80,21 @@ export const PrimaryMain: Story = {
   args: {
     variant: "primaryMain",
     children: "Botón Primary Main",
-    size: 'large'
+    size: "large",
   },
 };
 
 export const Transparent: Story = {
   render: () => (
     <div
-      style={{ 
+      style={{
         background: "#D3D3D3",
         padding: "16px",
       }}
     >
-      <Button size="large" variant="transparent">Action</Button>
+      <Button size="large" variant="transparent">
+        Action
+      </Button>
     </div>
   ),
 };
@@ -80,7 +105,7 @@ export const DisabledPrimaryBlue: Story = {
     variant: "primaryBlue",
     children: "Action",
     disabled: true,
-    size: 'large'
+    size: "large",
   },
 };
 
@@ -89,7 +114,7 @@ export const DisabledSecondaryOrange: Story = {
     variant: "secondaryOrange",
     children: "Action",
     disabled: true,
-    size: 'large'
+    size: "large",
   },
 };
 
@@ -98,11 +123,10 @@ export const DisabledSecondaryOutlined: Story = {
     variant: "secondaryOutlined",
     children: "Action",
     disabled: true,
-    size: 'large'
+    size: "large",
   },
 };
 
-// Grupos de botones (secundarios)
 export const SecondaryButtonsGroup: Story = {
   render: () => (
     <div
@@ -160,10 +184,18 @@ export const PrimaryButtonsGroup: Story = {
       <Button variant="transparent">Action</Button>
       <Button variant="primaryMain">Action</Button>
 
-      <Button variant="primaryBlue" disabled>Action</Button>
-      <Button variant="primaryOutline" disabled>Action</Button>
-      <Button variant="transparent" disabled>Action</Button>
-      <Button variant="primaryMain" disabled>Action</Button>
+      <Button variant="primaryBlue" disabled>
+        Action
+      </Button>
+      <Button variant="primaryOutline" disabled>
+        Action
+      </Button>
+      <Button variant="transparent" disabled>
+        Action
+      </Button>
+      <Button variant="primaryMain" disabled>
+        Action
+      </Button>
     </div>
   ),
 };
@@ -255,10 +287,18 @@ export const AllButtonVariants: Story = {
             <Button variant="transparent">Action</Button>
             <Button variant="primaryMain">Action</Button>
 
-            <Button variant="primaryBlue" disabled>Action</Button>
-            <Button variant="primaryOutline" disabled>Action</Button>
-            <Button variant="transparent" disabled>Action</Button>
-            <Button variant="primaryMain" disabled>Action</Button>
+            <Button variant="primaryBlue" disabled>
+              Action
+            </Button>
+            <Button variant="primaryOutline" disabled>
+              Action
+            </Button>
+            <Button variant="transparent" disabled>
+              Action
+            </Button>
+            <Button variant="primaryMain" disabled>
+              Action
+            </Button>
           </div>
         </div>
       </div>

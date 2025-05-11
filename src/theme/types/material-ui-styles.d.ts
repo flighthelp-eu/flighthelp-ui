@@ -68,52 +68,50 @@ interface PalettePrimary extends PaletteColorOptions {
 }
 
 declare module "@mui/material/styles" {
-  interface Palette {
-    // hart: HartPaletteColorOptions;
-    primary: PalettePrimary;
+  interface CommonPalette {
     systemHeader: SystemHeaderPaletteColorOptions;
     typography: TypographyPaletteColorOptions;
     buttons: ButtonPaletteColorOptions;
-    // shadow: ShadowPaletteColorOptions;
+    shadow: ShadowPaletteColorOptions;
     backgrounds: BackgroundsPaletteColorOptions;
-    // search: SelectPaletteColorOptions;
-    flightHelp: PaletteOptions["flightHelp"];
-    zaborAjutor: PaletteOptions["zaborAjutor"];
     alerts: PaletteOptions["alerts"];
-    universal: PaletteOptions["universal"];
+  }
+
+  interface FlightHelpColors {
+    primary: {
+      hue: string;
+      main: string;
+      main60: string;
+      light: string;
+      dark: string;
+      hover: string;
+    };
+    secondary: {
+      light: string;
+      main: string;
+      dark: string;
+    };
+  }
+
+  interface ZaborAjutorColors {
+    primary: {
+      hue: string;
+      main: string;
+      main60: string;
+      light: string;
+      dark: string;
+      hover: string;
+    };
+    secondary: {
+      light: string;
+      main: string;
+      dark: string;
+    };
   }
 
   interface PaletteOptions {
     mode?: string;
-    flightHelp: {
-      primary: {
-        hue: string;
-        main: string;
-        main60: string;
-        light: string;
-        dark: string;
-        dark2: string;
-      };
-      secondary: {
-        light: string;
-        main: string;
-        dark: string;
-      };
-    };
-    zaborAjutor: {
-      primary: {
-        hue: string;
-        main: string;
-        main60: string;
-        light: string;
-        dark: string;
-      };
-      secondary: {
-        light: string;
-        main: string;
-        dark: string;
-      };
-    };
+
     alerts: {
       yellow: {
         alert: string;
@@ -143,29 +141,7 @@ declare module "@mui/material/styles" {
         dark: string;
       };
     };
-    universal: {
-      white: {
-        light: string;
-      };
-      navy: {
-        dark: string;
-      };
-      black: {
-        dark: string;
-      };
-      neutral: {
-        darkGrey: string;
-        grey2: string;
-        lightGrey: string;
-      };
-      flat: {
-        grey: string;
-      };
-      stroke: {
-        grey: string;
-      };
-    };
-    primary?: PalettePrimary; // Optional since it wasn't in your original palette
+
     buttons: {
       backgroundLight: string;
       backgroundDisable: string;
@@ -187,7 +163,34 @@ declare module "@mui/material/styles" {
       border: string;
       addInInfo: string;
     };
+    shadow: ShadowPaletteColorOptions;
+    white: {
+      light: string;
+    };
+    navy: {
+      dark: string;
+    };
+    black: {
+      dark: string;
+    };
+    neutral: {
+      darkGrey: string;
+      grey2: string;
+      lightGrey: string;
+    };
+    flat: {
+      grey: string;
+    };
+    stroke: {
+      grey: string;
+    };
   }
+
+  interface Palette
+    extends CommonPalette,
+      FlightHelpColors,
+      ZaborAjutorColors {}
+
   interface TypographyVariants {
     allCaps: React.CSSProperties;
     bold18: React.CSSProperties;
@@ -202,7 +205,6 @@ declare module "@mui/material/styles" {
     regular10: React.CSSProperties;
     normalLink: React.CSSProperties;
     buttonLink: React.CSSProperties;
-    // Mantener tus variantes personalizadas existentes
     h1Light: React.CSSProperties;
     h1Regular: React.CSSProperties;
     h1Bold: React.CSSProperties;

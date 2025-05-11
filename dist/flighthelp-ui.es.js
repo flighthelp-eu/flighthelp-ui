@@ -7029,36 +7029,73 @@ const styled = createStyled({
   rootShouldForwardProp
 });
 
-const palette = {
-  mode: "light",
-  flightHelp: {
-    primary: {
-      hue: "#F6FBFB",
-      main: "#20ABAD",
-      main60: "#6FC3C4",
-      light: "#8FB2B2",
-      dark: "#0F5C5D",
-      dark2: "#063536"
-    },
-    secondary: {
-      light: "#F9D8D0",
-      main: "#FE5B35",
-      dark: "#E64722"
-    }
+const legacyPalette = {
+  common: {
+    white: "#FFFFFF",
+    black: "#000000"
   },
-  zaborAjutor: {
-    primary: {
-      hue: "#EFF7F1",
-      main: "#149F42",
-      main60: "#72C58E",
-      light: "#A9DCBA",
-      dark: "#0E1726"
-    },
-    secondary: {
-      light: "#DEF9D0",
-      main: "#218141",
-      dark: "#115026"
-    }
+  primary: {
+    light: "#EDEFF2",
+    main: "#20ABAD",
+    dark: "#E64722"
+  },
+  secondary: {
+    light: "#EDEFF2",
+    main: "#FE5B35",
+    dark: "#EDEFF2"
+  },
+  backgrounds: {
+    white: "#FFFFFF",
+    system: "#F4F5F8",
+    form: "#1e6779",
+    login: "#FFFCF5",
+    error: "#FCF6F6",
+    border: "#D6DCE6",
+    addInInfo: "#FFF7E1"
+  },
+  buttons: {
+    backgroundLight: "#F6F7FA",
+    backgroundDisable: "#E4E4E4",
+    backgroundSecondary: "#383F50",
+    backgroundDark: "#1F232D",
+    backgroundSystem: "#F4F5F8",
+    negativeDisabled: "#282828",
+    grayHover: "#E2E8F0",
+    grayPressed: "#CED5DF",
+    form: "#EDEFF2",
+    iconButtonBackgroundFocus: "#0000000a"
+  },
+  divider: "#c7c7c7",
+  shadow: {
+    main: "-1px 1px 0px #1F232D;",
+    solid: "-1px 1px 0px #CED5DF",
+    drop: "rgba(52, 54, 91, 0.08)",
+    avatarBadge: "0px 4px 12px rgba(31, 35, 45, 0.12)",
+    tooltip: "0px 5px 5px rgba(0, 0, 0, 0.1), -1px 1px 0px #1F232D, 0px 10px 14px rgba(52, 54, 91, 0.14)",
+    disabled: " -1px 1px 0px #B8B8B8",
+    addInShadow: `-1px 1px 0px #D6DCE5, 0px 1px 0px #E0E4EB`
+  }
+};
+const universalPalette = {
+  white: {
+    light: "#FFFFFF"
+  },
+  navy: {
+    dark: "#293747"
+  },
+  black: {
+    dark: "#000000"
+  },
+  neutral: {
+    darkGrey: "#828282",
+    grey2: "#CACACA",
+    lightGrey: "#EEEEEE"
+  },
+  flat: {
+    grey: "#F9F9F9"
+  },
+  stroke: {
+    grey: "#DBDFE3"
   },
   alerts: {
     yellow: {
@@ -7088,50 +7125,48 @@ const palette = {
       accent: "#D32F2F",
       dark: "#5F2120"
     }
-  },
-  universal: {
-    white: {
-      light: "#FFFFFF"
-    },
-    navy: {
-      dark: "#293747"
-    },
-    black: {
-      dark: "#000000"
-    },
-    neutral: {
-      darkGrey: "#828282",
-      grey2: "#CACACA",
-      lightGrey: "#EEEEEE"
-    },
-    flat: {
-      grey: "#F9F9F9"
-    },
-    stroke: {
-      grey: "#DBDFE3"
-    }
-  },
-  backgrounds: {
-    white: "#FFFFFF",
-    system: "#F4F5F8",
-    form: "#1e6779",
-    login: "#FFFCF5",
-    error: "#FCF6F6",
-    border: "#D6DCE6",
-    addInInfo: "#FFF7E1"
-  },
-  buttons: {
-    backgroundLight: "#8FB2B2",
-    backgroundDisable: "#CACACA",
-    backgroundSecondary: "#FE5B35",
-    backgroundDark: "#0F5C5D",
-    backgroundSystem: "#F6FBFB",
-    negativeDisabled: "#828282",
-    grayHover: "#E2E8F0",
-    grayPressed: "#CED5DF",
-    form: "#EDEFF2",
-    iconButtonBackgroundFocus: "#0000000"
   }
+};
+const paletteZborAjutor = {
+  ...legacyPalette,
+  ...universalPalette,
+  mode: "light",
+  primary: {
+    hue: "#EFF7F1",
+    main: "#149F42",
+    main60: "#72C58E",
+    light: "#A9DCBA",
+    dark: "#0E1726"
+  },
+  secondary: {
+    light: "#DEF9D0",
+    main: "#218141",
+    dark: "#115026"
+  }
+};
+const paletteFlightHelp = {
+  ...legacyPalette,
+  ...universalPalette,
+  mode: "light",
+  primary: {
+    hue: "#F6FBFB",
+    main: "#20ABAD",
+    main60: "#6FC3C4",
+    light: "#8FB2B2",
+    dark: "#0F5C5D",
+    hover: "#063536"
+  },
+  secondary: {
+    light: "#F9D8D0",
+    main: "#FE5B35",
+    dark: "#E64722"
+  }
+};
+const palette = {
+  legacyPalette,
+  universalPalette,
+  paletteZborAjutor,
+  paletteFlightHelp
 };
 
 const breakpoints = {
@@ -7562,18 +7597,6 @@ const MuiButtonBase = (theme) => {
   return styleOverrides;
 };
 
-const MuiDialogTitle = (theme) => {
-  const appBarStyleOverrides = {
-    styleOverrides: {
-      root: {
-        ...theme.typography.h1Medium,
-        backgroundColor: theme.palette.backgrounds.system
-      }
-    }
-  };
-  return appBarStyleOverrides;
-};
-
 const MuiFormHelperText = (theme) => {
   const styleOverrides = {
     styleOverrides: {
@@ -7668,7 +7691,7 @@ const MuiIconButton = (theme) => {
     styleOverrides: {
       root: {
         "&:focus": {
-          backgroundColor: theme.palette.buttons.iconButtonBackgroundFocus
+          backgroundColor: theme.palette.buttons?.iconButtonBackgroundFocus
         }
       }
     }
@@ -7741,7 +7764,6 @@ const overrides = (theme) => {
   return {
     MuiButton: MuiButton(theme),
     MuiButtonBase: MuiButtonBase(),
-    MuiDialogTitle: MuiDialogTitle(theme),
     MuiInputBase: MuiInputBase(theme),
     MuiFormLabel: MuiFormLabel(theme),
     MuiFormHelperText: MuiFormHelperText(),
@@ -7782,15 +7804,15 @@ function buttons(theme) {
         {
           props: { variant: "primaryBlue" },
           style: {
-            backgroundColor: theme.palette.flightHelp?.primary?.dark,
+            backgroundColor: theme.palette?.primary?.dark,
             color: theme.palette.common.white,
             "&:hover": {
-              backgroundColor: theme.palette.flightHelp?.primary?.dark2,
+              backgroundColor: theme.palette?.primary?.hover,
               color: theme.palette.common.white
             },
             "&:focus": {
-              backgroundColor: theme.palette.flightHelp?.primary?.dark2,
-              border: `3px solid ${theme.palette.flightHelp?.primary?.main}`
+              backgroundColor: theme.palette?.primary?.hover,
+              border: `3px solid ${theme.palette?.primary?.main}`
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
@@ -7802,15 +7824,15 @@ function buttons(theme) {
         {
           props: { variant: "secondaryOrange" },
           style: {
-            backgroundColor: theme.palette.flightHelp?.secondary?.main,
+            backgroundColor: theme.palette?.secondary?.main,
             color: theme.palette.common.white,
-            borderColor: theme.palette.flightHelp?.secondary?.main,
+            borderColor: theme.palette?.secondary?.main,
             "&:hover": {
-              backgroundColor: theme.palette.flightHelp?.secondary?.dark
+              backgroundColor: theme.palette?.secondary?.dark
             },
             "&:focus": {
-              backgroundColor: theme.palette.flightHelp?.secondary?.main,
-              border: `3px solid ${theme.palette.flightHelp?.secondary?.dark}`
+              backgroundColor: theme.palette?.secondary?.main,
+              border: `3px solid ${theme.palette?.secondary?.dark}`
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
@@ -7823,14 +7845,14 @@ function buttons(theme) {
           props: { variant: "secondaryOutlined" },
           style: {
             backgroundColor: theme.palette.common.white,
-            color: theme.palette.flightHelp?.secondary?.main,
-            border: `1px solid ${theme.palette.flightHelp?.secondary?.dark}`,
+            color: theme.palette?.secondary?.main,
+            border: `1px solid ${theme.palette?.secondary?.dark}`,
             "&:hover": {
-              backgroundColor: theme.palette.flightHelp?.secondary?.light
+              backgroundColor: theme.palette?.secondary?.light
             },
             "&:focus": {
               borderColor: theme.palette.secondary.dark,
-              border: `3px solid ${theme.palette.flightHelp?.secondary?.main}`
+              border: `3px solid ${theme.palette?.secondary?.main}`
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
@@ -7843,15 +7865,15 @@ function buttons(theme) {
           props: { variant: "primaryOutline" },
           style: {
             backgroundColor: theme.palette.common.white,
-            color: theme.palette.flightHelp?.primary?.dark,
-            border: `1px solid ${theme.palette.flightHelp?.primary?.dark}`,
+            color: theme.palette?.primary?.dark,
+            border: `1px solid ${theme.palette?.primary?.dark}`,
             "&:hover": {
-              backgroundColor: theme.palette.flightHelp?.primary?.dark2,
+              backgroundColor: "#E64722",
               color: theme.palette.common.white
             },
             "&:focus": {
-              backgroundColor: theme.palette.flightHelp?.primary?.dark2,
-              border: `3px solid ${theme.palette.flightHelp?.primary?.main}`
+              backgroundColor: theme.palette?.secondary.main,
+              border: `3px solid ${theme.palette?.primary?.main}`
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
@@ -7881,15 +7903,15 @@ function buttons(theme) {
         {
           props: { variant: "primaryMain" },
           style: {
-            backgroundColor: theme.palette.flightHelp?.primary?.main,
+            backgroundColor: theme.palette?.primary?.main,
             color: theme.palette.common.white,
             "&:hover": {
-              backgroundColor: theme.palette.flightHelp?.primary?.dark,
+              backgroundColor: theme.palette?.primary?.dark,
               color: theme.palette.common.white
             },
             "&:focus": {
-              backgroundColor: theme.palette.flightHelp?.primary?.dark2,
-              border: `3px solid ${theme.palette.flightHelp?.primary?.main}`
+              backgroundColor: theme.palette?.primary?.dark2,
+              border: `3px solid ${theme.palette?.primary?.main}`
             },
             "&.Mui-disabled": {
               backgroundColor: "#D8DFE3",
@@ -7948,6 +7970,12 @@ const TextFieldStyled = styled$2(TextField)(() => ({
   "& .MuiOutlinedInput-root": {
     lineHeight: "1.5",
     backgroundColor: "#F4FEFE",
+    "&.MuiInputBase-multiline": {
+      padding: 0,
+      "& .MuiInputBase-inputMultiline": {
+        padding: `${theme.spacing(3)} ${theme.spacing(4)}`
+      }
+    },
     "& fieldset": {
       borderColor: "#6FC3C4",
       borderWidth: "1px",

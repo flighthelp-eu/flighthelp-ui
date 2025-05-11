@@ -18,6 +18,14 @@ export const TextFieldStyled = styled(TextField)(() => ({
     lineHeight: "1.5",
     backgroundColor: "#F4FEFE",
 
+    "&.MuiInputBase-multiline": {
+      padding: 0,
+
+      "& .MuiInputBase-inputMultiline": {
+        padding: `${theme.spacing(3)} ${theme.spacing(4)}`,
+      },
+    },
+
     "& fieldset": {
       borderColor: "#6FC3C4",
       borderWidth: "1px",

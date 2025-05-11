@@ -52,6 +52,23 @@ const preview: Preview = {
       },
     },
   },
+
+  globalTypes: {
+    theme: {
+      name: "Theme",
+      description: "Global theme for components",
+      defaultValue: "flightHelp",
+      toolbar: {
+        title: "Theme",
+        icon: "paintbrush",
+        items: [
+          { value: "flightHelp", icon: "circlehollow", title: "FlightHelp" },
+          { value: "zaborAjutor", icon: "circle", title: "ZaborAjutor" },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
 };
 
 export default preview;

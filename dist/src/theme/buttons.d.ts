@@ -1,4 +1,4 @@
-import { Theme } from '@mui/material/styles';
+import { Theme } from '@mui/material';
 export default function buttons(theme: Theme): {
     MuiButton: {
         defaultProps: {
@@ -27,12 +27,12 @@ export default function buttons(theme: Theme): {
                 backgroundColor: string;
                 color: string;
                 "&:hover": {
-                    backgroundColor: string;
+                    backgroundColor: any;
                     color: string;
                     opacity?: undefined;
                 };
                 "&:focus": {
-                    backgroundColor: string;
+                    backgroundColor: any;
                     border: string;
                     borderColor?: undefined;
                 };

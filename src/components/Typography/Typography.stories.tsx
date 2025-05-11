@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Typography, ThemeProvider, Box } from "@mui/material";
-import theme from "@/theme";
+import customCreateTheme from "../../theme/themeFlighthelp";
 
 interface TypographyContainerProps {
   children: React.ReactNode;
@@ -90,15 +90,17 @@ const TypographyExample: React.FC<TypographyExampleProps> = ({
 );
 
 const meta: Meta = {
-  title: "Theme/Typography",
+  title: "Components/Typography",
   decorators: [
-    (Story) => (
-      <ThemeProvider theme={theme}>
-        <Box sx={{ p: 3 }}>
+    (Story, context) => {
+      const selectedTheme =
+        context.args.themeVariant || context.globals.theme || "flightHelp";
+      return (
+        <ThemeProvider theme={customCreateTheme(selectedTheme)}>
           <Story />
-        </Box>
-      </ThemeProvider>
-    ),
+        </ThemeProvider>
+      );
+    },
   ],
 };
 

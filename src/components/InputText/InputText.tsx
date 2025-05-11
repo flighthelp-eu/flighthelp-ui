@@ -8,7 +8,7 @@ import theme from "../../theme";
 export interface TextFieldProps extends Omit<MuiTextFieldProps, "variant"> {
   variant?: "primary" | "secondary" | "error" | "masked";
   title?: string;
-  urlPrefix?: string; // Para la variante masked con URL
+  urlPrefix?: string;
 }
 
 const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(

@@ -24,18 +24,6 @@ declare const _default: (theme: Theme) => {
             }>;
         }[] | undefined;
     };
-    MuiDialogTitle: {
-        defaultProps?: import('@mui/material/styles').ComponentsProps["MuiDialogTitle"];
-        styleOverrides?: Partial<import('@mui/material/styles/overrides').OverridesStyleRules<"root", "MuiDialogTitle", unknown>> | undefined;
-        variants?: {
-            props: Partial<import('@mui/material').DialogTitleProps> | ((props: Partial<import('@mui/material').DialogTitleProps> & {
-                ownerState: Partial<import('@mui/material').DialogTitleProps>;
-            }) => boolean);
-            style: import('@mui/styled-engine').Interpolation<{
-                theme: unknown;
-            }>;
-        }[] | undefined;
-    };
     MuiInputBase: {
         defaultProps?: import('@mui/material/styles').ComponentsProps["MuiInputBase"];
         styleOverrides?: Partial<import('@mui/material/styles/overrides').OverridesStyleRules<keyof import('@mui/material').InputBaseClasses, "MuiInputBase", unknown>> | undefined;

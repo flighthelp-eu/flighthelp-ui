@@ -1,6 +1,8 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import TextField from "./InputText";
+import { ThemeProvider } from "@mui/material";
+import customCreateTheme from "../../theme/themeFlighthelp";
 
 const meta: Meta<typeof TextField> = {
   title: "Components/TextField",
@@ -16,6 +18,16 @@ const meta: Meta<typeof TextField> = {
     disabled: { control: "boolean" },
     required: { control: "boolean" },
   },
+  decorators: [
+    (Story, context) => {
+      const selectedTheme = context.globals.theme || "flightHelp";
+      return (
+        <ThemeProvider theme={customCreateTheme(selectedTheme)}>
+          <Story />
+        </ThemeProvider>
+      );
+    },
+  ],
 };
 
 export default meta;
