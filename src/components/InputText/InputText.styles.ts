@@ -1,5 +1,4 @@
 import { styled, Typography, TextField } from "@mui/material";
-import theme from "../../theme";
 
 export const Title = styled(Typography)(() => ({
   fontSize: "14px",
@@ -11,7 +10,7 @@ export const Title = styled(Typography)(() => ({
   display: "flex",
 }));
 
-export const TextFieldStyled = styled(TextField)(() => ({
+export const TextFieldStyled = styled(TextField)((theme) => ({
   boxSizing: "border-box",
   "& label.Mui-focused": { color: "#0F5C5D" },
   "& .MuiOutlinedInput-root": {
@@ -22,7 +21,7 @@ export const TextFieldStyled = styled(TextField)(() => ({
       padding: 0,
 
       "& .MuiInputBase-inputMultiline": {
-        padding: `${theme.spacing(3)} ${theme.spacing(4)}`,
+        padding: `12px 16px`,
       },
     },
 
@@ -49,7 +48,7 @@ export const TextFieldStyled = styled(TextField)(() => ({
     "& .MuiOutlinedInput-input": {
       fontSize: "14px",
       fontWeight: 400,
-      padding: `${theme.spacing(4)} ${theme.spacing(4)}`,
+      padding: "16px",
       "&::placeholder": {
         color: "#293747",
         opacity: 1,

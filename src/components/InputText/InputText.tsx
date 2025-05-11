@@ -3,7 +3,6 @@ import { TextFieldProps as MuiTextFieldProps } from "@mui/material/TextField";
 import { TextFieldStyled, Title } from "./InputText.styles";
 import { Typography } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
-import theme from "../../theme";
 
 export interface TextFieldProps extends Omit<MuiTextFieldProps, "variant"> {
   variant?: "primary" | "secondary" | "error" | "masked";
@@ -83,8 +82,7 @@ const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
           {...props}
           sx={{
             "& .MuiOutlinedInput-input": {
-              paddingLeft:
-                variant === "masked" ? "0px !important" : theme.spacing(4),
+              paddingLeft: variant === "masked" ? "0px !important" : "16px",
             },
           }}
         />
