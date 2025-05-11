@@ -5,7 +5,9 @@ import overrides from "./overrides";
 import buttons from "./buttons";
 import palette from "./palette";
 
-const getColors = (type: string) => {
+type themeType = "zaborAjutor" | "flightHelp";
+
+const getColors = (type: themeType) => {
   if (type === "zaborAjutor") {
     return palette.paletteZborAjutor;
   }
@@ -13,7 +15,7 @@ const getColors = (type: string) => {
   return palette.paletteFlightHelp;
 };
 
-export const customCreateTheme = (type: string) => {
+export const customCreateTheme = (type: themeType) => {
   const colors = getColors(type);
 
   const baseTheme: Theme = createTheme({
