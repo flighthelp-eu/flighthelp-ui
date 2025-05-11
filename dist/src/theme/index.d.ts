@@ -6,4 +6,4 @@ export { default as breakpoints } from './breakpoints';
 export { default as overrides } from './overrides';
 export { default as buttons } from './buttons';
 export { default as GlobalStyles } from './global';
-export { default as theme } from './theme';
+export { customCreateTheme } from './theme';

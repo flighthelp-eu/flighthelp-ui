@@ -1,22 +1,36 @@
 import { createTheme, Theme } from "@mui/material/styles";
-import palette from "./palette";
 import typography from "./typography";
 import breakpoints from "./breakpoints";
 import overrides from "./overrides";
 import buttons from "./buttons";
+import palette from "./palette";
 
-const baseTheme: Theme = createTheme({
-  typography,
-  spacing: 4,
-  palette,
-  breakpoints,
-});
+const getColors = (type: string) => {
+  if (type === "zaborAjutor") {
+    return palette.paletteZborAjutor;
+  }
 
-const theme = createTheme(baseTheme, {
-  components: {
-    ...overrides(baseTheme),
-    ...buttons(baseTheme),
-  },
-});
+  return palette.paletteFlightHelp;
+};
 
-export default theme;
+export const customCreateTheme = (type: string) => {
+  const colors = getColors(type);
+
+  const baseTheme: Theme = createTheme({
+    typography,
+    spacing: 4,
+    palette: colors,
+    breakpoints,
+  });
+
+  const flightHelpTheme = createTheme(baseTheme, {
+    components: {
+      ...overrides(baseTheme),
+      ...buttons(baseTheme),
+    },
+  });
+
+  return flightHelpTheme;
+};
+
+export default customCreateTheme;

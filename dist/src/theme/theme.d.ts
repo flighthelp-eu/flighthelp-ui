@@ -1,3 +1,3 @@
 import { Theme } from '@mui/material/styles';
-declare const theme: Theme;
-export default theme;
+export declare const customCreateTheme: (type: string) => Theme;
+export default customCreateTheme;

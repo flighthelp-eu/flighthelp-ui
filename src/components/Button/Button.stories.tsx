@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Button from "./Button";
 import { ThemeProvider } from "@mui/material/styles";
-import { customCreateTheme } from "../../theme/themeFlighthelp";
+import { customCreateTheme } from "../../theme/theme";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Button",

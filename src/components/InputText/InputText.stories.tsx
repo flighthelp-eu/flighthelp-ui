@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import TextField from "./InputText";
 import { ThemeProvider } from "@mui/material";
-import customCreateTheme from "../../theme/themeFlighthelp";
+import customCreateTheme from "../../theme/theme";
 
 const meta: Meta<typeof TextField> = {
   title: "Components/TextField",

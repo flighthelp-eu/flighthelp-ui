@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Typography, ThemeProvider, Box } from "@mui/material";
-import customCreateTheme from "../../theme/themeFlighthelp";
+import customCreateTheme from "../../theme/theme";
 
 interface TypographyContainerProps {
   children: React.ReactNode;

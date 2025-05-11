@@ -143,6 +143,8 @@ const paletteFlightHelp: PaletteOptions = {
   },
 };
 
+console.log(paletteFlightHelp);
+
 export default {
   legacyPalette,
   universalPalette,
