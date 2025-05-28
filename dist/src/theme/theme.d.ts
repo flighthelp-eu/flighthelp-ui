@@ -1,3 +1,4 @@
 import { Theme } from '@mui/material/styles';
-export declare const customCreateTheme: (type: string) => Theme;
+type themeType = "zaborAjutor" | "flightHelp";
+export declare const customCreateTheme: (type: themeType) => Theme;
 export default customCreateTheme;

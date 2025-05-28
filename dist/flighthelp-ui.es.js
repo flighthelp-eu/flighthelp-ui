@@ -1441,12 +1441,12 @@ const Title = styled$2(Typography$1)(() => ({
   position: "relative",
   display: "flex"
 }));
-const TextFieldStyled = styled$2(TextField)((theme) => ({
+const TextFieldStyled = styled$2(TextField)(({ theme }) => ({
   boxSizing: "border-box",
   "& label.Mui-focused": { color: "#0F5C5D" },
   "& .MuiOutlinedInput-root": {
     lineHeight: "1.5",
-    backgroundColor: "#F4FEFE",
+    backgroundColor: theme.palette.background,
     "&.MuiInputBase-multiline": {
       padding: 0,
       "& .MuiInputBase-inputMultiline": {
@@ -1454,7 +1454,7 @@ const TextFieldStyled = styled$2(TextField)((theme) => ({
       }
     },
     "& fieldset": {
-      borderColor: "#6FC3C4",
+      borderColor: theme.palette.primary.main,
       borderWidth: "1px",
       borderRadius: "8px"
     },
