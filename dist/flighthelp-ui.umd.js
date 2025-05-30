@@ -1468,7 +1468,7 @@
 	  "& label.Mui-focused": { color: "#0F5C5D" },
 	  "& .MuiOutlinedInput-root": {
 	    lineHeight: "1.5",
-	    backgroundColor: theme.palette.primary.hue,
+	    backgroundColor: theme.palette.primary.light,
 	    "&.MuiInputBase-multiline": {
 	      padding: 0,
 	      "& .MuiInputBase-inputMultiline": {
