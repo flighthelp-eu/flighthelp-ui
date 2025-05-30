@@ -1468,7 +1468,7 @@
 	  "& label.Mui-focused": { color: "#0F5C5D" },
 	  "& .MuiOutlinedInput-root": {
 	    lineHeight: "1.5",
-	    backgroundColor: theme.palette.primary.light,
+	    backgroundColor: theme.palette.primary.hue,
 	    "&.MuiInputBase-multiline": {
 	      padding: 0,
 	      "& .MuiInputBase-inputMultiline": {
@@ -1476,7 +1476,7 @@
 	      }
 	    },
 	    "& fieldset": {
-	      borderColor: theme.palette.primary.main,
+	      borderColor: theme.palette.primary.light,
 	      borderWidth: "1px",
 	      borderRadius: "8px"
 	    },
