@@ -1463,12 +1463,12 @@
 	  position: "relative",
 	  display: "flex"
 	}));
-	const TextFieldStyled = material.styled(material.TextField)((theme) => ({
+	const TextFieldStyled = material.styled(material.TextField)(({ theme }) => ({
 	  boxSizing: "border-box",
 	  "& label.Mui-focused": { color: "#0F5C5D" },
 	  "& .MuiOutlinedInput-root": {
 	    lineHeight: "1.5",
-	    backgroundColor: "#F4FEFE",
+	    backgroundColor: theme.palette.primary.hue,
 	    "&.MuiInputBase-multiline": {
 	      padding: 0,
 	      "& .MuiInputBase-inputMultiline": {
@@ -1476,7 +1476,7 @@
 	      }
 	    },
 	    "& fieldset": {
-	      borderColor: "#6FC3C4",
+	      borderColor: theme.palette.primary.light,
 	      borderWidth: "1px",
 	      borderRadius: "8px"
 	    },

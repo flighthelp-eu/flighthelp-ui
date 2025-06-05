@@ -10,12 +10,12 @@ export const Title = styled(Typography)(() => ({
   display: "flex",
 }));
 
-export const TextFieldStyled = styled(TextField)((theme) => ({
+export const TextFieldStyled = styled(TextField)(({ theme }) => ({
   boxSizing: "border-box",
   "& label.Mui-focused": { color: "#0F5C5D" },
   "& .MuiOutlinedInput-root": {
     lineHeight: "1.5",
-    backgroundColor: "#F4FEFE",
+    backgroundColor: theme.palette.primary.hue,
 
     "&.MuiInputBase-multiline": {
       padding: 0,
@@ -26,7 +26,7 @@ export const TextFieldStyled = styled(TextField)((theme) => ({
     },
 
     "& fieldset": {
-      borderColor: "#6FC3C4",
+      borderColor: theme.palette.primary.light,
       borderWidth: "1px",
       borderRadius: "8px",
     },
