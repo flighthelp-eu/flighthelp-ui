@@ -1,6 +1,6 @@
-import theme from "@/theme";
 import { Box, ThemeProvider, Typography } from "@mui/material";
-import { Meta, StoryObj } from "@storybook/react/*";
+import type { Meta, StoryObj } from "@storybook/react";
+import theme from "../../theme/theme";
 
 export const ResponsiveTypography: StoryObj = {
   parameters: {
