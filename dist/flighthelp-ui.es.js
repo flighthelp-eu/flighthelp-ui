@@ -1485,7 +1485,7 @@ const TextFieldStyled = styled$2(TextField)(({ theme }) => ({
   }
 }));
 
-function _objectWithoutPropertiesLoose$1(r, e) {
+function _objectWithoutPropertiesLoose(r, e) {
   if (null == r) return {};
   var t = {};
   for (var n in r) if ({}.hasOwnProperty.call(r, n)) {
@@ -1495,14 +1495,14 @@ function _objectWithoutPropertiesLoose$1(r, e) {
   return t;
 }
 
-function _extends$3() {
-  return _extends$3 = Object.assign ? Object.assign.bind() : function (n) {
+function _extends$1() {
+  return _extends$1 = Object.assign ? Object.assign.bind() : function (n) {
     for (var e = 1; e < arguments.length; e++) {
       var t = arguments[e];
       for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
     }
     return n;
-  }, _extends$3.apply(null, arguments);
+  }, _extends$1.apply(null, arguments);
 }
 
 var propTypes = {exports: {}};
@@ -2662,16 +2662,6 @@ const capitalize = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty
 	default: capitalize$1
 }, Symbol.toStringTag, { value: 'Module' }));
 
-function _extends$2() {
-  return _extends$2 = Object.assign ? Object.assign.bind() : function (n) {
-    for (var e = 1; e < arguments.length; e++) {
-      var t = arguments[e];
-      for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
-    }
-    return n;
-  }, _extends$2.apply(null, arguments);
-}
-
 // https://github.com/sindresorhus/is-plain-obj/blob/main/index.js
 function isPlainObject(item) {
   if (typeof item !== 'object' || item === null) {
@@ -2693,7 +2683,7 @@ function deepClone(source) {
 function deepmerge$1(target, source, options = {
   clone: true
 }) {
-  const output = options.clone ? _extends$2({}, target) : target;
+  const output = options.clone ? _extends$1({}, target) : target;
   if (isPlainObject(target) && isPlainObject(source)) {
     Object.keys(source).forEach(key => {
       if ( /*#__PURE__*/React.isValidElement(source[key])) {
@@ -2729,16 +2719,6 @@ function merge(acc, item) {
 }
 
 const responsivePropType = process.env.NODE_ENV !== 'production' ? PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.object, PropTypes.array]) : {};
-
-function _extends$1() {
-  return _extends$1 = Object.assign ? Object.assign.bind() : function (n) {
-    for (var e = 1; e < arguments.length; e++) {
-      var t = arguments[e];
-      for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
-    }
-    return n;
-  }, _extends$1.apply(null, arguments);
-}
 
 // The breakpoint **start** at this value.
 // For instance with the first breakpoint xs: [xs, sm[.
@@ -3663,16 +3643,6 @@ function unstable_createStyleFunctionSx() {
 }
 const styleFunctionSx$1 = unstable_createStyleFunctionSx();
 styleFunctionSx$1.filterProps = ['sx'];
-
-function _objectWithoutPropertiesLoose(r, e) {
-  if (null == r) return {};
-  var t = {};
-  for (var n in r) if ({}.hasOwnProperty.call(r, n)) {
-    if (-1 !== e.indexOf(n)) continue;
-    t[n] = r[n];
-  }
-  return t;
-}
 
 const _excluded$8 = ["sx"];
 const splitProps = props => {
@@ -5937,7 +5907,7 @@ function generateUtilityClass(componentName, slot, globalStatePrefix = 'Mui') {
 }
 
 function createMixins(breakpoints, mixins) {
-  return _extends$3({
+  return _extends$1({
     toolbar: {
       minHeight: 56,
       [breakpoints.up('xs')]: {
@@ -6583,7 +6553,7 @@ function createPalette(palette) {
       contrastThreshold = 3,
       tonalOffset = 0.2
     } = palette,
-    other = _objectWithoutPropertiesLoose$1(palette, _excluded$5);
+    other = _objectWithoutPropertiesLoose(palette, _excluded$5);
   const primary = palette.primary || getDefaultPrimary(mode);
   const secondary = palette.secondary || getDefaultSecondary(mode);
   const error = palette.error || getDefaultError(mode);
@@ -6611,7 +6581,7 @@ function createPalette(palette) {
     lightShade = 300,
     darkShade = 700
   }) => {
-    color = _extends$3({}, color);
+    color = _extends$1({}, color);
     if (!color.main && color[mainShade]) {
       color.main = color[mainShade];
     }
@@ -6651,9 +6621,9 @@ const theme2 = createTheme({ palette: {
       console.error(`MUI: The palette mode \`${mode}\` is not supported.`);
     }
   }
-  const paletteOutput = deepmerge$1(_extends$3({
+  const paletteOutput = deepmerge$1(_extends$1({
     // A collection of common colors.
-    common: _extends$3({}, common),
+    common: _extends$1({}, common),
     // prevent mutable object.
     // The palette mode, can be light or dark.
     mode,
@@ -6738,7 +6708,7 @@ function createTypography(palette, typography) {
       allVariants,
       pxToRem: pxToRem2
     } = _ref,
-    other = _objectWithoutPropertiesLoose$1(_ref, _excluded$4);
+    other = _objectWithoutPropertiesLoose(_ref, _excluded$4);
   if (process.env.NODE_ENV !== 'production') {
     if (typeof fontSize !== 'number') {
       console.error('MUI: `fontSize` is required to be a number.');
@@ -6749,7 +6719,7 @@ function createTypography(palette, typography) {
   }
   const coef = fontSize / 14;
   const pxToRem = pxToRem2 || (size => `${size / htmlFontSize * coef}rem`);
-  const buildVariant = (fontWeight, size, lineHeight, letterSpacing, casing) => _extends$3({
+  const buildVariant = (fontWeight, size, lineHeight, letterSpacing, casing) => _extends$1({
     fontFamily,
     fontWeight,
     fontSize: pxToRem(size),
@@ -6781,7 +6751,7 @@ function createTypography(palette, typography) {
       letterSpacing: 'inherit'
     }
   };
-  return deepmerge$1(_extends$3({
+  return deepmerge$1(_extends$1({
     htmlFontSize,
     pxToRem,
     fontFamily,
@@ -6848,15 +6818,15 @@ function getAutoHeightDuration(height) {
   return Math.round((4 + 15 * constant ** 0.25 + constant / 5) * 10);
 }
 function createTransitions(inputTransitions) {
-  const mergedEasing = _extends$3({}, easing, inputTransitions.easing);
-  const mergedDuration = _extends$3({}, duration, inputTransitions.duration);
+  const mergedEasing = _extends$1({}, easing, inputTransitions.easing);
+  const mergedDuration = _extends$1({}, duration, inputTransitions.duration);
   const create = (props = ['all'], options = {}) => {
     const {
         duration: durationOption = mergedDuration.standard,
         easing: easingOption = mergedEasing.easeInOut,
         delay = 0
       } = options,
-      other = _objectWithoutPropertiesLoose$1(options, _excluded$3);
+      other = _objectWithoutPropertiesLoose(options, _excluded$3);
     if (process.env.NODE_ENV !== 'production') {
       const isString = value => typeof value === 'string';
       // IE11 support, replace with Number.isNaN
@@ -6883,7 +6853,7 @@ function createTransitions(inputTransitions) {
     }
     return (Array.isArray(props) ? props : [props]).map(animatedProp => `${animatedProp} ${typeof durationOption === 'string' ? durationOption : formatMs(durationOption)} ${easingOption} ${typeof delay === 'string' ? delay : formatMs(delay)}`).join(',');
   };
-  return _extends$3({
+  return _extends$1({
     getAutoHeightDuration,
     create
   }, inputTransitions, {
@@ -6913,7 +6883,7 @@ function createTheme(options = {}, ...args) {
       transitions: transitionsInput = {},
       typography: typographyInput = {}
     } = options,
-    other = _objectWithoutPropertiesLoose$1(options, _excluded$2);
+    other = _objectWithoutPropertiesLoose(options, _excluded$2);
   if (options.vars &&
   // The error should throw only for the root theme creation because user is not allowed to use a custom node `vars`.
   // `generateCssVars` is the closest identifier for checking that the `options` is a result of `extendTheme` with CSS variables so that user can create new theme for nested ThemeProvider.
@@ -6930,7 +6900,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
     shadows: shadows.slice(),
     typography: createTypography(palette, typographyInput),
     transitions: createTransitions(transitionsInput),
-    zIndex: _extends$3({}, zIndex)
+    zIndex: _extends$1({}, zIndex)
   });
   muiTheme = deepmerge$1(muiTheme, other);
   muiTheme = args.reduce((acc, argument) => deepmerge$1(acc, argument), muiTheme);
@@ -6964,7 +6934,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
       }
     });
   }
-  muiTheme.unstable_sxConfig = _extends$3({}, defaultSxConfig, other == null ? void 0 : other.unstable_sxConfig);
+  muiTheme.unstable_sxConfig = _extends$1({}, defaultSxConfig, other == null ? void 0 : other.unstable_sxConfig);
   muiTheme.unstable_sx = function sx(props) {
     return styleFunctionSx$1({
       sx: props,
@@ -6998,10 +6968,10 @@ const styled = createStyled({
  * @returns {object} resolved props
  */
 function resolveProps(defaultProps, props) {
-  const output = _extends$2({}, props);
+  const output = _extends$1({}, props);
   Object.keys(defaultProps).forEach(propName => {
     if (propName.toString().match(/^(components|slots)$/)) {
-      output[propName] = _extends$2({}, defaultProps[propName], output[propName]);
+      output[propName] = _extends$1({}, defaultProps[propName], output[propName]);
     } else if (propName.toString().match(/^(componentsProps|slotProps)$/)) {
       const defaultSlotProps = defaultProps[propName] || {};
       const slotProps = props[propName];
@@ -7013,7 +6983,7 @@ function resolveProps(defaultProps, props) {
         // Reduce the iteration if the default slot props is empty
         output[propName] = slotProps;
       } else {
-        output[propName] = _extends$2({}, slotProps);
+        output[propName] = _extends$1({}, slotProps);
         Object.keys(defaultSlotProps).forEach(slotPropName => {
           output[propName][slotPropName] = resolveProps(defaultSlotProps[slotPropName], slotProps[slotPropName]);
         });
@@ -7132,7 +7102,7 @@ const TypographyRoot = styled('span', {
 })(({
   theme,
   ownerState
-}) => _extends$3({
+}) => _extends$1({
   margin: 0
 }, ownerState.variant === 'inherit' && {
   // Some elements, like <button> on Chrome have default font that doesn't inherit, reset this.
@@ -7179,7 +7149,7 @@ const Typography = /*#__PURE__*/React.forwardRef(function Typography(inProps, re
     name: 'MuiTypography'
   });
   const color = transformDeprecatedColors(themeProps.color);
-  const props = extendSxProp(_extends$3({}, themeProps, {
+  const props = extendSxProp(_extends$1({}, themeProps, {
     color
   }));
   const {
@@ -7192,8 +7162,8 @@ const Typography = /*#__PURE__*/React.forwardRef(function Typography(inProps, re
       variant = 'body1',
       variantMapping = defaultVariantMapping
     } = props,
-    other = _objectWithoutPropertiesLoose$1(props, _excluded$1);
-  const ownerState = _extends$3({}, props, {
+    other = _objectWithoutPropertiesLoose(props, _excluded$1);
+  const ownerState = _extends$1({}, props, {
     align,
     color,
     className,
@@ -7206,7 +7176,7 @@ const Typography = /*#__PURE__*/React.forwardRef(function Typography(inProps, re
   });
   const Component = component || (paragraph ? 'p' : variantMapping[variant] || defaultVariantMapping[variant]) || 'span';
   const classes = useUtilityClasses$1(ownerState);
-  return /*#__PURE__*/jsxRuntimeExports.jsx(TypographyRoot, _extends$3({
+  return /*#__PURE__*/jsxRuntimeExports.jsx(TypographyRoot, _extends$1({
     as: Component,
     ref: ref,
     ownerState: ownerState,
@@ -7335,7 +7305,7 @@ const InputAdornmentRoot = styled('div', {
 })(({
   theme,
   ownerState
-}) => _extends$3({
+}) => _extends$1({
   display: 'flex',
   height: '0.01em',
   // Fix IE11 flexbox alignment. To remove at some point.
@@ -7372,7 +7342,7 @@ const InputAdornment = /*#__PURE__*/React.forwardRef(function InputAdornment(inP
       position,
       variant: variantProp
     } = props,
-    other = _objectWithoutPropertiesLoose$1(props, _excluded);
+    other = _objectWithoutPropertiesLoose(props, _excluded);
   const muiFormControl = useFormControl() || {};
   let variant = variantProp;
   if (variantProp && muiFormControl.variant) {
@@ -7385,7 +7355,7 @@ const InputAdornment = /*#__PURE__*/React.forwardRef(function InputAdornment(inP
   if (muiFormControl && !variant) {
     variant = muiFormControl.variant;
   }
-  const ownerState = _extends$3({}, props, {
+  const ownerState = _extends$1({}, props, {
     hiddenLabel: muiFormControl.hiddenLabel,
     size: muiFormControl.size,
     disablePointerEvents,
@@ -7395,7 +7365,7 @@ const InputAdornment = /*#__PURE__*/React.forwardRef(function InputAdornment(inP
   const classes = useUtilityClasses(ownerState);
   return /*#__PURE__*/jsxRuntimeExports.jsx(FormControlContext.Provider, {
     value: null,
-    children: /*#__PURE__*/jsxRuntimeExports.jsx(InputAdornmentRoot, _extends$3({
+    children: /*#__PURE__*/jsxRuntimeExports.jsx(InputAdornmentRoot, _extends$1({
       as: component,
       ownerState: ownerState,
       className: clsx(classes.root, className),
