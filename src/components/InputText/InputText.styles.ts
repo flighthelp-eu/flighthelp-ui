@@ -1,3 +1,4 @@
+import { palette } from "@/theme";
 import { styled, Typography, TextField } from "@mui/material";
 
 export const Title = styled(Typography)(() => ({
@@ -12,7 +13,15 @@ export const Title = styled(Typography)(() => ({
 
 export const TextFieldStyled = styled(TextField)(({ theme }) => ({
   boxSizing: "border-box",
-  "& label.Mui-focused": { color: "#0F5C5D" },
+  "& .MuiInputLabel-root": {
+    color: palette.universalPalette.navy.dark,
+  },
+  "& .MuiInputLabel-root.Mui-focused": {
+    color: "#0F5C5D",
+  },
+  "& .MuiInputLabel-shrink": {
+    color: "#0F5C5D",
+  },
   "& .MuiOutlinedInput-root": {
     lineHeight: "1.5",
     backgroundColor: theme.palette.primary.hue,
@@ -50,7 +59,7 @@ export const TextFieldStyled = styled(TextField)(({ theme }) => ({
       fontWeight: 400,
       padding: "16px",
       "&::placeholder": {
-        color: "#293747",
+        color: palette.universalPalette.navy.dark,
         opacity: 1,
       },
     },
