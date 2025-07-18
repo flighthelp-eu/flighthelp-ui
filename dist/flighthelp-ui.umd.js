@@ -1591,7 +1591,7 @@
 	  ...universalPalette,
 	  mode: "light",
 	  primary: {
-	    hue: "#F6FBFB",
+	    hue: "#F4FEFE",
 	    main: "#20ABAD",
 	    main60: "#6FC3C4",
 	    light: "#8FB2B2",
