@@ -1454,7 +1454,7 @@ const TextFieldStyled = styled$2(TextField)(({ theme }) => ({
       }
     },
     "& fieldset": {
-      borderColor: theme.palette.primary.light,
+      borderColor: theme.palette.primary.main60,
       borderWidth: "1px",
       borderRadius: "8px"
     },
@@ -8438,10 +8438,19 @@ const customCreateTheme = (type) => {
     palette: colors,
     breakpoints
   });
-  const flightHelpTheme = createTheme(baseTheme, {
+  const componentsOverrides = overrides(baseTheme);
+  const buttonOverrides = buttons(baseTheme);
+  const flightHelpTheme = createTheme({
+    typography,
+    spacing: 4,
+    palette: colors,
+    breakpoints,
     components: {
-      ...overrides(baseTheme),
-      ...buttons(baseTheme)
+      ...componentsOverrides,
+      MuiButton: {
+        ...componentsOverrides.MuiButton,
+        ...buttonOverrides.MuiButton
+      }
     }
   });
   return flightHelpTheme;

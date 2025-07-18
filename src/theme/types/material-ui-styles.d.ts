@@ -77,6 +77,18 @@ declare module "@mui/material/styles" {
     alerts: PaletteOptions["alerts"];
   }
 
+  interface PaletteColor {
+    hue?: string;
+    main60?: string;
+    hover?: string;
+  }
+
+  interface PaletteColorOptions {
+    hue?: string;
+    main60?: string;
+    hover?: string;
+  }
+
   interface FlightHelpColors {
     primary: {
       hue: string;

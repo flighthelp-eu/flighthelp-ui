@@ -26,7 +26,7 @@ export const TextFieldStyled = styled(TextField)(({ theme }) => ({
     },
 
     "& fieldset": {
-      borderColor: theme.palette.primary.light,
+      borderColor: theme.palette.primary.main60,
       borderWidth: "1px",
       borderRadius: "8px",
     },
