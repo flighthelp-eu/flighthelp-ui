@@ -2,13 +2,14 @@ import { palette } from "@/theme";
 import { styled, Typography, TextField } from "@mui/material";
 
 export const Title = styled(Typography)(() => ({
-  fontSize: "14px",
+  fontSize: "10px",
   fontWeight: 600,
-  lineHeight: "22px",
+  lineHeight: "14px",
   letterSpacing: "-0.28px",
   pb: 1,
   position: "relative",
   display: "flex",
+  color: palette.universalPalette.navy.dark,
 }));
 
 export const TextFieldStyled = styled(TextField)(({ theme }) => ({
@@ -55,9 +56,10 @@ export const TextFieldStyled = styled(TextField)(({ theme }) => ({
       color: "#0F5C5D",
     },
     "& .MuiOutlinedInput-input": {
-      fontSize: "14px",
+      fontSize: "12px",
       fontWeight: 400,
-      padding: "16px",
+      lineHeight: "14px",
+      padding: "18px",
       "&::placeholder": {
         color: palette.universalPalette.navy.dark,
         opacity: 1,

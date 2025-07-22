@@ -7946,13 +7946,14 @@ const customCreateTheme = (type) => {
 };
 
 const Title = styled$2(Typography$1)(() => ({
-  fontSize: "14px",
+  fontSize: "10px",
   fontWeight: 600,
-  lineHeight: "22px",
+  lineHeight: "14px",
   letterSpacing: "-0.28px",
   pb: 1,
   position: "relative",
-  display: "flex"
+  display: "flex",
+  color: palette.universalPalette.navy.dark
 }));
 const TextFieldStyled = styled$2(TextField)(({ theme }) => ({
   boxSizing: "border-box",
@@ -7995,9 +7996,10 @@ const TextFieldStyled = styled$2(TextField)(({ theme }) => ({
       color: "#0F5C5D"
     },
     "& .MuiOutlinedInput-input": {
-      fontSize: "14px",
+      fontSize: "12px",
       fontWeight: 400,
-      padding: "16px",
+      lineHeight: "14px",
+      padding: "18px",
       "&::placeholder": {
         color: palette.universalPalette.navy.dark,
         opacity: 1
@@ -8440,7 +8442,12 @@ const InputText = React__default.forwardRef(
         props.required ? /* @__PURE__ */ jsxRuntimeExports.jsx(
           Typography$1,
           {
-            sx: { fontSize: 20, pl: 0.3, display: "block" },
+            sx: {
+              fontSize: 14,
+              pl: 0.3,
+              display: "block",
+              lineHeight: "16px"
+            },
             color: "#C10000",
             children: "*"
           }

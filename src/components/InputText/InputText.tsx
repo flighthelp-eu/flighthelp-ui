@@ -66,7 +66,12 @@ const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
             {title}{" "}
             {props.required ? (
               <Typography
-                sx={{ fontSize: 20, pl: 0.3, display: "block" }}
+                sx={{
+                  fontSize: 14,
+                  pl: 0.3,
+                  display: "block",
+                  lineHeight: "16px",
+                }}
                 color="#C10000"
               >
                 *
