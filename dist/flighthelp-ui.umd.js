@@ -8020,7 +8020,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	    "& .MuiOutlinedInput-input": {
 	      fontSize: "12px",
 	      fontWeight: 400,
-	      lineHeight: "14px",
+	      lineHeight: "18px",
 	      padding: "18px",
 	      "&::placeholder": {
 	        color: palette.universalPalette.navy.dark,

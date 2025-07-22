@@ -58,7 +58,7 @@ export const TextFieldStyled = styled(TextField)(({ theme }) => ({
     "& .MuiOutlinedInput-input": {
       fontSize: "12px",
       fontWeight: 400,
-      lineHeight: "14px",
+      lineHeight: "18px",
       padding: "18px",
       "&::placeholder": {
         color: palette.universalPalette.navy.dark,
