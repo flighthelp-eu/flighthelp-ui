@@ -1,7 +1,7 @@
 import { createTheme, Theme } from "@mui/material/styles";
 import typography from "./typography";
 import breakpoints from "./breakpoints";
-import overrides from "./overrides";
+import overrides from "./overrides/index";
 import buttons from "./buttons";
 import palette from "./palette";
 
@@ -25,10 +25,20 @@ export const customCreateTheme = (type: themeType) => {
     breakpoints,
   });
 
-  const flightHelpTheme = createTheme(baseTheme, {
+  const componentsOverrides = overrides(baseTheme);
+  const buttonOverrides = buttons(baseTheme);
+  
+  const flightHelpTheme = createTheme({
+    typography,
+    spacing: 4,
+    palette: colors as any,
+    breakpoints,
     components: {
-      ...overrides(baseTheme),
-      ...buttons(baseTheme),
+      ...componentsOverrides,
+      MuiButton: {
+        ...componentsOverrides.MuiButton,
+        ...buttonOverrides.MuiButton,
+      } as any,
     },
   });
 

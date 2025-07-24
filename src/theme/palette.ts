@@ -1,5 +1,3 @@
-import { PaletteOptions } from "@mui/material/styles";
-
 const legacyPalette = {
   common: {
     white: "#FFFFFF",
@@ -103,10 +101,10 @@ const universalPalette = {
   },
 };
 
-const paletteZborAjutor: PaletteOptions = {
+const paletteZborAjutor = {
   ...legacyPalette,
   ...universalPalette,
-  mode: "light",
+  mode: "light" as const,
 
   primary: {
     hue: "#EFF7F1",
@@ -122,14 +120,14 @@ const paletteZborAjutor: PaletteOptions = {
   },
 };
 
-const paletteFlightHelp: PaletteOptions = {
+const paletteFlightHelp = {
   ...legacyPalette,
   ...universalPalette,
 
-  mode: "light",
+  mode: "light" as const,
 
   primary: {
-    hue: "#F6FBFB",
+    hue: "#F4FEFE",
     main: "#20ABAD",
     main60: "#6FC3C4",
     light: "#8FB2B2",

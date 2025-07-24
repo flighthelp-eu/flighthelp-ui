@@ -27,12 +27,12 @@ export default function buttons(theme: Theme): {
                 backgroundColor: string;
                 color: string;
                 "&:hover": {
-                    backgroundColor: any;
+                    backgroundColor: string | undefined;
                     color: string;
                     opacity?: undefined;
                 };
                 "&:focus": {
-                    backgroundColor: any;
+                    backgroundColor: string | undefined;
                     border: string;
                     borderColor?: undefined;
                 };
