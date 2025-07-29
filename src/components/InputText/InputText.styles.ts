@@ -2,11 +2,10 @@ import { palette } from "@/theme";
 import { styled, Typography, TextField } from "@mui/material";
 
 export const Title = styled(Typography)(() => ({
-  fontSize: "10px",
+  fontSize: "12px",
   fontWeight: 600,
-  lineHeight: "14px",
-  letterSpacing: "-0.28px",
-  pb: 1,
+  lineHeight: "18px",
+  letterSpacing: "-0.24px",
   position: "relative",
   display: "flex",
   color: palette.universalPalette.navy.dark,
@@ -63,6 +62,7 @@ export const TextFieldStyled = styled(TextField)(({ theme }) => ({
       "&::placeholder": {
         color: palette.universalPalette.navy.dark,
         opacity: 1,
+        fontSize: "12px",
       },
     },
   },
