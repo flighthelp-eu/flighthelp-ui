@@ -1,7 +1,7 @@
 import React from "react";
 import { TextFieldProps as MuiTextFieldProps } from "@mui/material/TextField";
 import { TextFieldStyled, Title } from "./InputText.styles";
-import { Stack, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 
 export interface TextFieldProps extends Omit<MuiTextFieldProps, "variant"> {
@@ -60,19 +60,22 @@ const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
     }
 
     return (
-      <Stack gap="4px">
+      <>
         {title && (
           <Title>
             {title}{" "}
             {props.required ? (
-              <span
-                style={{
-                  paddingLeft: "2px",
-                  color: "#C10000",
+              <Typography
+                sx={{
+                  fontSize: 14,
+                  pl: 0.3,
+                  display: "block",
+                  lineHeight: "16px",
                 }}
+                color="#C10000"
               >
                 *
-              </span>
+              </Typography>
             ) : (
               ""
             )}
@@ -88,7 +91,7 @@ const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
             },
           }}
         />
-      </Stack>
+      </>
     );
   }
 );
