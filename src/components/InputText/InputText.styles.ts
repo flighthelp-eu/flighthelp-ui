@@ -58,7 +58,7 @@ export const TextFieldStyled = styled(TextField)(({ theme }) => ({
       fontSize: "16px",
       fontWeight: 400,
       lineHeight: "18px",
-      padding: "10px 16px",
+      padding: "10px 14px",
       "&::placeholder": {
         color: palette.universalPalette.navy.dark,
         opacity: 0.7,
