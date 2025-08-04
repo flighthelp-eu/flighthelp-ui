@@ -7946,7 +7946,7 @@ const customCreateTheme = (type) => {
 };
 
 const Title = styled$2(Typography$1)(() => ({
-  fontSize: "14px",
+  fontSize: "16px",
   fontWeight: 600,
   lineHeight: "18px",
   letterSpacing: "-0.24px",
@@ -7995,14 +7995,14 @@ const TextFieldStyled = styled$2(TextField)(({ theme }) => ({
       color: "#0F5C5D"
     },
     "& .MuiOutlinedInput-input": {
-      fontSize: "14px",
+      fontSize: "16px",
       fontWeight: 400,
       lineHeight: "18px",
       padding: "10px 16px",
       "&::placeholder": {
         color: palette.universalPalette.navy.dark,
         opacity: 0.7,
-        fontSize: "14px"
+        fontSize: "16px"
       }
     }
   }
