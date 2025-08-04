@@ -7998,7 +7998,7 @@ const TextFieldStyled = styled$2(TextField)(({ theme }) => ({
       fontSize: "16px",
       fontWeight: 400,
       lineHeight: "18px",
-      padding: "11px 14px",
+      padding: "10px 14px",
       "&::placeholder": {
         color: palette.universalPalette.navy.dark,
         opacity: 0.7,
