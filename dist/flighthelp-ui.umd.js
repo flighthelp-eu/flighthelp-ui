@@ -8017,14 +8017,14 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	    },
 	    "& .MuiOutlinedInput-input": {
 	      paddingLeft: ownerState.variant === "masked" ? "0px !important" : "16px",
-	      fontSize: { xs: "0.95rem !important", md: "1rem !important" },
+	      fontSize: "0.9rem",
 	      fontWeight: 400,
 	      lineHeight: "1.2rem !important",
-	      padding: "10px 14px",
+	      padding: "14px 14px",
 	      "&::placeholder": {
 	        color: palette.universalPalette.navy.dark,
 	        opacity: 0.7,
-	        fontSize: { xs: "0.95rem !important", md: "1rem !important" }
+	        fontSize: "0.9rem"
 	      }
 	    }
 	  }
@@ -8457,21 +8457,30 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	        };
 	        break;
 	    }
-	    return /* @__PURE__ */ jsxRuntimeExports.jsxs(material.Stack, { gap: "4px", children: [
-	      title && /* @__PURE__ */ jsxRuntimeExports.jsxs(Title, { sx: { fontSize: { xs: "0.95rem", md: "1rem" } }, children: [
-	        title,
-	        " ",
-	        props.required ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-	          "span",
-	          {
-	            style: {
-	              paddingLeft: "2px",
-	              color: "#C10000"
-	            },
-	            children: "*"
-	          }
-	        ) : ""
-	      ] }),
+	    return /* @__PURE__ */ jsxRuntimeExports.jsxs(material.Stack, { gap: "2px", children: [
+	      title && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+	        Title,
+	        {
+	          sx: {
+	            fontSize: "0.9rem",
+	            "@media (max-width: 320px)": { fontSize: "0.75rem" }
+	          },
+	          children: [
+	            title,
+	            " ",
+	            props.required ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+	              "span",
+	              {
+	                style: {
+	                  paddingLeft: "2px",
+	                  color: "#C10000"
+	                },
+	                children: "*"
+	              }
+	            ) : ""
+	          ]
+	        }
+	      ),
 	      /* @__PURE__ */ jsxRuntimeExports.jsx(
 	        TextFieldStyled,
 	        {
