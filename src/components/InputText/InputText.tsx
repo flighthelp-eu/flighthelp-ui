@@ -3,6 +3,7 @@ import { TextFieldProps as MuiTextFieldProps } from "@mui/material/TextField";
 import { TextFieldStyled, Title } from "./InputText.styles";
 import { Stack, Typography } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
+import { palette } from "@/theme";
 
 export interface TextFieldProps extends Omit<MuiTextFieldProps, "variant"> {
   variant?: "primary" | "secondary" | "error" | "masked";
@@ -82,11 +83,20 @@ const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
           ref={ref}
           {...muiProps}
           {...props}
-          sx={{
+          sx={() => ({
             "& .MuiOutlinedInput-input": {
               paddingLeft: variant === "masked" ? "0px !important" : "16px",
+              fontSize: { xs: "0.95rem !important", md: "1rem !important" },
+              fontWeight: 400,
+              lineHeight: "1.2rem !important",
+              padding: "10px 14px",
+              "&::placeholder": {
+                color: palette.universalPalette.navy.dark,
+                opacity: 0.7,
+                fontSize: { xs: "0.95rem !important", md: "1rem !important" },
+              },
             },
-          }}
+          })}
         />
       </Stack>
     );
