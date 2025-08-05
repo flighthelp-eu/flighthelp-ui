@@ -60,7 +60,7 @@ const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
     }
 
     return (
-      <Stack gap="4px">
+      <Stack gap="2px">
         {title && (
           <Title
             sx={{

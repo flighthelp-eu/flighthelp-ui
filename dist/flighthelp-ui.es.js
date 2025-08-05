@@ -8435,7 +8435,7 @@ const InputText = React__default.forwardRef(
         };
         break;
     }
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(Stack, { gap: "4px", children: [
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(Stack, { gap: "2px", children: [
       title && /* @__PURE__ */ jsxRuntimeExports.jsxs(
         Title,
         {
