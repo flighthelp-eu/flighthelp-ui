@@ -7968,9 +7968,8 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	};
 
 	const Title = material.styled(material.Typography)(() => ({
-	  fontSize: "16px",
 	  fontWeight: 600,
-	  lineHeight: "18px",
+	  lineHeight: "1.2rem",
 	  letterSpacing: "-0.24px",
 	  position: "relative",
 	  display: "flex",
@@ -8017,14 +8016,14 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	      color: "#0F5C5D"
 	    },
 	    "& .MuiOutlinedInput-input": {
-	      fontSize: "16px",
+	      fontSize: { xs: "0.95rem", md: "1rem" },
 	      fontWeight: 400,
-	      lineHeight: "18px",
+	      lineHeight: "1.2rem",
 	      padding: "10px 14px",
 	      "&::placeholder": {
 	        color: palette.universalPalette.navy.dark,
 	        opacity: 0.7,
-	        fontSize: "16px"
+	        fontSize: { xs: "0.95rem", md: "1rem" }
 	      }
 	    }
 	  }
@@ -8458,7 +8457,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	        break;
 	    }
 	    return /* @__PURE__ */ jsxRuntimeExports.jsxs(material.Stack, { gap: "4px", children: [
-	      title && /* @__PURE__ */ jsxRuntimeExports.jsxs(Title, { children: [
+	      title && /* @__PURE__ */ jsxRuntimeExports.jsxs(Title, { sx: { fontSize: { xs: "0.95rem", md: "1rem" } }, children: [
 	        title,
 	        " ",
 	        props.required ? /* @__PURE__ */ jsxRuntimeExports.jsx(

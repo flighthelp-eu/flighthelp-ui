@@ -62,7 +62,7 @@ const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
     return (
       <Stack gap="4px">
         {title && (
-          <Title>
+          <Title sx={{ fontSize: { xs: "0.95rem", md: "1rem" } }}>
             {title}{" "}
             {props.required ? (
               <span
