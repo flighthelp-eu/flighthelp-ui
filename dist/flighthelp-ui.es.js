@@ -7946,15 +7946,14 @@ const customCreateTheme = (type) => {
 };
 
 const Title = styled$2(Typography$1)(() => ({
-  fontSize: "16px",
   fontWeight: 600,
-  lineHeight: "18px",
+  lineHeight: "1.2rem",
   letterSpacing: "-0.24px",
   position: "relative",
   display: "flex",
   color: palette.universalPalette.navy.dark
 }));
-const TextFieldStyled = styled$2(TextField)(({ theme }) => ({
+const TextFieldStyled = styled$2(TextField)(({ theme, ownerState }) => ({
   boxSizing: "border-box",
   "& .MuiInputLabel-root": {
     color: palette.universalPalette.navy.dark
@@ -7966,7 +7965,7 @@ const TextFieldStyled = styled$2(TextField)(({ theme }) => ({
     color: "#0F5C5D"
   },
   "& .MuiOutlinedInput-root": {
-    lineHeight: "1.5",
+    lineHeight: "1.2rem !important",
     backgroundColor: theme.palette.primary.hue,
     "&.MuiInputBase-multiline": {
       padding: 0,
@@ -7995,14 +7994,15 @@ const TextFieldStyled = styled$2(TextField)(({ theme }) => ({
       color: "#0F5C5D"
     },
     "& .MuiOutlinedInput-input": {
-      fontSize: "16px",
+      paddingLeft: ownerState.variant === "masked" ? "0px !important" : "16px",
+      fontSize: { xs: "0.95rem !important", md: "1rem !important" },
       fontWeight: 400,
-      lineHeight: "18px",
+      lineHeight: "1.2rem !important",
       padding: "10px 14px",
       "&::placeholder": {
         color: palette.universalPalette.navy.dark,
         opacity: 0.7,
-        fontSize: "16px"
+        fontSize: { xs: "0.95rem !important", md: "1rem !important" }
       }
     }
   }
@@ -8436,7 +8436,7 @@ const InputText = React__default.forwardRef(
         break;
     }
     return /* @__PURE__ */ jsxRuntimeExports.jsxs(Stack, { gap: "4px", children: [
-      title && /* @__PURE__ */ jsxRuntimeExports.jsxs(Title, { children: [
+      title && /* @__PURE__ */ jsxRuntimeExports.jsxs(Title, { sx: { fontSize: { xs: "0.95rem", md: "1rem" } }, children: [
         title,
         " ",
         props.required ? /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -8456,11 +8456,7 @@ const InputText = React__default.forwardRef(
           ref,
           ...muiProps,
           ...props,
-          sx: {
-            "& .MuiOutlinedInput-input": {
-              paddingLeft: variant === "masked" ? "0px !important" : "16px"
-            }
-          }
+          ownerState: { variant }
         }
       )
     ] });

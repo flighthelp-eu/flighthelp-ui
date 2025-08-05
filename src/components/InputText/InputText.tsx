@@ -62,7 +62,7 @@ const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
     return (
       <Stack gap="4px">
         {title && (
-          <Title>
+          <Title sx={{ fontSize: { xs: "0.95rem", md: "1rem" } }}>
             {title}{" "}
             {props.required ? (
               <span
@@ -82,11 +82,7 @@ const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
           ref={ref}
           {...muiProps}
           {...props}
-          sx={{
-            "& .MuiOutlinedInput-input": {
-              paddingLeft: variant === "masked" ? "0px !important" : "16px",
-            },
-          }}
+          ownerState={{ variant }}
         />
       </Stack>
     );
