@@ -7975,7 +7975,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	  display: "flex",
 	  color: palette.universalPalette.navy.dark
 	}));
-	const TextFieldStyled = material.styled(material.TextField)(({ theme }) => ({
+	const TextFieldStyled = material.styled(material.TextField)(({ theme, ownerState }) => ({
 	  boxSizing: "border-box",
 	  "& .MuiInputLabel-root": {
 	    color: palette.universalPalette.navy.dark
@@ -8016,6 +8016,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	      color: "#0F5C5D"
 	    },
 	    "& .MuiOutlinedInput-input": {
+	      paddingLeft: ownerState.variant === "masked" ? "0px !important" : "16px",
 	      fontSize: { xs: "0.95rem !important", md: "1rem !important" },
 	      fontWeight: 400,
 	      lineHeight: "1.2rem !important",
@@ -8477,20 +8478,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	          ref,
 	          ...muiProps,
 	          ...props,
-	          sx: () => ({
-	            "& .MuiOutlinedInput-input": {
-	              paddingLeft: variant === "masked" ? "0px !important" : "16px",
-	              fontSize: { xs: "0.95rem !important", md: "1rem !important" },
-	              fontWeight: 400,
-	              lineHeight: "1.2rem !important",
-	              padding: "10px 14px",
-	              "&::placeholder": {
-	                color: palette.universalPalette.navy.dark,
-	                opacity: 0.7,
-	                fontSize: { xs: "0.95rem !important", md: "1rem !important" }
-	              }
-	            }
-	          })
+	          ownerState: { variant }
 	        }
 	      )
 	    ] });

@@ -10,7 +10,9 @@ export const Title = styled(Typography)(() => ({
   color: palette.universalPalette.navy.dark,
 }));
 
-export const TextFieldStyled = styled(TextField)(({ theme }) => ({
+export const TextFieldStyled = styled(TextField)<{
+  ownerState: { variant: "primary" | "secondary" | "error" | "masked" };
+}>(({ theme, ownerState }) => ({
   boxSizing: "border-box",
   "& .MuiInputLabel-root": {
     color: palette.universalPalette.navy.dark,
@@ -54,6 +56,7 @@ export const TextFieldStyled = styled(TextField)(({ theme }) => ({
       color: "#0F5C5D",
     },
     "& .MuiOutlinedInput-input": {
+      paddingLeft: ownerState.variant === "masked" ? "0px !important" : "16px",
       fontSize: { xs: "0.95rem !important", md: "1rem !important" },
       fontWeight: 400,
       lineHeight: "1.2rem !important",
