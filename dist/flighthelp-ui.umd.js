@@ -8020,7 +8020,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	      fontSize: "0.9rem",
 	      fontWeight: 400,
 	      lineHeight: "1.2rem !important",
-	      padding: "10px 14px",
+	      padding: "14px 14px",
 	      "&::placeholder": {
 	        color: palette.universalPalette.navy.dark,
 	        opacity: 0.7,
