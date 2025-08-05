@@ -7987,7 +7987,7 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	    color: "#0F5C5D"
 	  },
 	  "& .MuiOutlinedInput-root": {
-	    lineHeight: "1.5",
+	    lineHeight: "1.2rem !important",
 	    backgroundColor: theme.palette.primary.hue,
 	    "&.MuiInputBase-multiline": {
 	      padding: 0,
@@ -8016,14 +8016,14 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	      color: "#0F5C5D"
 	    },
 	    "& .MuiOutlinedInput-input": {
-	      fontSize: { xs: "0.95rem", md: "1rem" },
+	      fontSize: { xs: "0.95rem !important", md: "1rem !important" },
 	      fontWeight: 400,
-	      lineHeight: "1.2rem",
+	      lineHeight: "1.2rem !important",
 	      padding: "10px 14px",
 	      "&::placeholder": {
 	        color: palette.universalPalette.navy.dark,
 	        opacity: 0.7,
-	        fontSize: { xs: "0.95rem", md: "1rem" }
+	        fontSize: { xs: "0.95rem !important", md: "1rem !important" }
 	      }
 	    }
 	  }
