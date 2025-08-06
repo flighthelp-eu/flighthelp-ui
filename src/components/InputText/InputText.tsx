@@ -88,6 +88,11 @@ const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
           {...muiProps}
           {...props}
           ownerState={{ variant }}
+          FormHelperTextProps={{
+            sx: {
+              ml: 0,
+            },
+          }}
         />
       </Stack>
     );
