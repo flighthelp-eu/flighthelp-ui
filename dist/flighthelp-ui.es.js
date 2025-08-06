@@ -8465,7 +8465,12 @@ const InputText = React__default.forwardRef(
           ref,
           ...muiProps,
           ...props,
-          ownerState: { variant }
+          ownerState: { variant },
+          FormHelperTextProps: {
+            sx: {
+              ml: 0
+            }
+          }
         }
       )
     ] });

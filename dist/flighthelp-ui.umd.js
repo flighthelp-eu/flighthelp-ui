@@ -8487,7 +8487,12 @@ Please use another name.` : formatMuiErrorMessage$1(18));
 	          ref,
 	          ...muiProps,
 	          ...props,
-	          ownerState: { variant }
+	          ownerState: { variant },
+	          FormHelperTextProps: {
+	            sx: {
+	              ml: 0
+	            }
+	          }
 	        }
 	      )
 	    ] });
