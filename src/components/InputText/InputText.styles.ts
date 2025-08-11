@@ -2,16 +2,17 @@ import { palette } from "@/theme";
 import { styled, Typography, TextField } from "@mui/material";
 
 export const Title = styled(Typography)(() => ({
-  fontSize: "12px",
   fontWeight: 600,
-  lineHeight: "18px",
+  lineHeight: "1.2rem",
   letterSpacing: "-0.24px",
   position: "relative",
   display: "flex",
   color: palette.universalPalette.navy.dark,
 }));
 
-export const TextFieldStyled = styled(TextField)(({ theme }) => ({
+export const TextFieldStyled = styled(TextField)<{
+  ownerState: { variant: "primary" | "secondary" | "error" | "masked" };
+}>(({ theme, ownerState }) => ({
   boxSizing: "border-box",
   "& .MuiInputLabel-root": {
     color: palette.universalPalette.navy.dark,
@@ -23,7 +24,7 @@ export const TextFieldStyled = styled(TextField)(({ theme }) => ({
     color: "#0F5C5D",
   },
   "& .MuiOutlinedInput-root": {
-    lineHeight: "1.5",
+    lineHeight: "1.2rem !important",
     backgroundColor: theme.palette.primary.hue,
 
     "&.MuiInputBase-multiline": {
@@ -55,14 +56,15 @@ export const TextFieldStyled = styled(TextField)(({ theme }) => ({
       color: "#0F5C5D",
     },
     "& .MuiOutlinedInput-input": {
-      fontSize: "12px",
+      paddingLeft: ownerState.variant === "masked" ? "0px !important" : "16px",
+      fontSize: "0.9rem",
       fontWeight: 400,
-      lineHeight: "18px",
-      padding: "18px",
+      lineHeight: "1.2rem !important",
+      padding: "14px 14px",
       "&::placeholder": {
         color: palette.universalPalette.navy.dark,
-        opacity: 1,
-        fontSize: "12px",
+        opacity: 0.7,
+        fontSize: "0.9rem",
       },
     },
   },

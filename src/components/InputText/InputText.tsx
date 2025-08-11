@@ -60,9 +60,14 @@ const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
     }
 
     return (
-      <Stack gap="4px">
+      <Stack gap="2px">
         {title && (
-          <Title>
+          <Title
+            sx={{
+              fontSize: "0.9rem",
+              "@media (max-width: 320px)": { fontSize: "0.75rem" },
+            }}
+          >
             {title}{" "}
             {props.required ? (
               <span
@@ -82,9 +87,10 @@ const InputText = React.forwardRef<HTMLDivElement, TextFieldProps>(
           ref={ref}
           {...muiProps}
           {...props}
-          sx={{
-            "& .MuiOutlinedInput-input": {
-              paddingLeft: variant === "masked" ? "0px !important" : "16px",
+          ownerState={{ variant }}
+          FormHelperTextProps={{
+            sx: {
+              ml: 0,
             },
           }}
         />
